@@ -1,0 +1,7 @@
+# Global Gitignore file.
+# More Help: https://help.github.com/articles/ignoring-files
+# To make it work run: git config --global core.excludesfile ~/.gitignore_global
+
+#ignore rubymine folders
+.idea
+.DS_Store

@@ -19,6 +19,7 @@ Usage
 * `ln -nfs ~/dotfiles/bash_profile .bash_profile`
 * `ln -nfs ~/dotfiles/bash_aliases .bash_aliases`
 * `ln -nfs ~/dotfiles/gitconfig .gitconfig`
+* `ln -nfs ~/dotfiles/gitignore_global .gitignore_global`
 
 ##Fetch submodules after cloning repo, in ~/dotfiles
 
