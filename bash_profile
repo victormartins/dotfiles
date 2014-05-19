@@ -1,14 +1,21 @@
 # to reload:  source ~/.bash_profile
 
+export TERM=screen-256color
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 #Set Default Editor
 export EDITOR=vim
-source ~/dotfiles/git-completion.bash
 
-f [ -f ~/.bash_aliases ]; then
+# https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
+source ~/dotfiles/git-completion.bash
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
+
+if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
