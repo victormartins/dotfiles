@@ -2,6 +2,7 @@
 alias cls='clear'
 alias ls='ls -CGaop'
 alias lls='clear && ls -CGaop'
+alias f='find . -name '
 
 ## #Ruby & Rails¶
 alias rr_migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test' #using && will only run the next command if the first passes
