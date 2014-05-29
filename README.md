@@ -14,6 +14,7 @@ Usage
 ##Then add symlinks in your ~/ directory
 
 * `cd ~/`
+* `ln -nfs ~/dotfiles/rspec .rspec`
 * `ln -nfs ~/dotfiles/vim/ .vim`
 * `ln -nfs ~/dotfiles/vimrc .vimrc`
 * `ln -nfs ~/dotfiles/bash_profile .bash_profile`
