@@ -9,6 +9,7 @@ alias rr_migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAI
 alias rr_checkup='bundle exec cucumber; bundle exec rspec' #using ; will run the next command even if the first fails
 alias rr_pry='pry -r ./config/environment'
 alias be='bundle exec'
+alias rspec='bundle exec rspec'
 alias ss='bundle exec rails server thin'  #start server
 alias sg="bundle exec guard"              #start guard
 alias stf='bundle exec rspec'              #run tests
