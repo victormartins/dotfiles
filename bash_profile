@@ -1,3 +1,9 @@
+# WORK STUFF
+export DEFERRED_GARBAGE_COLLECTION=true #move this to a rails_stuff .file
+export MYSQL_USERNAME=root
+export MYSQL_PASSWORD=admin
+
+
 # to reload:  source ~/.bash_profile
 
 export TERM=screen-256color
