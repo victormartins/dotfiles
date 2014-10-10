@@ -1,3 +1,5 @@
+time_stamp=$(date +"%Y_%m_%d_%S")
+
 ##bash
 alias cls='clear'
 alias ls='ls -CGaop'
@@ -15,6 +17,7 @@ alias sg="bundle exec guard"              #start guard
 alias stf='bundle exec rspec'              #run tests
 alias smt="bundle exec rake db:migrate RAILS_ENV=test"
 alias rmglock='find . -name *.lock -exec rm -rf {} \;' #Remove gemfile.lock recursively
+alias fu='bundle exec fudge build | tee ~/Desktop/Temp/__fudge_builds__/fudge_build.$time_stamp.log'
 
 #Git
 alias gitk='gitk 2>/dev/null' #to remove the error messages of gitk on osx
