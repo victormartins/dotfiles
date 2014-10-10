@@ -24,6 +24,12 @@ alias gitk='gitk 2>/dev/null' #to remove the error messages of gitk on osx
 alias gst='clear; git status -sb'
 alias gitclean='git clean -f -d -n' #DOn't delete, just show the problems
 alias gitcleany='git clean -f -d' #Delete at will
+alias gc='git commit'
+alias gco='git checkout'
+alias gpl='git pull'
+alias gp='git push'
+alias gb='git branch'
+
 
 #Others
 
