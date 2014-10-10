@@ -1,4 +1,4 @@
-time_stamp=$(date +"%Y_%m_%d_%S")
+time_stamp=$(date +"%Y_%m_%d__%H_%M_%S")
 
 ##bash
 alias cls='clear'
