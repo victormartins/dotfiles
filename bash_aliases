@@ -26,6 +26,7 @@ alias gc='git commit'
 alias gco='git checkout'
 alias gpl='git pull'
 alias gp='git push'
+alias gpu='git push upstream'
 alias gb='git branch'
 
 
