@@ -4,8 +4,8 @@ function timestamp {
 
 ##bash
 alias cls='clear'
-alias ls='ls -CGaop'
-alias lls='clear && ls -CGaop'
+alias ls='ls -CGaop -lh'
+alias lls='clear && ls -CGaop -lh'
 alias f='find . -name '
 
 ## #Ruby & Rails¶
@@ -20,7 +20,9 @@ alias stf='bundle exec rspec'              #run tests
 alias smt="bundle exec rake db:migrate RAILS_ENV=test"
 alias rmglock='find . -name *.lock -exec rm -rf {} \;' #Remove gemfile.lock recursively
 alias fu='file="fudge_build.$(timestamp).log" && touch $file && echo $(GIT_BRANCH) >> $file && echo $(git log -1)  >> $file && echo '' >> $file && echo '' >> $file && time bundle exec fudge build | tee -a $file && mv $file ~/Desktop/Temp/__fudge_builds__'
-
+alias start_jobs='be rake jobs:work'
+alias start_redis='redis-server /usr/local/etc/redis.conf'
+alias start_pdf_server='be fuji_pdf_server start' # run inside the host_app folder 
 
 #Git
 alias gitk='gitk 2>/dev/null' #to remove the error messages of gitk on osx
