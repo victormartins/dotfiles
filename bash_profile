@@ -7,8 +7,6 @@ export MYSQL_PASSWORD=admin
 # to reload:  source ~/.bash_profile
 
 export TERM=screen-256color
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 #Set Default Editor
@@ -115,4 +113,10 @@ print_before_the_prompt () {
 PROMPT_COMMAND=print_before_the_prompt 
 PS1='>>'
 
-export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/bin:$PATH
+
+
+## This needs to be the last thing on bash_profile to bake rbenv work
+# http://stackoverflow.com/questions/10940736/rbenv-not-changing-ruby-version
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
