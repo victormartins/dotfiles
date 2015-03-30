@@ -1,0 +1,27 @@
+# origin https://gist.github.com/andrewjtait/9114245e92b84d69aa43
+# source https://gist.github.com/victormartins/777c2311a7fd66f5af47
+
+# commands
+# github                      -> opens GitHub repo and branch
+# github compare              -> opens GitHub branch comparison with master
+# github compare branch_name  -> opens GitHub branch comparison with branch_name
+# github pr                   -> opens a GitHub pull request against master
+# github pr branch_name       -> opens a GitHub pull request against branch_name
+
+function github {
+  branch="$(git rev-parse --abbrev-ref HEAD)"
+  url="$(git config --get remote.upstream.url)"
+  url=${url/git@github.com:/http://github.com/}
+  url=${url/.git/}
+
+  if [[ $1 =~ "compare" ]]; then action="compare"
+  elif [[ $1 =~ "pr" ]]; then action="pull"
+  else action="tree"; fi
+
+  if [[ $2 != "" ]]; then base="$2..."
+  else base=""; fi
+
+  url="${url}/${action}/${base}${branch}"
+
+  echo "Opening ${url} $(\open ${url})"
+}

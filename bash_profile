@@ -23,6 +23,11 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+if [ -f ~/dotfiles/git_helpers ]; then
+  . ~/dotfiles/git_helpers
+fi
+
+
 #------------------------------------------------------------------------------- 
 #               Customize Prompt
 # http://net.tutsplus.com/tutorials/other/how-to-customize-the-command-prompt/
