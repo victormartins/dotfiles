@@ -1,6 +1,6 @@
 [user]
-	name = Victor D. G. Martins
-	email = correio@victormartins.com
+	name = Victor Martins
+	email = victor.martins@sage.com
 [core]
 	excludesfile = /Users/victor.martins/.gitignore_global
 	editor = vim
@@ -19,3 +19,9 @@
     prompt = false
 [merge]
     tool = Kaleidoscope
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

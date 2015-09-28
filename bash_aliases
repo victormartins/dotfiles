@@ -37,7 +37,11 @@ alias gpu='git push upstream'
 alias gb='git branch'
 
 
+alias testjs='RAILS_ENV=test be rake spec:javascripts'
+
+
 #Others
+alias htk='echo "ps aux | grep ruby kill -9 xxxxx"'
 
 ## Project specific
 alias g2_sopt='cd ~/Documents/SAGE/code/PT/sageone_pt'
@@ -47,12 +51,14 @@ alias g2_sopt_id='cd ~/Documents/SAGE/code/PT/sageone_sageid'
 alias g2_sop='cd ~/Documents/SAGE/code/clones/sop'
 alias g2_fuji='cd ~/Documents/SAGE/code/clones/project_fuji'
 
-alias g2_migos='cd ~/Documents/Projects/migos'
+alias g2_art='cd ~/Documents/Projects/the_food_artisans/web_page/the_food_artisans'
 
 alias g2_nft='cd ~/Documents/SAGE/code/BR/nfe_tools'
 alias g2_nfe='cd ~/Documents/SAGE/code/BR/nfe'
 
 alias g2_extra='cd ~/Documents/SAGE/code/UK/sage_one_advanced'
 alias g2_myuk='cd ~/Documents/SAGE/code/UK/mysageone_uk'
+alias g2_uk='cd ~/Documents/SAGE/code/UK'
+alias g2_payroll='cd ~/Documents/SAGE/code/payroll'
 
 alias _rm_gemfile_locks='g2_sopt; rm Gemfile.lock ; rm host_app/Gemfile.lock; rm sopt_extensions/Gemfile.lock'
