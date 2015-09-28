@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/victor.martins/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sageone_na_support-0.0.27'
+let g:netrw_dirhist_2='/Users/victor.martins/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/soroban-2.0.0'
