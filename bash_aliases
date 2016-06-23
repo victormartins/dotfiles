@@ -15,6 +15,7 @@ alias rr_pry='pry -r ./config/environment'
 alias be='bundle exec'
 alias rspec='bundle exec rspec'
 alias ss='bundle exec rails server thin'  #start server
+alias sst='bundle exec rails server thin start --threaded'  #start server
 alias sg="bundle exec guard"              #start guard
 alias stf='bundle exec rspec'              #run tests
 alias smt="bundle exec rake db:migrate RAILS_ENV=test"
@@ -23,6 +24,7 @@ alias fu='file="fudge_build.$(timestamp).log" && touch $file && echo $(GIT_BRANC
 alias start_jobs='be rake jobs:work'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
 alias start_pdf_server='be fuji_pdf_server start' # run inside the host_app folder 
+alias start_mysql='mysql.server start' # start mysql
 
 #Git
 alias gitk='gitk 2>/dev/null' #to remove the error messages of gitk on osx
@@ -43,6 +45,10 @@ alias testjs='RAILS_ENV=test be rake spec:javascripts'
 #Others
 alias htk='echo "ps aux | grep ruby kill -9 xxxxx"'
 
+## Mine
+alias g2_proj='cd ~/Google\ Drive/_Projects'
+
+#
 ## Project specific
 alias g2_sopt='cd ~/Documents/SAGE/code/PT/sageone_pt'
 alias g2_mypt='cd ~/Documents/SAGE/code/PT/mysageone_pt'
@@ -51,7 +57,7 @@ alias g2_sopt_id='cd ~/Documents/SAGE/code/PT/sageone_sageid'
 alias g2_sop='cd ~/Documents/SAGE/code/clones/sop'
 alias g2_fuji='cd ~/Documents/SAGE/code/clones/project_fuji'
 
-alias g2_art='cd ~/Documents/Projects/the_food_artisans/web_page/the_food_artisans'
+alias g2_art='cd ~/Google\ Drive/_Projects/the_food_artisans/web_page/the_food_artisans'
 
 alias g2_nft='cd ~/Documents/SAGE/code/BR/nfe_tools'
 alias g2_nfe='cd ~/Documents/SAGE/code/BR/nfe'
