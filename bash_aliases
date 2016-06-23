@@ -15,7 +15,6 @@ alias rr_pry='pry -r ./config/environment'
 alias be='bundle exec'
 alias rspec='bundle exec rspec'
 alias ss='bundle exec rails server thin'  #start server
-alias sst='bundle exec rails server thin start --threaded'  #start server
 alias sg="bundle exec guard"              #start guard
 alias stf='bundle exec rspec'              #run tests
 alias smt="bundle exec rake db:migrate RAILS_ENV=test"
@@ -37,6 +36,7 @@ alias gpl='git pull'
 alias gp='git push'
 alias gpu='git push upstream'
 alias gb='git branch'
+alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
 
 
 alias testjs='RAILS_ENV=test be rake spec:javascripts'
