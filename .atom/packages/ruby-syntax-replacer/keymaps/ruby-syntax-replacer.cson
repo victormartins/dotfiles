@@ -1,0 +1,2 @@
+'atom-text-editor':
+  'cmd-alt-x': 'ruby-syntax-replacer:replace'

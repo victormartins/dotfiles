@@ -1,0 +1,443 @@
+require 'spec_helper'
+
+describe AdvancedUk::Product do
+  before :all do
+    user = user_not_vat_registered
+    @business = user.business
+  end
+
+  it { is_expected.to be_a AdvancedUk::CatalogItem }
+
+  describe "analysable" do
+    subject { build(:nes_console) }
+
+    it_behaves_like :analysable
+  end
+
+  describe 'shared_catalog_behaviour' do
+    subject { create :nes_console }
+
+    it_behaves_like :catalog_item
+  end
+
+  describe 'attributes' do
+    it { is_expected.to respond_to :description }
+    it { is_expected.to respond_to :sales_price }
+    it { is_expected.to respond_to :cost_price }
+    it { is_expected.to respond_to :notes }
+    it { is_expected.to respond_to :item_code }
+  end
+
+  describe 'security' do
+    describe 'mass_assignment' do
+      it { is_expected.not_to allow_mass_assignment_of :business_id }
+
+      [:full_access, :restricted_access].each do |access|
+        it { is_expected.to allow_mass_assignment_of(:description).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:ledger_account_id).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:notes).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:item_code).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:cost_price).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:tax_rate_id).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:prices_attributes).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:purchase_ledger_account_id).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:purchase_tax_rate_id).as(access) }
+        it { is_expected.to allow_mass_assignment_of(:lock_version).as(access) }
+      end
+    end
+
+    it { is_expected.to secure(:purchase_ledger_account, :through => :purchase_ledgers) }
+    it { is_expected.to secure(:ledger_account, :through => :sales_ledgers) }
+    it { is_expected.to accept_nested_attributes_for(:prices) }
+  end
+
+  describe 'associations' do
+    it { is_expected.to belong_to :business }
+    it { is_expected.to belong_to :ledger_account }
+    it { is_expected.to belong_to :tax_rate }
+    it { is_expected.to belong_to :purchase_ledger_account }
+    it { is_expected.to belong_to :purchase_tax_rate }
+    it { is_expected.to have_many(:prices).dependent(:destroy) }
+  end
+
+  describe 'after_initialize' do
+    describe 'create_default_nominals' do
+      let(:product) { @business.products.build }
+
+      it 'sets ledger_account to sales default nominal' do
+        expect(product.ledger_account).to eq @business.default_settings.product_sales_ledger_account
+      end
+
+      context "when tax enabled" do
+        before do
+          @taxable_user = user_standard_vat
+          @taxable_business = @taxable_user.business
+          @taxable_product = @taxable_business.products.build
+        end
+
+        it 'sets tax rate to sales default nominal' do
+          expect(@taxable_product.tax_rate).to eq @taxable_business.default_settings.product_sales_ledger_account.tax_rate
+        end
+
+        it 'sets purchase_tax_rate of the purchase default nominal' do
+          expect(@taxable_product.purchase_tax_rate).to eq @taxable_business.default_settings.product_sales_ledger_account.tax_rate
+        end
+      end
+
+      context "when tax disabled" do
+        before do
+          # TODO should stub GlobalAccountingBase
+          allow_any_instance_of(SageOneGacTest::Configurators::Tax).to receive(:tax_system).and_return(:sales_tax)
+        end
+
+        it 'sets sales tax rate to nil' do
+          expect(product.tax_rate).to be_nil
+        end
+        it 'sets purchase tax rate to nil' do
+          expect(product.purchase_tax_rate).to be_nil
+        end
+      end
+    end
+
+    describe 'filter_by_search_text' do
+      before :each do
+        @business.products.destroy_all
+        @product = @business.products.create!({:description => "Description", :item_code => "001" }, :as => :full_access)
+      end
+
+      it "returns filtered products" do
+        expect(described_class.filter_by_search_text("Desc").first).to eq @product
+        expect(described_class.filter_by_search_text("001").first).to eq @product
+        expect(described_class.filter_by_search_text("002").first).to_not be_present
+      end
+    end
+
+    describe 'sorting' do
+      it_behaves_like :sort_through_localised_lookup_data, :for => :tax_rate
+      it_behaves_like :sort_through_localised_lookup_data, :for => :purchase_tax_rate
+
+      describe 'sort_by_sales_price' do
+        it "has correct sorting criteria" do
+          ["ASC", "DESC"].each do |order|
+            expect(described_class.sort_by_sales_price(order).joins_values).to eq(["INNER JOIN catalog_prices ON catalog_prices.id = (SELECT MIN(id) FROM catalog_prices cp WHERE cp.priced_catalog_item_type = 'AdvancedUk::CatalogItem' AND cp.priced_catalog_item_id = catalog_items.id)"])
+            expect(described_class.sort_by_sales_price(order).order_values).to eq(["catalog_prices.price #{order}"])
+          end
+        end
+      end
+    end
+
+    describe 'prices' do
+      let(:default_name) { I18n.t('sop_settings/default_settings.product.global_pricing_labels', :locale => @business.locale).first }
+
+      context 'when there are default settings' do
+        before :each do
+          allow_any_instance_of(AdvancedUk::DefaultSettings).to receive(:product_labels_enabled).and_return(true)
+          @price = @business.default_settings.prices.build({:id => 123, :name => 'TEST NAME', :price => '22', :in_use => false}, :as => :full_access )
+          allow_any_instance_of(AdvancedUk::DefaultSettings).to receive(:prices).and_return([@price])
+          @product = @business.products.build({:description => "Description"})
+        end
+
+        it 'is not empty' do
+          expect(@product.prices).not_to be_empty
+        end
+
+        it 'has a default name of sales price in settings' do
+          expect(@product.prices.first.name).to eq(@price.name)
+        end
+
+        it 'has a in_use set' do
+          expect(@product.prices.first.in_use).to eq(false)
+        end
+
+        it 'has a relation to the default price' do
+          expect(@product.prices.first.default_price_id).to eq(@price.id)
+        end
+      end
+
+      context 'when there are no prices given' do
+        before :each do
+          @product = @business.products.build({:description => "Description"})
+        end
+
+        it 'is not empty' do
+          expect(@product.prices).not_to be_empty
+        end
+
+        it 'has a default name of sales price' do
+          expect(@product.prices.first.name).to eq(default_name)
+        end
+
+        it 'has a default in_use' do
+          expect(@product.prices.first.in_use).to eq(true)
+        end
+      end
+
+      context 'when there are prices ' do
+        before :each do
+          product_price =  AdvancedUk::ProductPrice.new( { :name => 'my price' }, :as => :full_access )
+          @product = described_class.new({ :prices => [product_price] }, :as => :full_access)
+        end
+
+        it 'has a default name of sales price' do
+          expect(@product.prices.map(&:name)).not_to include default_name
+        end
+
+        it 'includes prices in the json' do
+          json = @product.as_json(:dummy => :test)
+          expect(json).to include('prices')
+          expect(json).to include('sales_price')
+          expect(json).to include('sales_price_includes_tax')
+        end
+      end
+
+      context 'when there are ledger accounts' do
+        before :each do
+          @product = @business.products.build({:description => "Description"})
+          @product.ledger_account = @business.ledger_accounts[0]
+          @product.purchase_ledger_account = @business.ledger_accounts[1]
+        end
+
+        it 'includes formatted ledger account names in the json' do
+          json = @product.as_json(:dummy => :test)
+          expect(json).to include('ledger_account_formatted')
+          expect(json).to include('purchase_ledger_account_formatted')
+        end
+      end
+    end
+  end
+
+  describe '#as_json' do
+    let(:product_name) { 'Baked Beans' }
+    let(:product_code) { 'BB001' }
+
+    before :each do
+      product = @business.products.build
+      product.description = product_name
+      product.item_code = product_code
+      @json = product.as_json
+    end
+
+    it 'has a correct "resource" property' do
+      expect(@json['resource']).to eq('advanced_uk/product')
+    end
+
+    it 'has a correct "resource_name" property' do
+      expect(@json['resource_name']).to eq("#{product_name} (#{product_code})")
+    end
+  end
+
+  describe 'after_create' do
+    subject { build(:nes_console) }
+
+    let(:default_price) { @business.default_settings.prices.build({:name => 'Foo'}, :as => :full_access) }
+
+    before do
+      # since @business is only created once, previous groups of specs create invalid products.  Not needed for this spec.
+      @business.products.clear
+      @business.save!
+      subject.save!
+    end
+
+    describe 'add_default_pricing_labels' do
+      it 'should add the default price' do
+        expect(default_price.save).to be_truthy
+      end
+    end
+  end
+
+  describe 'validations' do
+    before :each do
+      allow(subject).to receive(:taxable?)
+    end
+    it { is_expected.to validate_presence_of :business }
+    it { is_expected.to validate_presence_of :ledger_account }
+    it { is_expected.to validate_presence_of :purchase_ledger_account }
+    it { is_expected.to validate_length_of(:item_code).is_at_most(255) }
+
+    describe 'prices' do
+      context 'when saving a product has no prices' do
+        before :each do
+          subject.prices = []
+        end
+
+        it 'has an error' do
+          expect(subject.valid?).to be_falsey
+          expect(subject.errors[:base]).to include I18n.t('activerecord.errors.models.advanced_uk/product.attributes.base.at_least_one_price')
+        end
+      end
+
+      context 'when when removing all prices' do
+        subject { build(:nes_console) }
+
+        before :each do
+          product_price = AdvancedUk::ProductPrice.new
+          product_price.name = 'car'
+          product_price.price = 123
+
+          subject.prices = [product_price]
+          subject.save!
+        end
+
+        it 'has an error' do
+          allow(subject.prices.first).to receive(:_destroy).and_return(true)
+          subject.valid? be_falsey
+          expect(subject.errors[:base]).to include I18n.t('activerecord.errors.models.advanced_uk/product.attributes.base.at_least_one_price')
+        end
+      end
+    end
+  end
+
+  describe 'suggestion' do
+    it { is_expected.to search_suggests :like => [:description, :item_code], :show => :formatted_search, :order => :description }
+  end
+
+  describe 'methods' do
+    it { is_expected.to respond_to :sales_ledgers }
+
+    describe 'formatted_search' do
+      before do
+        @product = AdvancedUk::Product.new
+        @product.description = "First Product"
+        @product.item_code = "ITEM1"
+      end
+
+      it 'should have a formatted search string' do
+        expect(@product.formatted_search).to eq("#{@product.description} (#{@product.item_code})")
+      end
+    end
+  end
+
+  describe 'sales_ledger_account' do
+    subject { build(:nes_console) }
+
+    context 'when setting a sales ledger' do
+      it 'can NOT set purchase ledger_account' do
+        subject.ledger_account = @business.ledger_accounts.for_scope(:purchasing).first
+        subject.tax_rate = CoreAccounting::Taxes::Models::TaxRate.find(3) #TODO: TAX_REFACT VICMAR this does not look good!
+        # TODO:  (VICMAR) Make the test check for certain error key and error message. We are testing a validation not an exception
+        # WHen the test passes, put a pry here, check the exception. If it is a validation one, just fix the test to show that.
+        expect { subject.save! }.to raise_error(ActiveRecord::RecordInvalid)
+      end
+    end
+
+    context 'when setting a income ledger' do
+      it 'can set sales_ledger_account' do
+        subject.tax_rate = CoreAccounting::Taxes::Models::TaxRate.find(3) #TODO: TAX_REFACT VICMAR this does not look good!
+        expect { subject.save! }.to_not raise_error
+      end
+    end
+  end
+
+  describe 'purchase_ledger_account' do
+    subject { build(:nes_console) }
+
+    context 'when setting a purchase ledger' do
+      it 'can set purchase_ledger_account' do
+        subject.tax_rate = CoreAccounting::Taxes::Models::TaxRate.find(3) #TODO: TAX_REFACT VICMAR this does not look good!
+        expect { subject.save! }.to_not raise_error
+      end
+    end
+
+    context 'when setting a income ledger' do
+      it 'can NOT set sales ledger_account' do
+        subject.purchase_ledger_account_id = @business.ledger_accounts.for_scope(:sales).first.id
+        subject.tax_rate = CoreAccounting::Taxes::Models::TaxRate.find(3) #TODO: TAX_REFACT VICMAR this does not look good!
+        expect { subject.save! }.to raise_error(ActiveRecord::RecordInvalid)
+      end
+    end
+  end
+
+  describe 'sales_price' do
+    it 'should return the value of the first price' do
+      subject.prices.delete_all
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 34.23, :name => 'first price'}, :as => :full_access)
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 43.23, :name => 'second price'}, :as => :full_access)
+
+      expect(subject.sales_price).to eq(34.23)
+    end
+  end
+
+  describe 'sales_price_2' do
+    before :each do
+      subject.prices.delete_all
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 34.23, :name => 'first price'}, :as => :full_access)
+    end
+
+    it 'returns nil when there is only 1 price' do
+      expect(subject.sales_price_2).to be_nil
+    end
+
+    it 'returns the value of the second price when there is more than 1 price' do
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 43.23, :name => 'second price'}, :as => :full_access)
+
+      expect(subject.sales_price_2).to eq(43.23)
+    end
+  end
+
+  describe 'sales_price_3' do
+    before :each do
+      subject.prices.delete_all
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 34.23, :name => 'first price'}, :as => :full_access)
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 43.23, :name => 'second price'}, :as => :full_access)
+    end
+
+    it 'returns nil when there is only 2 prices' do
+      expect(subject.sales_price_3).to be_nil
+    end
+
+    it 'returns the value of the third price when there is more than 2 prices' do
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 43.23, :name => 'third price'}, :as => :full_access)
+
+      expect(subject.sales_price_2).to eq(43.23)
+    end
+  end
+
+  describe 'price_includes_tax' do
+    it 'should return the price_includes_tax value of the first price' do
+      subject.prices.delete_all
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 34.23, :name => 'first price', :price_includes_tax => true}, :as => :full_access)
+      subject.prices << AdvancedUk::ProductPrice.new({:price => 43.23, :name => 'second price', :price_includes_tax => false}, :as => :full_access)
+
+      expect(subject.sales_price_includes_tax).to be_truthy
+    end
+  end
+
+  describe 'cost_price_changeable' do
+    before :each do
+      @product = create :nes_console
+    end
+
+    it "allows cost price to be changed for full access" do
+      allow(@product).to receive_message_chain(:current_user, :role_for_area).and_return(:full_access)
+      @product.update_attribute(:cost_price, '20')
+      expect(@product.cost_price.to_s).to eq('20.0')
+    end
+
+    it "forbids changing cost price if user does not have full access" do
+      allow(@product).to receive_message_chain(:current_user, :role_for_area).and_return(:restricted_access)
+      expect{ @product.update_attribute(:cost_price, '30') }.to raise_error(SopCore::Exceptions::MultiUserAccessDenied)
+    end
+  end
+
+  describe 'destroy_product' do
+    before :each do
+      user = user_not_vat_registered
+      @business = user.business
+      @product = create :nes_console
+    end
+
+    it "prevents destruction if on a line item attached to a transaction" do
+      artefact_line_item = mock_model('ArtefactLineItems', :product_id => @product.id)
+      artefact_line_items = [artefact_line_item]
+      allow(@business).to receive_message_chain(:ledger_entries, :not_corrected, :joins, :where).and_return(artefact_line_items)
+      @product.destroy
+      expect(@product.errors.messages[:base]).to include I18n.t('activerecord.errors.models.advanced_uk/product.attributes.base.delete_associated_with_invoice')
+    end
+
+    it "allows destruction if there are no matching line items" do
+      allow(@business).to receive_message_chain(:ledger_entries, :not_corrected, :joins, :where, :empty?).and_return(true)
+      @product.destroy
+      expect(@product.errors.messages).to be_empty
+    end
+  end
+end

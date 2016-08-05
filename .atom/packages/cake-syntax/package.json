@@ -1,0 +1,39 @@
+{
+  "name": "cake-syntax",
+  "theme": "syntax",
+  "version": "0.5.0",
+  "description": "Yummy syntax theme",
+  "keywords": [
+    "cake",
+    "syntax",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielPintilei/cake-atom-syntax.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "readme": "![Cake Logo](https://raw.githubusercontent.com/DanielPintilei/Cake/master/build/img/logo.png)\n\n\nYummy syntax theme for Atom, Brackets, Sublime Text and Visual Studio Code.\n\nhttps://danielpintilei.cf/Cake\n\n### License\n\nMIT © [Daniel Pintilei][website]\n\n[website]: http://danielpintilei.cf\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/DanielPintilei/cake-atom-syntax/issues"
+  },
+  "homepage": "https://github.com/DanielPintilei/cake-atom-syntax#readme",
+  "_id": "cake-syntax@0.5.0",
+  "_shasum": "6df2da653aac93557334a720237364a8fe0ec335",
+  "_resolved": "file:../d-116230-87087-1ovqyux/package.tgz",
+  "_from": "../d-116230-87087-1ovqyux/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
