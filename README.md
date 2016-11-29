@@ -22,7 +22,7 @@ Usage
 * `ln -nfs ~/dotfiles/gitconfig .gitconfig`
 * `ln -nfs ~/dotfiles/gitignore_global .gitignore_global`
 * `ln -nfs ~/dotfiles/bashrc .bashrc`
-* * `ln -nfs ~/dotfiles/atom .atom`
+* `ln -nfs ~/dotfiles/atom .atom`
 
 ##Fetch submodules after cloning repo, in ~/dotfiles
 
