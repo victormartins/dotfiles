@@ -1,10 +1,15 @@
+# Notes:
+# to reload:  source ~/.bash_profile
+
+
+#To make brew work properly this needs to come first.
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
 # WORK STUFF
 export DEFERRED_GARBAGE_COLLECTION=true #move this to a rails_stuff .file
 export MYSQL_USERNAME=root
 export MYSQL_PASSWORD=admin
-
-
-# to reload:  source ~/.bash_profile
 
 export TERM=screen-256color
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
@@ -28,7 +33,7 @@ if [ -f ~/dotfiles/git_helpers ]; then
 fi
 
 
-#------------------------------------------------------------------------------- 
+#-------------------------------------------------------------------------------
 #               Customize Prompt
 # http://net.tutsplus.com/tutorials/other/how-to-customize-the-command-prompt/
 
@@ -115,11 +120,19 @@ print_before_the_prompt () {
   printf "\n"
 }
 
-PROMPT_COMMAND=print_before_the_prompt 
+PROMPT_COMMAND=print_before_the_prompt
 PS1='>>'
 
-# export PATH=/usr/local/bin:$PATH
 
+
+# function to start docker (from s1_documentation @ sage)
+function docker_start() {
+  docker-machine start default
+  docker-machine env
+  eval "$(docker-machine env default)"
+  eval "$(aws ecr get-login --region eu-west-1)"
+}
+alias start_docker='docker_start'
 
 ## This needs to be the last thing on bash_profile to bake rbenv work
 # http://stackoverflow.com/questions/10940736/rbenv-not-changing-ruby-version

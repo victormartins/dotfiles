@@ -1,7 +1,8 @@
-var gulp = require('gulp'),
-    iconfont = require('gulp-iconfont'),
+var fontName    = 'seti',
+    gulp        = require('gulp'),
+    iconfont    = require('gulp-iconfont'),
     iconfontCss = require('gulp-iconfont-css'),
-    fontName = 'seti';
+    svgmin      = require('gulp-svgmin');
 
 gulp.task('font', function(){
   gulp.src(['./icons/*.svg'])
@@ -13,11 +14,18 @@ gulp.task('font', function(){
     }))
     .pipe(iconfont({
       normalize: true,
+      fontHeight: 1000,
       fontName: fontName,
       formats: ['ttf', 'eot', 'woff', 'woff2', 'svg']
      }))
     .pipe(gulp.dest('./styles/_fonts/seti/'));
 });
 
-gulp.task('icon', ['font']);
-gulp.task('icons', ['font']);
+gulp.task('icon', ['svg', 'font']);
+gulp.task('icons', ['svg', 'font']);
+
+gulp.task('svg', function() {
+  gulp.src('./icons/*.svg')
+      .pipe(svgmin())
+      .pipe(gulp.dest('./icons'));
+});

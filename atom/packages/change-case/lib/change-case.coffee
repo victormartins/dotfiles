@@ -11,10 +11,15 @@ Commands =
   path: 'pathCase'
   sentence: 'sentenceCase'
   snake: 'snakeCase'
-  switch: 'switchCase'
+  switch: 'swapCase'
+  swap: 'swapCase'
   title: 'titleCase'
   upper: 'upperCase'
   upperFirst: 'upperCaseFirst'
+  kebab: 'paramCase'
+
+# NOTE: New commands musst be added to the activationCommands
+# in the package.json
 
 module.exports =
   activate: (state) ->
@@ -22,19 +27,23 @@ module.exports =
       makeCommand(command)
 
 makeCommand = (command) ->
-  atom.commands.add 'atom-workspace', "change-case:#{command}", ->
-    editor = atom.workspace.getActiveTextEditor()
+  atom.commands.add 'atom-workspace', "change-case:#{command}", (event) ->
+    editor = getEditorFromElement(event.target) if event?
+    editor = atom.workspace.getActiveTextEditor() unless editor?
+
     return unless editor?
 
     method = Commands[command]
     converter = ChangeCase[method]
 
-    options = {}
-    options.wordRegex = /^[\t ]*$|[^\s\/\\\(\)"':,\.;<>~!@#\$%\^&\*\|\+=\[\]\{\}`\?]+/g
-    for cursor in editor.getCursors()
-      position = cursor.getBufferPosition()
+    editor.mutateSelectedText (selection) ->
+      if selection.isEmpty()
+        selection.selectWord()
 
-      range = cursor.getCurrentWordBufferRange(options)
-      text = editor.getTextInBufferRange(range)
+      text = selection.getText()
       newText = converter(text)
-      editor.setTextInBufferRange(range, newText)
+
+      selection.insertText newText, select: true
+
+getEditorFromElement = (element) ->
+  element.closest('atom-text-editor')?.getModel()

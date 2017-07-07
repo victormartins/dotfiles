@@ -1,0 +1,1 @@
+{"menu":[{"label":"Packages","submenu":[{"label":"RubySyntaxReplacer","submenu":[{"label":"Replace","command":"ruby-syntax-replacer:replace"}]}]}]}

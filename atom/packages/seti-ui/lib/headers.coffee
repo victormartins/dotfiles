@@ -5,7 +5,13 @@ atom.packages.activatePackage('tree-view').then (tree) ->
   projectRoots = treeView.roots
 
   updateTreeViewHeaderPosition = ->
-    yScrollPosition = treeView.scroller[0].scrollTop
+
+    if treeView.scroller
+      position = treeView.scroller[0] ? treeView.scroller
+    else
+      position = 0
+
+    yScrollPosition = (position).scrollTop
 
     for project in projectRoots
       projectHeaderHeight = project.header.offsetHeight
@@ -32,7 +38,11 @@ atom.packages.activatePackage('tree-view').then (tree) ->
     # TODO something other than setTimeout? it's a hack to trigger the update
     # after the CSS changes have occurred. a gamble, probably inaccurate
     setTimeout -> updateTreeViewHeaderPosition()
-  treeView.scroller.on 'scroll', updateTreeViewHeaderPosition
+  if typeof treeView.scroller.on is 'function'
+    treeView.scroller.on 'scroll', updateTreeViewHeaderPosition
+  else
+    treeView.scroller.addEventListener 'scroll', ->
+      updateTreeViewHeaderPosition()
 
   setTimeout -> # TODO something other than setTimeout?
     updateTreeViewHeaderPosition()

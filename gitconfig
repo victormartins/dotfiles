@@ -3,7 +3,7 @@
 	email = victor.martins@sage.com
 [core]
 	excludesfile = /Users/victor.martins/.gitignore_global
-	editor = vim
+	editor = atom
 [color]
 	ui = true
 [difftool "Kaleidoscope"]

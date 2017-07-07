@@ -1,4 +1,95 @@
 # Changelog
+## 1.9.0
+- Better support for multiple project folders
+- Improve dock styling
+- Style tree-view toggle buttons
+- Fix broken search results #427
+- Fix undefined error in header.coffee #415 #424 #434
+- Update git files to use Git logo #341 #437
+- Map .toml files to config icon #429
+- Remove font option from settings
+- Default to blue theme
+- Fix button styles
+- Add new theme settings:
+  - Hide Title Bar
+  - Hide Document Title
+  - Hide Project
+- New Icons & Extensions
+  - .firebaserc
+  - .cert
+  - .jar
+  - .jinja/.jinja2
+  - .key
+  - .pxm
+  - .toml
+  - .travis.yml
+  - .zip
+  - firebase.json
+  - geckodriver
+  - jenkinsfile
+  - mime.types
+
+## 1.8.0
+- Update Icons
+  - Docker Icons
+  - F#
+  - Powershell
+  - Jenkins
+  - Pug (updated)
+  - Changelog (updated)
+  - Readme (updated)
+  - CSV (updated)
+  - Eslint (updated)
+  - Editorconfig (updated)
+  - VueJS (update)
+
+## 1.7.0
+- Fix small README.md typos
+- Futureproof theme against impending jQuery removal
+- Add additional file icons:
+  - ESLint
+  - Salesforce
+  - Sublime
+  - VueJS #316 #352
+
+## 1.6.1
+- Add additional file icons:
+  - Excel
+  - Maven
+  - Spring
+  - SQL
+  - Word
+
+## 1.6.0
+- Bump version to fix incorrect publish
+
+## 1.5.0
+- Bump atom target version to 1.13
+- Fix typo in README
+- Fix deprecation warnings
+  - Remove shadow psudo-selector
+  - Prepend syntax selectors with syntax--
+- Add additional icons:
+  - .babelrc
+  - .eslintrc
+  - .gitmodules
+  - rollup.config.js
+  - yarn.lock
+  - yarn.clean
+
+## 1.4.0
+- Bump atom target version to 1.12
+- Minify icons
+- Update scrollbars
+- Update workspace.less
+- Use npm icon for .npmrc
+- Change preview settings icons background colors for todo-show package
+- Correct link to icon mapping file
+- Update autocomplete-plus labels
+- Add icons for .bat,.cmd
+
+## 1.3.2
+- Update status bar styles for 1.8
 
 ## 1.3.1
 - Tone down styles for tree-view-git-branch

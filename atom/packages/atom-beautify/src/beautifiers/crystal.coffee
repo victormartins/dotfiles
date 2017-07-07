@@ -6,28 +6,33 @@ Requires https://github.com/jaspervdj/stylish-haskell
 Beautifier = require('./beautifier')
 
 module.exports = class Crystal extends Beautifier
-  name: "crystal"
+  name: "Crystal"
+  link: "http://crystal-lang.org"
+  executables: [
+    {
+      name: "Crystal"
+      cmd: "crystal"
+      homepage: "http://crystal-lang.org"
+      installation: "https://crystal-lang.org/docs/installation/"
+      version: {
+        parse: (text) -> text.match(/Crystal (\d+\.\d+\.\d+)/)[1]
+      }
+      docker: {
+        image: "unibeautify/crystal"
+      }
+    }
+  ]
 
   options: {
-    Crystal: true
+    Crystal: false
   }
 
   beautify: (text, language, options) ->
-    # Seems that Crystal dosen't have Windows support yet.
-    if @isWindows
-      @Promise.reject(@commandNotFoundError(
-        'crystal'
-        {
-        link: "http://crystal-lang.org"
-        program: "crystal"
-        })
+    @exe("crystal").run([
+      'tool',
+      'format',
+      tempFile = @tempFile("temp", text)
+      ], {ignoreReturnCode: true})
+      .then(=>
+        @readFile(tempFile)
       )
-    else
-      @run("crystal", [
-        'tool',
-        'format',
-        tempFile = @tempFile("temp", text)
-        ], {ignoreReturnCode: true})
-        .then(=>
-          @readFile(tempFile)
-        )

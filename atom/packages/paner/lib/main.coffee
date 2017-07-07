@@ -1,60 +1,113 @@
+_ = require 'underscore-plus'
 {CompositeDisposable, Emitter} = require 'atom'
-{
-  debug
-  getView
-  getActivePane
-  splitPane
-  resetPreviewStateForPane
-  setConfig
-  getAdjacentPane
-  moveActivePaneItem
-  swapActiveItem
-  moveAllPaneItems
-  mergeToParentPaneAxis
-  getAllPaneAxis
-  copyPaneAxis
-  copyRoot
-  isSameOrientationAsParent
-} = require './utils'
+
+# Utils
+getView = (model) ->
+  atom.views.getView(model)
+
+getActivePane = ->
+  atom.workspace.getActivePane()
+
+debug = (msg) ->
+  console.log msg
+  return unless atom.config.get('paner.debug')
+
+splitPane = (pane, direction, params) ->
+  method = "split#{_.capitalize(direction)}"
+  pane[method](params)
+
+withConfig = (scope, value, fn) ->
+  origialValue = atom.config.get(scope)
+  unless origialValue is value
+    atom.config.set(scope, value)
+    restoreConfig = ->
+      atom.config.set(scope, origialValue)
+  try
+    fn()
+  finally
+    restoreConfig?()
+
+# Return adjacent pane within current PaneAxis.
+#  * return next Pane if exists.
+#  * return previous pane if next pane was not exits.
+getAdjacentPane = (pane) ->
+  return unless children = pane.getParent().getChildren?()
+  index = children.indexOf(pane)
+  [prev, next] = [children[index-1], children[index+1]]
+  _.last(_.compact([prev, next]))
+
+# Move active item from srcPane to dstPane's last index
+moveActivePaneItem = (srcPane, dstPane) ->
+  item = srcPane.getActiveItem()
+  index = dstPane.getItems().length
+  srcPane.moveItemToPane(item, dstPane, index)
+  dstPane.activateItem(item)
+
+# [FIXME] after swapped, dst pane have no focus, but cursor is still visible.
+# I can manually cursor.setVisible(false) but this cause curor is not visible
+# after pane got focus again.
+swapActiveItem = (srcPane, dstPane) ->
+  srcIndex = null
+  if (srcItem  = srcPane.getActiveItem())?
+    srcIndex = srcPane.getActiveItemIndex()
+
+  dstIndex = null
+  if (dstItem  = dstPane.getActiveItem())?
+    dstIndex = srcPane.getActiveItemIndex()
+
+  if srcItem?
+    srcPane.moveItemToPane(srcItem, dstPane, dstIndex)
+
+  if dstItem?
+    dstPane.moveItemToPane(dstItem, srcPane, srcIndex)
+    srcPane.activateItem(dstItem)
+  srcPane.activate()
+
+reparent = (paneAxis) ->
+  debug("reparent")
+  parent = paneAxis.getParent()
+  for child, i in paneAxis.getChildren()
+    if i is 0
+      parent.replaceChild(paneAxis, child)
+    else
+      parent.insertChildAfter(anchor, child)
+    anchor = child
+  paneAxis.destroy()
+
+getAllPaneAxis = (paneAxis, results=[]) ->
+  for child in paneAxis.getChildren() when child instanceof PaneAxis
+    results.push(child)
+    getAllPaneAxis(child, results)
+  results
 
 PaneAxis = null
 Pane = null
 
-# Utility
-# -------------------------
-Config =
-  debug:
-    type: 'boolean'
-    default: false
-  mergeSameOrientaion:
-    type: 'boolean'
-    default: true
-    description: "When moving very far, merge child PaneAxis to Parent if orientaion is same"
-
 module.exports =
-  config: Config
-
   activate: (state) ->
     @subscriptions = new CompositeDisposable
     @workspaceElement = getView(atom.workspace)
-    Pane = atom.workspace.getActivePane().constructor
+    Pane = getActivePane().constructor
     @emitter = new Emitter
 
     @subscriptions.add atom.commands.add 'atom-workspace',
-      'paner:maximize':    => @maximize()
-      'paner:swap-item':   => @swapItem()
-      'paner:merge-item':  => @mergeItem {activate: true}
-      'paner:send-item':   => @mergeItem {activate: false}
+      'paner:maximize': => @maximize()
+      'paner:swap-item': => @swapItem()
+      'paner:merge-item': => @mergeItem(activate: true)
+      'paner:send-item': => @mergeItem(activate: false)
 
-      'paner:split-up':    => @split 'up'
-      'paner:split-down':  => @split 'down'
-      'paner:split-left':  => @split 'left'
-      'paner:split-right': => @split 'right'
 
-      'paner:very-top':    => @moveToVery 'top'
-      'paner:very-bottom': => @moveToVery 'bottom'
-      'paner:very-left':   => @moveToVery 'left'
-      'paner:very-right':  => @moveToVery 'right'
+      'paner:split-up': => @splitPane('up')
+      'paner:split-down': => @splitPane('down')
+      'paner:split-left': => @splitPane('left')
+      'paner:split-right': => @splitPane('right')
+
+      'paner:swap-pane': => @swapPane()
+
+      'paner:very-top': => @movePaneToVery('top')
+      'paner:very-bottom': => @movePaneToVery('bottom')
+      'paner:very-left': => @movePaneToVery('left')
+      'paner:very-right': => @movePaneToVery('right')
 
     @onDidPaneSplit ({oldPane, newPane, direction, options}) ->
       return unless oldEditor = oldPane.getActiveEditor()
@@ -71,7 +124,7 @@ module.exports =
           scrolloff = 2
           lineHeightInPixels = oldEditor.getLineHeightInPixels()
 
-          offsetTop    = lineHeightInPixels * scrolloff
+          offsetTop = lineHeightInPixels * scrolloff
           offsetBottom = newHeight - lineHeightInPixels * (scrolloff+1)
           offsetCursor = newHeight * ratio
           scrollTop = pixelTop - Math.min(Math.max(offsetCursor, offsetTop), offsetBottom)
@@ -81,7 +134,7 @@ module.exports =
 
   deactivate: ->
     @subscriptions.dispose()
-    {Pane, PaneAxis, @workspaceElement} = {}
+    {@workspaceElement} = {}
 
   onDidPaneSplit: (callback) ->
     @emitter.on 'did-pane-split', callback
@@ -100,12 +153,12 @@ module.exports =
     ratio = (pixelTop - editorElement.getScrollTop()) / editorElement.getHeight()
     {pixelTop, ratio}
 
-  split: (direction) ->
+  splitPane: (direction) ->
     oldPane = getActivePane()
     options = null
     if direction in ['up', 'down']
       options = @getCursorPositionInfo(oldPane.getActiveEditor())
-    newPane = splitPane(oldPane, direction)
+    newPane = splitPane(oldPane, direction, copyActiveItem: true, activate: false)
     @emitter.emit 'did-pane-split', {oldPane, newPane, direction, options}
 
   swapItem: ->
@@ -113,11 +166,8 @@ module.exports =
     if adjacentPane = getAdjacentPane(currentPane)
       # In case there is only one item in pane, we need to avoid pane itself
       # destroyed while swapping.
-      try
-        restoreConfig = setConfig('core.destroyEmptyPanes', false)
+      withConfig 'core.destroyEmptyPanes', false, ->
         swapActiveItem(currentPane, adjacentPane)
-      finally
-        restoreConfig?()
 
   mergeItem: ({activate}={}) ->
     currentPane = getActivePane()
@@ -125,54 +175,46 @@ module.exports =
       moveActivePaneItem(currentPane, dstPane)
       dstPane.activate() if activate
 
-  # This code is result of try&error to get desirble result.
-  #  * I couldn't understand why copyRoot is necessary, but without copying PaneAxis,
-  #    it seem to PaneAxis detatched from View element and not reflect model change.
-  #  * Simply changing order of children by splicing children of PaneAxis or similar
-  #    kind of direct manupilation to Pane or PaneAxis won't work, it easily bypassing
-  #    event callback and produce bunch of Exception.
-  #  * I wanted to use `currentPane` directly, instead of `new Pane() then moveAllPaneItems`, but I gave up to
-  #    solve a lot of exception caused by removeChild(currentPane). So I took moveAllPaneItems() approarch.
-  #  * So as conclusion, code is far from ideal, I took dirty try&error approarch,
-  #    need to be improved in future. There must be better way.
-  #
-  # [FIXME]
-  # Occasionally blank pane remain on original pane position.
-  # Clicking this blank pane cause Uncaught Error: Pane has bee destroyed.
-  # This issue is already reported to https://github.com/atom/atom/issues/4643
-  #
-  # [TODO]
-  # Understand Pane, PaneAxis, PaneContainer and its corresponding ViewElement and surrounding
-  # Event callbacks. Ideally it should be done without copyRoot()?
-  moveToVery: (direction) ->
+  swapPane: ->
+    pane = getActivePane()
+    parent = pane.getParent()
+
+    return unless children = parent.getChildren?()
+
+    index = children.indexOf(pane)
+    if index is (children.length - 1)
+      adjacentPane = children[index - 1]
+      parent.removeChild(pane, true)
+      parent.insertChildBefore(adjacentPane, pane)
+    else
+      adjacentPane = children[index + 1]
+      parent.removeChild(pane, true)
+      parent.insertChildAfter(adjacentPane, pane)
+
+    pane.activate()
+
+  movePaneToVery: (direction) ->
     return if atom.workspace.getPanes().length < 2
-    currentPane = getActivePane()
-    container = currentPane.getContainer()
+    pane = getActivePane()
+    container = pane.getContainer()
     root = container.getRoot()
     orientation = if direction in ['top', 'bottom'] then 'vertical' else 'horizontal'
 
     # If there is multiple pane in window, root is always instance of PaneAxis
     PaneAxis ?= root.constructor
-
+    parent = pane.getParent()
     if root.getOrientation() isnt orientation
-      debug "Different orientation"
-      children = [copyRoot(root)]
-      root.destroy()
-      container.setRoot(root = new PaneAxis({container, orientation, children}))
+      container.setRoot(root = new PaneAxis({container, orientation, children: [root]}))
+      parent.removeChild(pane)
+    else
+      parent.removeChild(pane, true)
 
-    newPane = new Pane()
     switch direction
-      when 'top', 'left'     then root.addChild(newPane, 0)
-      when 'right', 'bottom' then root.addChild(newPane)
+      when 'top', 'left' then root.addChild(pane, 0)
+      when 'right', 'bottom' then root.addChild(pane)
 
-    # [NOTE] Order is matter.
-    # Calling moveAllPaneItems() before setRoot() cause first item blank
-    moveAllPaneItems(currentPane, newPane)
-    currentPane.destroy()
+    for axis in getAllPaneAxis(root)
+      if axis.getOrientation() is axis.getParent().getOrientation()
+        reparent(axis)
 
-    if atom.config.get('paner.mergeSameOrientaion')
-      for axis in getAllPaneAxis(root) when isSameOrientationAsParent(axis)
-        debug "merge to parent!!"
-        mergeToParentPaneAxis(axis)
-
-    newPane.activate()
+    pane.activate()

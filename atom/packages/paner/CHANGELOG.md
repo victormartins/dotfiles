@@ -1,3 +1,22 @@
+## 0.4.0
+- New: `paner:swap-pane` command to swap pane with adjacent pane.
+## 0.3.0
+- No longer copy root. Once necessary but now OK to re-use existing root.
+- Refuse activePane instead of copy all item to newly created pane(once necessary).
+- Cleanup unused code.
+- [Breaking]: Remove `mergeSameOrientaion` setting.
+- Improve test for ensuring pain layout after move-to-very-xxx commands.
+- [Fix]: When reparenting, the order of pane was not kept where it should be kept.
+
+## 0.2.1
+- Doc: Update keymap example.
+
+## 0.2.0
+- FIX: now Paner comeback. works again!
+
+## 2016.05.16.
+- Unpublished from Atom.io since I couldn't fix immediately and not sure I will fix again.
+
 ## 0.1.14
 - FIX: Deprecation warning
 
