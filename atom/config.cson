@@ -9,6 +9,7 @@
   autosave:
     enabled: true
   core:
+    closeDeletedFileTabs: true
     customFileTypes:
       "source.ruby": [
         "html.ui"
