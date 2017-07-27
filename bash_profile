@@ -115,7 +115,8 @@ function ruby_rails_versions {
 print_before_the_prompt () {
   NOW=$(date "+%Y-%m-%d-%H:%M:%S")
 
-  printf "\n[$NOW] $bldylw%s: $bldgrn%s $txtrst" "$USER" "$PWD"
+  # printf "\n[$NOW] $bldylw%s: $bldgrn%s $txtrst" "$USER" "$PWD"
+  printf "\n$bldylw%s: $bldgrn%s $txtrst" "$USER" "$PWD"
   GIT_BRANCH
   printf "\n"
 }
@@ -133,6 +134,18 @@ function docker_start() {
   eval "$(aws ecr get-login --region eu-west-1)"
 }
 alias start_docker='docker_start'
+
+#function to remove and close all docker containers
+function docker_clean() {
+  #!/bin/sh
+  echo cleanup started
+  echo stop all containers
+  docker stop $(docker ps -a -q)
+  echo removed untagged images
+  docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+  docker rm -v $(docker ps -a -q -f status=exited)
+  echo cleanup complete
+}
 
 ## This needs to be the last thing on bash_profile to bake rbenv work
 # http://stackoverflow.com/questions/10940736/rbenv-not-changing-ruby-version
