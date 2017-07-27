@@ -1,5 +1,14 @@
+## 1.0.0: Restarted
+- Breaking:
+  - This package was broken for very long time.(over 6 months).
+  - Because catching up with Atom's latest change was hard for me especially for this hacky package.
+  - Now I rewrote everything and make work it again.
+  - Some command(e.g. `maximize`) was removed.
+  - All command names are changed, old keymap no longer work.
+
 ## 0.4.0
 - New: `paner:swap-pane` command to swap pane with adjacent pane.
+
 ## 0.3.0
 - No longer copy root. Once necessary but now OK to re-use existing root.
 - Refuse activePane instead of copy all item to newly created pane(once necessary).

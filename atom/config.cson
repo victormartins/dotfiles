@@ -1,5 +1,7 @@
 "*":
   "activate-power-mode":
+    autoToggle: false
+    comboMode: {}
     plugins:
       playAudio: true
       screenShake: true
@@ -32,6 +34,8 @@
     showInvisibles: true
   "exception-reporting":
     userId: "fdef7b15-e6e2-22f8-1615-44a5a2f92fe0"
+  github:
+    viewChangesForCurrentFileDiffPaneSplitDirection: "right"
   linter: {}
   "linter-rubocop": {}
   minimap:
@@ -45,9 +49,10 @@
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
     syncHorizontalScroll: true
   "tree-view":
-    hideVcsIgnoredFiles: false
+    hideVcsIgnoredFiles: true
   "vim-mode": {}
   welcome:
     showOnStartup: false

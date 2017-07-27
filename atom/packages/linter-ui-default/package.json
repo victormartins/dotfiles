@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
+        "raw": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
-        "spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
+        "rawSpec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
+        "spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/apm-install-dir-117527-2134-te2vqi.hzhj90be29"
+      "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/apm-install-dir-117621-70441-140quf5.o27nrn3ik9"
     ]
   ],
-  "_from": "../d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
-  "_id": "linter-ui-default@1.6.2",
+  "_from": "../d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
+  "_id": "linter-ui-default@1.6.3",
   "_inCache": true,
   "_location": "/linter-ui-default",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
+    "raw": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
-    "spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
+    "rawSpec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
+    "spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
-  "_shasum": "2cd669df4bd1740382364347ea8f429401e9dcd0",
+  "_resolved": "file:../d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
+  "_shasum": "1aa958af941aff923c6d2dd66057c117d7aed3d6",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117527-2134-nlu27m.uvl6fuhaor/package.tgz",
-  "_where": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/apm-install-dir-117527-2134-te2vqi.hzhj90be29",
+  "_spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117621-70441-xdsxlb.nskovo0f6r/package.tgz",
+  "_where": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/apm-install-dir-117621-70441-140quf5.o27nrn3ik9",
   "bugs": {
     "url": "https://github.com/steelbrain/linter-ui-default/issues"
   },
@@ -228,13 +228,13 @@
   "scripts": {
     "test": "(apm test) && (flow check) && (eslint . )"
   },
-  "version": "1.6.2",
+  "version": "1.6.3",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "asap",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/asap/asap.js"
       },
       {
@@ -299,7 +299,7 @@
       },
       {
         "name": "js-tokens",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "path": "node_modules/js-tokens/index.js"
       },
       {
@@ -409,7 +409,7 @@
       },
       {
         "name": "ua-parser-js",
-        "version": "0.7.13",
+        "version": "0.7.14",
         "path": "node_modules/ua-parser-js/src/ua-parser.js"
       },
       {
@@ -478,8 +478,8 @@
         "node_modules/strip-bom-buf/package.json",
         "node_modules/ua-parser-js/bower.json",
         "node_modules/ua-parser-js/package.json",
-        "node_modules/ua-parser-js/ua-parser-js.jquery.json",
         "node_modules/whatwg-fetch/package.json",
+        "package-lock.json",
         "package.json"
       ],
       ".js": [
