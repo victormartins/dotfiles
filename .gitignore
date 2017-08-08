@@ -1,1 +1,3 @@
 vim/tmp/**/*.*
+atom/compile-cache/*.*
+atom/compile-cache/**/*.*
