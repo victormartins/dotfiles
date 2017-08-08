@@ -1,3 +1,4 @@
 vim/tmp/**/*.*
 atom/compile-cache/*.*
 atom/compile-cache/**/*.*
+atom/.apm/.apmrc
