@@ -23,4 +23,14 @@
 '.source.ruby':
   'pry':
     'prefix': 'pry'
-    'body': 'require "pry"; binding.pry'
+    'body': "require 'pry'; binding.pry"
+
+  'banner':
+    'prefix': 'banner'
+    'body': '''
+      puts ''
+      puts '-'*50
+      puts "#{$1}".center(50)
+      puts '-'*50
+      puts ''
+    '''
