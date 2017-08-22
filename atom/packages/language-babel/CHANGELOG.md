@@ -1,3 +1,21 @@
+### 2.72.0
+  - Add `.mjs` as supported filetype for grammar. See [PR 399](https://github.com/gandm/language-babel/pull/399)
+  - Relax parsing of styled-components withComponent to allow chaining. [Issue 400](https://github.com/gandm/language-babel/issues/400)
+  - Remove redundant scoping for [+-]Infinity. [Issue 401](https://github.com/gandm/language-babel/issues/401)
+
+### 2.71.0
+  - Add support to grammar for private class fields and methods defined at [TC39 ](https://github.com/tc39/proposal-class-fields)
+
+### 2.70.2
+  - Add commenting option to pipelined operators
+  - Fix bad captures in 2.71.1
+
+### 2.70.1
+  - Fix JS keywords being parsed as pipeline functions.
+
+### 2.70.0
+  - Add support for |> [pipeline operator](https://github.com/tc39/proposal-pipeline-operator)
+
 ### 2.69.0
   - Add support for Flow's [opaque](https://flow.org/en/docs/types/opaque-types/#opaque-type-alias-syntax-a-classtoc-idtoc-opaque-type-alias-syntax-hreftoc-opaque-type-alias-syntaxa) keyword.
   - Fix Flow type objects in grammar - Issue #392

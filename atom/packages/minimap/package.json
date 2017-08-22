@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
+        "raw": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117722-70228-chqgqr.84ew89f6r/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
-        "spec": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
+        "rawSpec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117722-70228-chqgqr.84ew89f6r/package.tgz",
+        "spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117722-70228-chqgqr.84ew89f6r/package.tgz",
         "type": "local"
       },
-      "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/apm-install-dir-11772-22727-15uclhk.quc1bgldi"
+      "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/apm-install-dir-117722-70228-1xoobvk.exzssv2t9"
     ]
   ],
-  "_from": "../d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
-  "_id": "minimap@4.29.3",
+  "_from": "../d-117722-70228-chqgqr.84ew89f6r/package.tgz",
+  "_id": "minimap@4.29.6",
   "_inCache": true,
   "_location": "/minimap",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
+    "raw": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117722-70228-chqgqr.84ew89f6r/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
-    "spec": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
+    "rawSpec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117722-70228-chqgqr.84ew89f6r/package.tgz",
+    "spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117722-70228-chqgqr.84ew89f6r/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
-  "_shasum": "1f7380c869b6832e3f7da3ab2d4d373b5320e98e",
+  "_resolved": "file:../d-117722-70228-chqgqr.84ew89f6r/package.tgz",
+  "_shasum": "4a0a2f27e91527ac32b7a132707f8d2b01ccac29",
   "_shrinkwrap": null,
-  "_spec": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/d-11772-22727-tnlypt.3h9j3piudi/package.tgz",
-  "_where": "/private/var/folders/78/9_0bqmg907g1m2bmb2zqy7880000gn/T/apm-install-dir-11772-22727-15uclhk.quc1bgldi",
+  "_spec": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/d-117722-70228-chqgqr.84ew89f6r/package.tgz",
+  "_where": "/private/var/folders/x_/qzybq57s6c33tf8_wkjhc5gdn_zzsf/T/apm-install-dir-117722-70228-1xoobvk.exzssv2t9",
   "author": {
     "name": "Fangdun Cai",
     "email": "cfddream@gmail.com"
@@ -255,7 +255,7 @@
       "IntersectionObserver"
     ]
   },
-  "version": "4.29.3",
+  "version": "4.29.6",
   "viewProviders": [
     "minimapViewProvider"
   ],
@@ -314,7 +314,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.24",
+        "version": "0.10.29",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -602,6 +602,7 @@
         "node_modules/es5-ext/array/#/indexes-of.js",
         "node_modules/es5-ext/array/#/intersection.js",
         "node_modules/es5-ext/array/#/is-copy.js",
+        "node_modules/es5-ext/array/#/is-empty.js",
         "node_modules/es5-ext/array/#/is-uniq.js",
         "node_modules/es5-ext/array/#/keys/implement.js",
         "node_modules/es5-ext/array/#/keys/index.js",
@@ -825,6 +826,8 @@
         "node_modules/es5-ext/object/copy.js",
         "node_modules/es5-ext/object/count.js",
         "node_modules/es5-ext/object/create.js",
+        "node_modules/es5-ext/object/ensure-array.js",
+        "node_modules/es5-ext/object/ensure-finite-number.js",
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
         "node_modules/es5-ext/object/ensure-promise.js",
@@ -843,6 +846,7 @@
         "node_modules/es5-ext/object/is-copy-deep.js",
         "node_modules/es5-ext/object/is-copy.js",
         "node_modules/es5-ext/object/is-empty.js",
+        "node_modules/es5-ext/object/is-finite-number.js",
         "node_modules/es5-ext/object/is-number-value.js",
         "node_modules/es5-ext/object/is-object.js",
         "node_modules/es5-ext/object/is-plain-object.js",
@@ -876,6 +880,7 @@
         "node_modules/es5-ext/object/validate-array-like.js",
         "node_modules/es5-ext/object/validate-stringifiable-value.js",
         "node_modules/es5-ext/object/validate-stringifiable.js",
+        "node_modules/es5-ext/optional-chaining.js",
         "node_modules/es5-ext/reg-exp/#/index.js",
         "node_modules/es5-ext/reg-exp/#/is-sticky.js",
         "node_modules/es5-ext/reg-exp/#/is-unicode.js",
@@ -958,6 +963,7 @@
         "node_modules/es5-ext/string/raw/index.js",
         "node_modules/es5-ext/string/raw/is-implemented.js",
         "node_modules/es5-ext/string/raw/shim.js",
+        "node_modules/es5-ext/to-short-string-representation.js",
         "node_modules/es6-iterator/#/chain.js",
         "node_modules/es6-iterator/array.js",
         "node_modules/es6-iterator/for-of.js",
