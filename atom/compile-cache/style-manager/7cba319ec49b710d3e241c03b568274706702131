@@ -1,1 +1,0 @@
-{"source":":root {\n  font-size: 16px;\n}\n.power-mode {\n  transform: translate3d(0, 0, 0);\n}\n.power-mode-canvas {\n  position: absolute;\n  z-index: 10;\n  top: 0;\n  left: 0;\n  pointer-events: none;\n}\n"}
