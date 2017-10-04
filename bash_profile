@@ -131,7 +131,8 @@ function docker_start() {
   docker-machine start default
   docker-machine env
   eval "$(docker-machine env default)"
-  eval "$(aws ecr get-login --region eu-west-1)"
+  eval "$(aws ecr get-login --no-include-email)"
+
 }
 alias start_docker='docker_start'
 
