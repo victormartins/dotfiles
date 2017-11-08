@@ -5,6 +5,8 @@
 #To make brew work properly this needs to come first.
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+# Vendor bins for tooling. Eg:chromedriver for selenium
+export PATH="$PATH:/Users/$USER/dotfiles/vendor_bin"
 
 # WORK STUFF
 export DEFERRED_GARBAGE_COLLECTION=true #move this to a rails_stuff .file
