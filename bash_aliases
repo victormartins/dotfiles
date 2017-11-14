@@ -23,7 +23,7 @@ alias rmglock='find . -name *.lock -exec rm -rf {} \;' #Remove gemfile.lock recu
 alias fu='file="fudge_build.$(timestamp).log" && touch $file && echo $(GIT_BRANCH) >> $file && echo $(git log -1)  >> $file && echo '' >> $file && echo '' >> $file && time bundle exec fudge build | tee -a $file && mv $file ~/Desktop/Temp/__fudge_builds__'
 alias start_jobs='be rake jobs:work'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
-alias start_pdf_server='be fuji_pdf_server start' # run inside the host_app folder 
+alias start_pdf_server='be fuji_pdf_server start' # run inside the host_app folder
 alias start_mysql='mysql.server start' # start mysql
 
 #Git
@@ -47,6 +47,7 @@ alias testjs='RAILS_ENV=test be rake spec:javascripts'
 alias htk='echo "ps aux | grep ruby kill -9 xxxxx"'
 
 ## Mine
+alias kata='cp -r ./starting_point ./$(date "+%Y%m%d") && echo created ./$(date "+%Y%m%d")'
 alias g2_proj='cd ~/Google\ Drive/_Projects'
 
 #
