@@ -48,8 +48,10 @@ alias htk='echo "ps aux | grep ruby kill -9 xxxxx"'
 
 ## Mine
 alias kata='cp -r ./starting_point ./$(date "+%Y%m%d") && echo created ./$(date "+%Y%m%d")'
-alias g2_proj='cd ~/Google\ Drive/_Projects'
+alias spec_1='clear && be rspec spec/ --order defined --fail-fast  -f p'
+alias g2_today='cd ./$(date "+%Y%m%d")'
 
+alias g2_proj='cd ~/Google\ Drive/_Projects'
 #
 ## Project specific
 alias g2_sopt='cd ~/Documents/SAGE/code/PT/sageone_pt'
