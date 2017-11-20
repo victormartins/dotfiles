@@ -47,9 +47,9 @@ alias testjs='RAILS_ENV=test be rake spec:javascripts'
 alias htk='echo "ps aux | grep ruby kill -9 xxxxx"'
 
 ## Mine
-alias kata='cp -r ./starting_point ./$(date "+%Y%m%d") && echo created ./$(date "+%Y%m%d")'
 alias spec_1='clear && be rspec spec/ --order defined --fail-fast  -f p'
 alias g2_today='cd ./$(date "+%Y%m%d")'
+alias kata='cp -r ./starting_point ./$(date "+%Y%m%d") && echo created ./$(date "+%Y%m%d") && g2_today'
 
 alias g2_proj='cd ~/Google\ Drive/_Projects'
 #
