@@ -10,8 +10,16 @@ export PATH="$PATH:/Users/$USER/dotfiles/vendor_bin"
 
 # WORK STUFF
 export DEFERRED_GARBAGE_COLLECTION=true #move this to a rails_stuff .file
+
+# MYSQL configurations
+# Did: "brew install mysql@5.6"
+# To have launchd start mysql@5.6 now and restart at login:
+#   brew services start mysql@5.6
+# Or, if you don't want/need a background service you can just run:
+#   /usr/local/opt/mysql@5.6/bin/mysql.server start
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export MYSQL_USERNAME=root
-export MYSQL_PASSWORD=admin
+export MYSQL_PASSWORD=''
 
 export TERM=screen-256color
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
@@ -24,7 +32,6 @@ source ~/dotfiles/git-completion.bash
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
-
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
