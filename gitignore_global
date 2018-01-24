@@ -5,3 +5,4 @@
 #ignore rubymine folders
 .idea
 .DS_Store
+.ruby-version
