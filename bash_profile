@@ -21,6 +21,9 @@ export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export MYSQL_USERNAME=root
 export MYSQL_PASSWORD=''
 
+# Add the POSTGRES utilities to the terminal. Eg: psql
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
 export TERM=screen-256color
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
