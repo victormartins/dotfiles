@@ -143,10 +143,13 @@ function docker_start() {
   docker-machine start default
   docker-machine env
   eval "$(docker-machine env default)"
-  eval "$(aws ecr get-login --no-include-email)"
-
+  aws_login
 }
 alias start_docker='docker_start'
+
+function aws_login() {
+  eval "$(aws ecr get-login --no-include-email)"
+}
 
 #function to remove and close all docker containers
 function docker_clean() {
