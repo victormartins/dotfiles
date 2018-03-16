@@ -25,6 +25,7 @@ alias start_jobs='be rake jobs:work'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
 alias start_pdf_server='be fuji_pdf_server start' # run inside the host_app folder
 alias start_mysql='mysql.server start' # start mysql
+alias start_rabbitmq='rabbitmq-server'
 
 #Git
 alias gitk='gitk 2>/dev/null' #to remove the error messages of gitk on osx
