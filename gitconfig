@@ -1,31 +1,31 @@
 [user]
-	name = Victor Martins
-	email = victor.martins@sage.com
+  name = Victor Martins
+  email = victor.martins@sage.com
 [core]
-	excludesfile = /Users/victor.martins/.gitignore_global
-	editor = atom --wait
+  excludesfile = /Users/victor.martins/.gitignore_global
+  editor = atom --wait
 [color]
-	ui = true
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-  prompt = false
-[diff]
-    tool = Kaleidoscope
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
-[mergetool]
-    prompt = false
-[merge]
-    tool = Kaleidoscope
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  ui = true
 [commit]
-	template = /Users/victor.martins/.stCommitMsg
+  template = /Users/victor.martins/.stCommitMsg
 [gui]
-	recentrepo = /Users/victor.martins/work/learning/pro-react-book
+  recentrepo = /Users/victor.martins/work/learning/pro-react-book
+
+# https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool#34119867
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[mergetool "meld"]
+    # $LOCAL is the file in the current branch (e.g. master).
+    # $REMOTE is the file in the branch being merged (e.g. branch_name).
+    # $MERGED is the partially merged file with the merge conflict information in it.
+    # $BASE is the shared commit ancestor of $LOCAL and $REMOTE, this is to say the file as it was when the branch containing $REMOTE was originally created.
+    # Choose one of these 2 lines bellow (not both!).
+    # The difference is just in which starting edit position you'd prefer;
+    # $MERGED for the file which contains the partially merged file with the merge conflict information or
+    # $BASE for the shared commit ancestor of $LOCAL and $REMOTE.
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
