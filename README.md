@@ -14,15 +14,14 @@ Usage
 ##Then add symlinks in your ~/ directory
 
 * `cd ~/`
-* `ln -nfs ~/dotfiles/rspec .rspec`
-* `ln -nfs ~/dotfiles/vim/ .vim`
-* `ln -nfs ~/dotfiles/vimrc .vimrc`
-* `ln -nfs ~/dotfiles/bash_profile .bash_profile`
-* `ln -nfs ~/dotfiles/bash_aliases .bash_aliases`
-* `ln -nfs ~/dotfiles/gitconfig .gitconfig`
-* `ln -nfs ~/dotfiles/gitignore_global .gitignore_global`
-* `ln -nfs ~/dotfiles/bashrc .bashrc`
-* `ln -nfs ~/dotfiles/atom .atom`
+* `ln -nfs ~/dotfiles/rspec ~/.rspec`
+* `ln -nfs ~/dotfiles/Gemfile ~/Gemfile`
+* `ln -nfs ~/dotfiles/bash_profile ~/.bash_profile`
+* `ln -nfs ~/dotfiles/bash_aliases ~/.bash_aliases`
+* `ln -nfs ~/dotfiles/gitconfig ~/.gitconfig`
+* `ln -nfs ~/dotfiles/gitignore_global ~/.gitignore_global`
+* `ln -nfs ~/dotfiles/bashrc ~/.bashrc`
+* `ln -nfs ~/dotfiles/atom ~/.atom`
 
 ##Fetch submodules after cloning repo, in ~/dotfiles
 
