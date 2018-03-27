@@ -13,7 +13,11 @@ source "https://rubygems.org" do
   gem 'reek'
   gem 'guard-rspec', require: false
   gem 'rb-readline' # for guard
-
+  # Contracts and Documentation
   gem 'contracts'
   gem 'yard-contracts'
+  # Performance
+  gem 'benchmark-ips'
+  gem 'memory_profiler'
+  gem 'benchmark_driver'
 end
