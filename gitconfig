@@ -29,3 +29,9 @@
     # $BASE for the shared commit ancestor of $LOCAL and $REMOTE.
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
     # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
