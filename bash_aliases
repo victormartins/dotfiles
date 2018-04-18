@@ -40,6 +40,8 @@ alias gpu='git push upstream'
 alias gb='git branch'
 alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
 
+#Docker
+alias d-c='docker-compose'
 
 alias testjs='RAILS_ENV=test be rake spec:javascripts'
 
