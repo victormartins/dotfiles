@@ -167,3 +167,6 @@ function docker_clean() {
 # http://stackoverflow.com/questions/10940736/rbenv-not-changing-ruby-version
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
