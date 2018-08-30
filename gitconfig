@@ -1,13 +1,13 @@
 [user]
-  name = Victor Martins
-  email = victor.martins@sage.com
+	name = Victor Martins
+	email = victor.martins@sage.com
 [core]
-  excludesfile = /Users/victor.martins/.gitignore_global
+	excludesfile = /Users/victor.martins/.gitignore_global
   editor = atom --wait
 [color]
   ui = true
 [commit]
-  template = /Users/victor.martins/.stCommitMsg
+	template = /Users/victor.martins/.stCommitMsg
 [gui]
   recentrepo = /Users/victor.martins/work/learning/pro-react-book
 
