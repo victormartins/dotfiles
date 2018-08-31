@@ -75,4 +75,11 @@ alias g2_myuk='cd ~/Documents/SAGE/code/UK/mysageone_uk'
 alias g2_uk='cd ~/Documents/SAGE/code/UK'
 alias g2_payroll='cd ~/Documents/SAGE/code/payroll'
 
-alias _rm_gemfile_locks='g2_sopt; rm Gemfile.lock ; rm host_app/Gemfile.lock; rm sopt_extensions/Gemfile.lock'
+## WORK
+alias egs_proxy_master_sync='cd ~/work/UK/s1_event_gateway_proxy/ && git checkout master && git pull origin master'
+alias egs_service_master_sync='cd ~/work/UK/s1_event_gateway_service/ && git checkout master && git pull origin master'
+alias egs_worker_master_sync='cd ~/work/UK/s1_event_gateway_worker/ && git checkout master && git pull origin master'
+alias egs_status_worker_master_sync='cd ~/work/UK/s1_event_gateway_status_worker/ && git checkout master && git pull origin master'
+alias egs_master_sync='egs_service_master_sync && egs_proxy_master_sync && egs_worker_master_sync && egs_status_worker_master_sync'
+
+alias g2_sage_docs='cd ~/Google\ Drive/_SAGE'
