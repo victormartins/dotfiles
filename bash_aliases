@@ -83,4 +83,9 @@ alias egs_status_worker_master_sync='cd ~/work/UK/s1_event_gateway_status_worker
 alias egs_master_sync='egs_service_master_sync && egs_proxy_master_sync && egs_worker_master_sync && egs_status_worker_master_sync'
 alias egs_start_central_test='docker_clean && ./script/boot.sh --clean -w gac -w ms1uk'
 
+alias egs_logs_proxy='docker logs proxy_event_gateway -f'
+alias egs_logs_service='docker logs service_event_gateway -f'
+alias egs_logs_worker='docker logs worker_event_gateway -f'
+alias egs_logs_status='docker logs worker_status_event_gateway -f'
+
 alias g2_sage_docs='cd ~/Google\ Drive/_SAGE'
