@@ -81,7 +81,8 @@ alias egs_service_master_sync='cd ~/work/UK/s1_event_gateway_service/ && git che
 alias egs_worker_master_sync='cd ~/work/UK/s1_event_gateway_worker/ && git checkout master && git pull origin master'
 alias egs_status_worker_master_sync='cd ~/work/UK/s1_event_gateway_status_worker/ && git checkout master && git pull origin master'
 alias egs_master_sync='egs_service_master_sync && egs_proxy_master_sync && egs_worker_master_sync && egs_status_worker_master_sync'
-alias egs_start_central_test='docker_clean && ./script/boot.sh --clean -w gac -w ms1uk -w event'
+alias egs_start_central_test='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1uk'
+alias egs_start_central_test_events='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1uk -w event'
 
 alias egs_logs_proxy='docker logs proxy_event_gateway -f'
 alias egs_logs_service='docker logs service_event_gateway -f'
