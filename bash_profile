@@ -128,7 +128,8 @@ print_before_the_prompt () {
   NOW=$(date "+%Y-%m-%d-%H:%M:%S")
 
   # printf "\n[$NOW] $bldylw%s: $bldgrn%s $txtrst" "$USER" "$PWD"
-  printf "\n$bldylw%s: $bldgrn%s $txtrst" "$USER" "$PWD"
+  # printf "\n$bldylw%s: $bldgrn%s $txtrst" "$USER" "$PWD"
+  printf "\n$bldgrn%s $txtrst" "$PWD"
   GIT_BRANCH
   printf "\n"
 }
