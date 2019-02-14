@@ -3,7 +3,7 @@
 	email = victor.martins@sage.com
 [core]
 	excludesfile = /Users/victor.martins/.gitignore_global
-  editor = atom --wait
+  editor = vim
 [color]
   ui = true
 [commit]

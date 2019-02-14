@@ -76,6 +76,8 @@ alias g2_uk='cd ~/Documents/SAGE/code/UK'
 alias g2_payroll='cd ~/Documents/SAGE/code/payroll'
 
 ## WORK
+alias sanity_check='./cleanup.sh && ./setup.sh && ./test.sh'
+
 alias egs_proxy_master_sync='cd ~/work/UK/s1_event_gateway_proxy/ && git checkout master && git pull origin master'
 alias egs_service_master_sync='cd ~/work/UK/s1_event_gateway_service/ && git checkout master && git pull origin master'
 alias egs_worker_master_sync='cd ~/work/UK/s1_event_gateway_worker/ && git checkout master && git pull origin master'
