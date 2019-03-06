@@ -53,27 +53,13 @@ alias htk='echo "ps aux | grep ruby kill -9 xxxxx"'
 alias spec_1='clear && be rspec spec/ --order defined --fail-fast  -f p'
 alias g2_today='cd ./$(date "+%Y%m%d")'
 alias kata='cp -r ./starting_point ./$(date "+%Y%m%d") && echo created ./$(date "+%Y%m%d") && g2_today && git add . && git commit -m "start"'
-alias kkata='kata && atom . && be guard'
+alias kkata='kata && code-insiders . && be guard'
 
-alias g2_proj='cd ~/Google\ Drive/_Projects'
 #
 ## Project specific
-alias g2_sopt='cd ~/Documents/SAGE/code/PT/sageone_pt'
-alias g2_mypt='cd ~/Documents/SAGE/code/PT/mysageone_pt'
-alias g2_sopt_id='cd ~/Documents/SAGE/code/PT/sageone_sageid'
+alias g2_work='cd ~/Work'
+alias g2_projects='cd ~/Projects'
 
-alias g2_sop='cd ~/Documents/SAGE/code/clones/sop'
-alias g2_fuji='cd ~/Documents/SAGE/code/clones/project_fuji'
-
-alias g2_art='cd ~/Google\ Drive/_Projects/the_food_artisans/web_page/the_food_artisans'
-
-alias g2_nft='cd ~/Documents/SAGE/code/BR/nfe_tools'
-alias g2_nfe='cd ~/Documents/SAGE/code/BR/nfe'
-
-alias g2_extra='cd ~/Documents/SAGE/code/UK/sage_one_advanced'
-alias g2_myuk='cd ~/Documents/SAGE/code/UK/mysageone_uk'
-alias g2_uk='cd ~/Documents/SAGE/code/UK'
-alias g2_payroll='cd ~/Documents/SAGE/code/payroll'
 
 ## WORK
 alias sanity_check='./cleanup.sh && ./setup.sh && ./test.sh'
@@ -84,6 +70,7 @@ alias egs_worker_master_sync='cd ~/work/UK/s1_event_gateway_worker/ && git check
 alias egs_status_worker_master_sync='cd ~/work/UK/s1_event_gateway_status_worker/ && git checkout master && git pull origin master'
 alias egs_master_sync='egs_service_master_sync && egs_proxy_master_sync && egs_worker_master_sync && egs_status_worker_master_sync'
 alias egs_start_central_test='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1uk'
+alias egs_start_central_test_us='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1us'
 alias egs_start_central_test_events='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1uk -w event'
 
 alias egs_logs_proxy='docker logs proxy_event_gateway -f'
