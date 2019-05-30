@@ -25,6 +25,9 @@ export MYSQL_USERNAME=root
 export MYSQL_PASSWORD=''
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
+# After brew install qt  for capybara webkit gem
+export PATH="/usr/local/opt/qt/bin:$PATH"
+
 export TERM=screen-256color
 
 #Set Default Editor

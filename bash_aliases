@@ -59,10 +59,13 @@ alias kkata='kata && code-insiders . && be guard'
 ## Project specific
 alias g2_work='cd ~/Work'
 alias g2_projects='cd ~/Projects'
+alias g2_katas_ruby='g2_projects && cd ./katas/ruby_katas/'
 
 
 ## WORK
 alias sanity_check='./cleanup.sh && ./setup.sh && ./test.sh'
+
+alias docker_boot='./script/docker/boot.sh --pull --clean --bundle'
 
 alias egs_proxy_master_sync='cd ~/work/UK/s1_event_gateway_proxy/ && git checkout master && git pull origin master'
 alias egs_service_master_sync='cd ~/work/UK/s1_event_gateway_service/ && git checkout master && git pull origin master'
