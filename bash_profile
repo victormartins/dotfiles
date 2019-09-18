@@ -1,8 +1,7 @@
 # Notes:
 # to reload:  source ~/.bash_profile
 
-
-#To make brew work properly this needs to come first.
+# To make brew work properly this needs to come first.
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 # Vendor bins for tooling. Eg:chromedriver for selenium
@@ -175,4 +174,3 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-

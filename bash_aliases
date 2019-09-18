@@ -53,7 +53,8 @@ alias htk='echo "ps aux | grep ruby kill -9 xxxxx"'
 alias spec_1='clear && be rspec spec/ --order defined --fail-fast  -f p'
 alias g2_today='cd ./$(date "+%Y%m%d")'
 alias kata='cp -r ./starting_point ./$(date "+%Y%m%d") && echo created ./$(date "+%Y%m%d") && g2_today && git add . && git commit -m "start"'
-alias kkata='kata && code-insiders . && be guard'
+alias kkata='kata && code . && be guard'
+alias jskata='kata && npm install && code . && npx jest --watch'
 
 #
 ## Project specific
@@ -72,13 +73,13 @@ alias egs_service_master_sync='cd ~/work/UK/s1_event_gateway_service/ && git che
 alias egs_worker_master_sync='cd ~/work/UK/s1_event_gateway_worker/ && git checkout master && git pull origin master'
 alias egs_status_worker_master_sync='cd ~/work/UK/s1_event_gateway_status_worker/ && git checkout master && git pull origin master'
 alias egs_master_sync='egs_service_master_sync && egs_proxy_master_sync && egs_worker_master_sync && egs_status_worker_master_sync'
-alias egs_start_central_test='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1uk'
-alias egs_start_central_test_us='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1us'
-alias egs_start_central_test_events='docker_clean && ./script/boot.sh --pull --clean -w gac -w ms1uk -w event'
+alias egs_start_central_test='docker_clean && ./script/boot.sh --pull --clean central gac ms1uk cbc'
+alias egs_start_central_test_us='docker_clean && ./script/boot.sh --pull --clean central gac ms1us cbc'
+alias egs_start_central_test_events='docker_clean && ./script/boot.sh --pull --clean central gac ms1uk event cbc'
 
-alias egs_logs_proxy='docker logs proxy_event_gateway -f'
-alias egs_logs_service='docker logs service_event_gateway -f'
-alias egs_logs_worker='docker logs worker_event_gateway -f'
-alias egs_logs_status='docker logs worker_status_event_gateway -f'
+alias egs_logs_proxy='docker logs proxy-event-gateway -f'
+alias egs_logs_service='docker logs service-event-gateway -f'
+alias egs_logs_worker='docker logs worker-event-gateway -f'
+alias egs_logs_status='docker logs worker-status-event_gateway -f'
 
 alias g2_sage_docs='cd ~/Google\ Drive/_SAGE'
