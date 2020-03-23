@@ -12,6 +12,8 @@
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -151,18 +153,20 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>422 113 547 344 0 0 2560 1417 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>1068 694 400 129 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 768 620 392 0 0 2560 1417 </string>
+	<string>746 417 700 622 0 0 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>351 234 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>-1470 337 796 486 -1680 127 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 1417 0 0 2560 1417 </string>
+	<string>400 591 905 575 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>719 627 905 575 0 0 2560 1417 </string>
+	<string>840 0 839 1027 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 553 1027 0 0 2560 1417 </string>
+	<string>0 80 850 1337 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 0 2560 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -1640,12 +1644,24 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.6</string>
+		<string>3.3.2</string>
+		<string>3.3.8</string>
+		<string>3.3.5</string>
+		<string>3.3.7</string>
 		<string>3.2.9</string>
 		<string>3.3.0</string>
-		<string>3.3.2</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {2560, 1440}}</string>
+		<key>topLeft</key>
+		<string>{705, 1139}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
@@ -1660,9 +1676,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>5A27C4CF-4C5C-44FD-A903-866321C6751D</string>
 	<key>NoSyncLastTipTime</key>
-	<real>587897506.26814795</real>
+	<real>590330981.68989694</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>8</integer>
+	<integer>47</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2037,6 +2053,14 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
 				<string>currentTab</string>
@@ -2171,6 +2195,22 @@
 				<true/>
 				<key>name</key>
 				<string>currentSession.commandLine</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2365,29 +2405,6 @@
 	</dict>
 	<key>NoSyncSaveDocumentAsPathSet_saveDocumentAs:</key>
 	<true/>
-	<key>NoSyncSearchHistory</key>
-	<array>
-		<string>back</string>
-		<string>2039</string>
-		<string>743</string>
-		<string>service-user</string>
-		<string>user_</string>
-		<string>exit</string>
-		<string>exe</string>
-	</array>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>GenerateAccountClaim</string>
-		<string>GEne</string>
-		<string>business_id</string>
-		<string>Service</string>
-		<string>BusinessS</string>
-		<string>Business Service</string>
-		<string>Account Claims</string>
-		<string>Payload Object Build</string>
-		<string>Payload Object b</string>
-		<string>Payload Ojb</string>
-	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>571674938.70083594</real>
 	<key>NoSyncTipsToNotShow</key>
@@ -2471,6 +2488,7 @@
 		<string>0075</string>
 		<string>0076</string>
 		<string>0077</string>
+		<string>0078</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -2542,7 +2560,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-28T10:16:56Z</date>
+	<date>2020-02-03T15:06:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -66017,7 +66035,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.2</string>
+	<string>3.3.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

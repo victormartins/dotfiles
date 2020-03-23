@@ -8,6 +8,7 @@ alias ls='ls -CGaop -lh'
 alias lls='clear && ls -CGaop -lh'
 alias f='find . -name '
 alias today='date +%a_%b\(%d-%m-%Y\)'
+alias wtf='top -o mem -O cpu -n 20'
 
 ## #Ruby & Rails¶
 alias rr_migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test' #using && will only run the next command if the first passes
@@ -39,6 +40,7 @@ alias gp='git push'
 alias gpu='git push upstream'
 alias gb='git branch'
 alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
+alias gls="git log  --oneline -10"
 
 #Docker
 alias d-c='docker-compose'
