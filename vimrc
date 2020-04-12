@@ -129,7 +129,7 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 " nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <leader>pv :wincmd v<bar> :NERDTree <bar> :vertical resize 30<CR>
+map <C-n> :NERDTreeToggle<CR>
 " Project Search using RipGrep
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
