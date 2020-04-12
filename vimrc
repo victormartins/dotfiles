@@ -16,6 +16,10 @@ set incsearch					 " get search results while we type. start with '/' then press
 set updatetime=150     " Update UI frequency .defaults to 4000 (4s). https://github.com/airblade/vim-gitgutter#getting-started
 let mapleader = " "    " Trigger key modifications. Search bellow
 
+" Folding
+set foldmethod=syntax
+" set foldcolumn=2
+
 " backup strategy
 set nobackup
 set undodir=~/.vim/undodir " WARNING: this folder needs to be manually created
@@ -143,3 +147,5 @@ fun! GoYCM()
 endfun
 
 autocmd FileType typescript :call GoYCM()
+autocmd BufWinLeave *.* mkview            " save folding view on exit - https://vim.fandom.com/wiki/Make_views_automatic
+autocmd BufWinEnter *.* silent loadview   " load folding view on entering file
