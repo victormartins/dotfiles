@@ -49,7 +49,7 @@ set colorcolumn=120
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'                       " Color scheme
 Plug 'vim-utils/vim-man'                     " Manual
-Plug 'jremmen/vim-ripgrep'                   " Very fast search
+Plug 'jremmen/vim-ripgrep'                   " Very fast search TODO: brew install ripgrep
 Plug 'tpope/vim-fugitive'                    " Git Wrapper
 Plug 'mbbill/undotree'                       " Non linear undos
 Plug 'git@github.com:kien/ctrlp.vim.git'     " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
@@ -123,4 +123,23 @@ colorscheme gruvbox
 set background=dark
 
 " Key Modifications
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
+" nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>pv :wincmd v<bar> :NERDTree <bar> :vertical resize 30<CR>
+" Project Search using RipGrep
+nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <silent> <Leader>+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
+" https://github.com/erkrnt/awesome-streamerrc/blob/1edf0e855b0a2f122800731686831123622f0084/ThePrimeagen/.vimrc#L72
+fun! GoYCM()
+    nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
+    nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+    nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
+endfun
+
+autocmd FileType typescript :call GoYCM()
