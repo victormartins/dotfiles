@@ -101,11 +101,15 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:ctrlp_user_caching=0
 
 " Configure LINT languages
+let g:ale_set_highlights = 0
 let g:ale_linters = {
       \   'ruby':       ['standardrb', 'rubocop', 'reek', 'brakeman'],
       \   'javascript': ['eslint'],
       \   'jsx':        ['stylelint', 'eslint']
       \}
+
+" Only run linters named in ale_linters settings.
+let g:ale_linters_explicit = 1
 
 let g:ale_linter_aliases = {'jsx': 'css'} " https://github.com/mlent/ale#5xi-how-can-i-check-jsx-files-with-both-stylelint-and-eslint
 
@@ -159,3 +163,5 @@ endfun
 autocmd FileType typescript :call GoYCM()
 autocmd BufWinLeave *.* mkview            " save folding view on exit - https://vim.fandom.com/wiki/Make_views_automatic
 autocmd BufWinEnter *.* silent loadview   " load folding view on entering file
+:autocmd InsertEnter * set cul            " When in insert mode, highlight line
+:autocmd InsertLeave * set nocul          " Revert from above

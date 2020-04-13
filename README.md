@@ -22,9 +22,10 @@ Usage
 * `ln -nfs ~/dotfiles/gitignore_global ~/.gitignore_global`
 * `ln -nfs ~/dotfiles/bashrc ~/.bashrc`
 * `ln -nfs ~/dotfiles/vimrc ~/.vimrc`
+* `ln -nfs ~/dotfiles/rubocop ~/.rubocop`
+* `ln -nfs ~/dotfiles/reek ~/.reek`
 
 ##Fetch submodules after cloning repo, in ~/dotfiles
 
 * `cd ~/dotfiles`
 * `git submodule update --init`
-## If issues with Vim Plugins, go to ~/dotfiles/vim/bundle and git clone the repos of empty folders. Will resolve this.
