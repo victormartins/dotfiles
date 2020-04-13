@@ -71,13 +71,16 @@ Plug 'tpope/vim-eunuch'                      " Delete, Rename, Move files and mu
 Plug 'Xuyuanp/nerdtree-git-plugin'           " Git Markers for Nerdtree
 Plug 'vim-airline/vim-airline'               " Status bar bellow VIM
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/goyo.vim'                     " Center content and remove distractions
 Plug 'airblade/vim-gitgutter'                " (slow) Show the git status of each file on the next to line numbers
 Plug 'ycm-core/YouCompleteMe'                " Autocomplete for many languages (Eg: Typescript)
 Plug 'dense-analysis/ale'                    " Language LINT (eg: Ruby, JS, CSS...)
 Plug 'tpope/vim-commentary'                  " Use gcc to comment out a line or gc to comment a selection in visual mode
 Plug 'jiangmiao/auto-pairs'                  " Insert or delete brackets, parens, quotes in pairs
 Plug 'godlygeek/tabular'                     " Align things together http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-Plug 'plasticboy/vim-markdown'               " Language Support for Markdown
+Plug 'plasticboy/vim-markdown'               " Language Support for Markdown DEPENDS OF godlygeek/tabular
+Plug 'mzlogin/vim-markdown-toc'              " Language Support for Markdown - Generate table of contents
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 Plug 'leafgarland/typescript-vim'            " Language Support for TypeScript
 Plug 'tpope/vim-rails'                       " Language Support for Rails
 Plug 'tpope/vim-endwise'                     " Language Support for Ruby - close end blocks automagically
@@ -132,6 +135,17 @@ let g:ale_lint_on_text_changed = 'never' " Make it faster
 let g:airline_powerline_fonts = 1             " https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
 let g:airline#extensions#ale#enabled = 1      " https://github.com/dense-analysis/ale#5v-how-can-i-show-errors-or-warnings-in-my-statusline
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+let g:goyo_width=140 " When width centering the contents of the screen
+
+" for plasticboy/vim-markdown
+let g:vim_markdown_conceal = 0   " https://github.com/plasticboy/vim-markdown#syntax-concealing
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_new_list_item_indent = 2
+" for iamcco/markdown-preview.nvim
+let g:mkdp_refresh_slow=1 " Less CPU intensive
+let g:mkdp_markdown_css = '~/dotfiles/helpers/vim__github-markdown.css'
 
 " END Config Plugins -------------
 
