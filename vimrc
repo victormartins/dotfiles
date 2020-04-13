@@ -76,6 +76,8 @@ Plug 'ycm-core/YouCompleteMe'                " Autocomplete for many languages (
 Plug 'dense-analysis/ale'                    " Language LINT (eg: Ruby, JS, CSS...)
 Plug 'tpope/vim-commentary'                  " Use gcc to comment out a line or gc to comment a selection in visual mode
 Plug 'jiangmiao/auto-pairs'                  " Insert or delete brackets, parens, quotes in pairs
+Plug 'godlygeek/tabular'                     " Align things together http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+Plug 'plasticboy/vim-markdown'               " Language Support for Markdown
 Plug 'leafgarland/typescript-vim'            " Language Support for TypeScript
 Plug 'tpope/vim-rails'                       " Language Support for Rails
 Plug 'tpope/vim-endwise'                     " Language Support for Ruby - close end blocks automagically
@@ -153,6 +155,14 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
+" align spaces and hashes
+if exists(":Tabularize")
+	nmap <Leader>a= :Tabularize /=<CR>
+	vmap <Leader>a= :Tabularize /=<CR>
+	nmap <Leader>a: :Tabularize /:\zs<CR>
+	vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
 " https://github.com/erkrnt/awesome-streamerrc/blob/1edf0e855b0a2f122800731686831123622f0084/ThePrimeagen/.vimrc#L72
 fun! GoYCM()
     nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
@@ -163,5 +173,5 @@ endfun
 autocmd FileType typescript :call GoYCM()
 autocmd BufWinLeave *.* mkview            " save folding view on exit - https://vim.fandom.com/wiki/Make_views_automatic
 autocmd BufWinEnter *.* silent loadview   " load folding view on entering file
-:autocmd InsertEnter * set cul            " When in insert mode, highlight line
-:autocmd InsertLeave * set nocul          " Revert from above
+autocmd InsertEnter * set cul            " When in insert mode, highlight line
+autocmd InsertLeave * set nocul          " Revert from above
