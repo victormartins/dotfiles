@@ -8,13 +8,22 @@
 
 " Basic defaults
 syntax on " Enable syntax highlighting
+set nocompatible       " dont use vi defaults: http://vimdoc.sourceforge.net/htmldoc/options.html#'compatible'
+set hidden             " ?? http://vimdoc.sourceforge.net/htmldoc/options.html#'hidden'
 set noerrorbells
 set nu								 " set line numbers
+set backspace=2        " make backspace work like most other programs"
 set smartcase					 " case sensitive searching
 set noswapfile
 set incsearch					 " get search results while we type. start with '/' then press enter then keep pressing 'n'
-set updatetime=150     " Update UI frequency .defaults to 4000 (4s). https://github.com/airblade/vim-gitgutter#getting-started
+set updatetime=50      " Update UI frequency .defaults to 4000 (4s). Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience. https://github.com/erkrnt/awesome-streamerrc/blob/1edf0e855b0a2f122800731686831123622f0084/ThePrimeagen/.vimrc#L21
 let mapleader = " "    " Trigger key modifications. Search bellow
+
+" Give more space to the cmd line for displaying messages.
+set cmdheight=2
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 
 " Folding
 set foldmethod=syntax
@@ -56,8 +65,9 @@ Plug 'vim-utils/vim-man'                     " Manual
 Plug 'jremmen/vim-ripgrep'                   " Very fast search TODO: brew install ripgrep
 Plug 'tpope/vim-fugitive'                    " Git Wrapper
 Plug 'mbbill/undotree'                       " Non linear undos
-Plug 'git@github.com:kien/ctrlp.vim.git'     " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
+Plug 'ctrlpvim/ctrlp.vim'                    " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 Plug 'preservim/nerdtree'                    " File System Explorer
+Plug 'tpope/vim-eunuch'                      " Delete, Rename, Move files and much more
 Plug 'Xuyuanp/nerdtree-git-plugin'           " Git Markers for Nerdtree
 Plug 'vim-airline/vim-airline'               " Status bar bellow VIM
 Plug 'vim-airline/vim-airline-themes'
