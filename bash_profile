@@ -165,7 +165,7 @@ function docker_clean() {
   docker rm -v $(docker ps -a -q -f status=exited)
   echo cleanup complete
 
-  docker system prune
+  docker system prune --force
 }
 
 ## This needs to be the last thing on bash_profile to bake rbenv work
