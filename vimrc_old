@@ -1,0 +1,198 @@
+" VIM Configuration - Victor Martins
+"
+" References:
+" * ThePrimeagen - Your first VimRC
+"     https://www.youtube.com/watch?v=n9k9scbTuvQ
+" * Vim for Ruby and Rails 2019
+"     https://www.vimfromscratch.com/articles/vim-for-ruby-and-rails-in-2019/
+
+" Basic defaults
+syntax on " Enable syntax highlighting
+set nocompatible       " dont use vi defaults: http://vimdoc.sourceforge.net/htmldoc/options.html#'compatible'
+set noerrorbells
+set nu								 " set line numbers
+set backspace=2        " make backspace work like most other programs"
+set smartcase					 " case sensitive searching
+set noswapfile
+set incsearch					 " get search results while we type. start with '/' then press enter then keep pressing 'n'
+set updatetime=50      " Update UI frequency .defaults to 4000 (4s). Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience. https://github.com/erkrnt/awesome-streamerrc/blob/1edf0e855b0a2f122800731686831123622f0084/ThePrimeagen/.vimrc#L21
+let mapleader = " "    " Trigger key modifications. Search bellow
+
+
+" may be dangerous for begginers since we can loose work if we quit with hidden buffers
+"set hidden             " allow hidden buffers so that we don't have to be forced to save one before switching buffers
+
+
+
+" Give more space to the cmd line for displaying messages.
+set cmdheight=2
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Folding
+set foldmethod=syntax
+" set foldcolumn=2
+
+" backup strategy
+set nobackup
+set undodir=~/.vim/undodir " WARNING: this folder needs to be manually created
+set undofile							 " have a backup per file
+
+" text options
+set nowrap
+
+" tabs behaviour: https://tedlogan.com/techblog3.html
+set tabstop=2 softtabstop=2
+set shiftwidth=2       " use with << and >>
+set expandtab          " convert from tab to spaces
+set smartindent				 " auto indentation
+
+
+" Enable file specific behaviour like syntax highlighting and indentation
+filetype on
+filetype plugin on
+filetype indent on
+
+" set the text delimiter horizontal column
+set colorcolumn=120
+" let &colorcolumn="80,".join(range(120,999),",") " adds the 80 column and a 120 and above block
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
+" Plugins: https://github.com/junegunn/vim-plug
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'                       " Color scheme
+Plug 'vim-utils/vim-man'                     " Manual
+Plug 'jremmen/vim-ripgrep'                   " Very fast search TODO: brew install ripgrep
+Plug 'tpope/vim-fugitive'                    " Git Wrapper
+Plug 'mbbill/undotree'                       " Non linear undos
+Plug 'ctrlpvim/ctrlp.vim'                    " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
+Plug 'preservim/nerdtree'                    " File System Explorer
+Plug 'tpope/vim-eunuch'                      " Delete, Rename, Move files and much more
+Plug 'Xuyuanp/nerdtree-git-plugin'           " Git Markers for Nerdtree
+Plug 'vim-airline/vim-airline'               " Status bar bellow VIM
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/goyo.vim'                     " Center content and remove distractions
+Plug 'airblade/vim-gitgutter'                " (slow) Show the git status of each file on the next to line numbers
+" Plug 'ycm-core/YouCompleteMe'                " Autocomplete for many languages (Eg: Typescript)
+Plug 'dense-analysis/ale'                    " Language LINT (eg: Ruby, JS, CSS...)
+Plug 'tpope/vim-commentary'                  " Use gcc to comment out a line or gc to comment a selection in visual mode
+Plug 'jiangmiao/auto-pairs'                  " Insert or delete brackets, parens, quotes in pairs
+Plug 'godlygeek/tabular'                     " Align things together http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+Plug 'plasticboy/vim-markdown'               " Language Support for Markdown DEPENDS OF godlygeek/tabular
+Plug 'mzlogin/vim-markdown-toc'              " Language Support for Markdown - Generate table of contents
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
+Plug 'leafgarland/typescript-vim'            " Language Support for TypeScript
+Plug 'tpope/vim-rails'                       " Language Support for Rails
+Plug 'tpope/vim-endwise'                     " Language Support for Ruby - close end blocks automagically
+Plug 'ap/vim-css-color'                      " Language Support - show CSS Colors
+
+" To learn:
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"
+" Initialize plugin system
+" Reload .vimrc (:so %) and :PlugInstall to install plugins.
+call plug#end()
+
+" Config Plugins ----------------
+let NERDTreeShowHidden=1
+
+" Config vim-fugitive to find the git root and use the gitignore for faster
+" searching
+if executable('rg')
+  let g:rg_derive_root='true'
+endif
+
+" ignore files from ctrlp search
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" disable caching from ctrlp since its fast enough
+let g:ctrlp_user_caching=0
+
+" Configure LINT languages
+let g:ale_set_highlights = 0
+let g:ale_linters = {
+      \   'ruby':       ['standardrb', 'rubocop', 'reek', 'brakeman'],
+      \   'javascript': ['eslint'],
+      \   'jsx':        ['stylelint', 'eslint']
+      \}
+
+" Only run linters named in ale_linters settings.
+let g:ale_linters_explicit = 1
+
+let g:ale_linter_aliases = {'jsx': 'css'} " https://github.com/mlent/ale#5xi-how-can-i-check-jsx-files-with-both-stylelint-and-eslint
+
+" autofix languages on save
+let g:ale_fixers = {
+      \    '*':    ['remove_trailing_lines', 'trim_whitespace'],
+      \    'ruby': ['standardrb', 'rubocop'],
+      \}
+
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_enter = 0              " Make it faster
+let g:ale_lint_on_insert_leave = 0       " Make it faster
+let g:ale_lint_on_text_changed = 'never' " Make it faster
+" let g:ale_open_list = 1                " Open the location list when we have Lint issues.
+" let g:ale_keep_list_window_open = 1    " Keep the linting list open
+
+" TODO: Install https://github.com/powerline/fonts
+let g:airline_powerline_fonts = 1             " https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
+let g:airline#extensions#ale#enabled = 1      " https://github.com/dense-analysis/ale#5v-how-can-i-show-errors-or-warnings-in-my-statusline
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+let g:goyo_width=140 " When width centering the contents of the screen
+
+" for plasticboy/vim-markdown
+let g:vim_markdown_conceal = 0   " https://github.com/plasticboy/vim-markdown#syntax-concealing
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_new_list_item_indent = 2
+" for iamcco/markdown-preview.nvim
+let g:mkdp_refresh_slow=1 " Less CPU intensive
+let g:mkdp_markdown_css = '~/dotfiles/helpers/vim__github-markdown.css'
+
+" END Config Plugins -------------
+
+" Set Color Scheme
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_number_column='bg1'
+let g:gruvbox_color_column='bg1'
+let g:gruvbox_italic=1
+colorscheme gruvbox
+set background=dark
+
+" Key Modifications
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+" nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+map <C-n> :NERDTreeToggle<CR>
+" Project Search using RipGrep
+nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <silent> <Leader>+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
+" align spaces and hashes
+if exists(":Tabularize")
+	nmap <Leader>a= :Tabularize /=<CR>
+	vmap <Leader>a= :Tabularize /=<CR>
+	nmap <Leader>a: :Tabularize /:\zs<CR>
+	vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
+" https://github.com/erkrnt/awesome-streamerrc/blob/1edf0e855b0a2f122800731686831123622f0084/ThePrimeagen/.vimrc#L72
+fun! GoYCM()
+    nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
+    nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+    nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
+endfun
+
+autocmd FileType typescript :call GoYCM()
+autocmd BufWinLeave *.* mkview            " save folding view on exit - https://vim.fandom.com/wiki/Make_views_automatic
+autocmd BufWinEnter *.* silent loadview   " load folding view on entering file
+autocmd InsertEnter * set cul            " When in insert mode, highlight line
+autocmd InsertLeave * set nocul          " Revert from above
