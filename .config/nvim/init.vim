@@ -1,33 +1,20 @@
 " Victor Martins
 
 " https://github.com/junegunn/vim-plug
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'             " Color scheme
 Plug 'mbbill/undotree'                       " Non linear undos
 Plug 'dense-analysis/ale'                    " Language LINT (eg: Ruby, JS, CSS...)
 Plug 'tpope/vim-commentary'                  " Use gcc to comment out a line or gc to comment a selection in visual mode
 Plug 'jiangmiao/auto-pairs'                  " Insert or delete brackets, parens, quotes in pairs
-Plug 'ycm-core/YouCompleteMe'              " Autocomplete for many languages (Eg: Typescript)
+" Plug 'ycm-core/YouCompleteMe'              " Autocomplete for many languages (Eg: Typescript)
 Plug 'vim-ruby/vim-ruby'                     " Language Support for Rails
 Plug 'tpope/vim-rails'                       " Language Support for Rails
 Plug 'tpope/vim-endwise'                     " Language Support for Ruby - close end blocks automagically
 Plug 'ap/vim-css-color'                      " Language Support - show CSS Colors
-
-" For Markdown ----
-Plug 'godlygeek/tabular'                     " Align things together http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-Plug 'plasticboy/vim-markdown'               " Language Support for Markdown DEPENDS OF godlygeek/tabular
-Plug 'mzlogin/vim-markdown-toc'              " Language Support for Markdown - Generate table of contents
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 " Initialize plugin system
 " Reload .vimrc (:so %) and :PlugInstall to install plugins.
 call plug#end()
-
-
-" Set Color Scheme
-set termguicolors
-" set Vim-specific sequences for RGB colors to fix termguicolor
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Configure LINT languages
 let g:ale_set_highlights = 0
@@ -57,12 +44,11 @@ let g:ale_lint_on_text_changed = 'never' " Make it faster
 
 
 
-
-
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_number_column='bg1'
 let g:gruvbox_color_column='bg1'
 let g:gruvbox_italic=1
+
 colorscheme gruvbox
 set background=dark
 
@@ -83,8 +69,18 @@ set smartcase
 set incsearch
 set updatetime=500
 set cmdheight=2
-" set cursorline
+set cursorline
+set guicursor+=n-v-c:block-Cursor,i-ci-ve:block-blinkwait175-blinkoff150-blinkon175,r-cr-o:hor20  " use blinking block cursor when editing
 let mapleader=' '
+
+
+
+" Highlight matching pairs of brackets. Use the '%' character to jump between them.
+set matchpairs+=<:>
+
+" Display different types of white spaces.
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 
 
@@ -123,3 +119,16 @@ nnoremap <Up> :resize +2<CR>
 nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
+
+
+" Auto File Update Timer  -------------------------------------
+" This timmer will check the files for change outside VIM and update them.
+if ! exists("g:CheckUpdateStarted")
+    let g:CheckUpdateStarted=1
+    call timer_start(1,'CheckUpdate')
+endif
+function! CheckUpdate(timer)
+    silent! checktime
+    call timer_start(1000,'CheckUpdate')
+endfunction
+" END Auto File Update Timer  -------------------------------------

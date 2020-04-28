@@ -3,6 +3,7 @@ function timestamp {
 }
 
 ##bash
+alias vim='nvim'
 alias cls='clear'
 alias ls='ls -CGaop -lh'
 alias lls='clear && ls -CGaop -lh'

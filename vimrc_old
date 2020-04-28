@@ -86,6 +86,7 @@ Plug 'plasticboy/vim-markdown'               " Language Support for Markdown DEP
 Plug 'mzlogin/vim-markdown-toc'              " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 Plug 'leafgarland/typescript-vim'            " Language Support for TypeScript
+Plug 'vim-ruby/vim-ruby'                     " Language Support for Ruby
 Plug 'tpope/vim-rails'                       " Language Support for Rails
 Plug 'tpope/vim-endwise'                     " Language Support for Ruby - close end blocks automagically
 Plug 'ap/vim-css-color'                      " Language Support - show CSS Colors

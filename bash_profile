@@ -1,5 +1,5 @@
-# Notes:
-# to reload:  source ~/.bash_profile
+# Set iTerm colors to match grubox
+source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
 # To make brew work properly this needs to come first.
 export PATH="/usr/local/bin:$PATH"
