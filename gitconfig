@@ -3,7 +3,7 @@
 	email = correio@victormartins.com
 [core]
 	excludesfile = /Users/victor.martins/.gitignore_global
-  editor = vim
+  editor = nvim
 [color]
   ui = true
 [commit]

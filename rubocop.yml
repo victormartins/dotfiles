@@ -13,3 +13,12 @@ Metrics/LineLength:
 
 Metrics/MethodLength:
   Max: 20
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+# Rails/TimeZone:
+#   EnforcedStyle: strict
