@@ -3,6 +3,7 @@
 echo "Installing/Updating Cashs..."
 
 CASKS=(
+tmux
 alacritty
 meld
 neofetch

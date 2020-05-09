@@ -30,7 +30,7 @@ export PATH="/usr/local/opt/qt/bin:$PATH"
 export TERM=screen-256color
 
 #Set Default Editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
 source ~/dotfiles/git-completion.bash
@@ -108,7 +108,7 @@ txtrst='\e[0m'    # Text Reset
 bind "set completion-ignore-case on" #make the bash autocomplete case insensitive
 bind "set show-all-if-ambiguous on"  #shows all options if ambiguouse, avoiding to press tab twice
 
-# fix ls colors on OSX
+# use colorscheme colors when we run ls on OSX
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #https://github.com/seebi/dircolors-solarized/issues/10
 
 ## CUSTOMIZATION
@@ -174,3 +174,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
