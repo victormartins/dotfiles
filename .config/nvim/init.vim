@@ -2,55 +2,31 @@
 
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
-Plug 'gruvbox-community/gruvbox'             " Color scheme
-Plug 'mbbill/undotree'                       " Non linear undos
-Plug 'dense-analysis/ale'                    " Language LINT (eg: Ruby, JS, CSS...)
-Plug 'tpope/vim-commentary'                  " Use gcc to comment out a line or gc to comment a selection in visual mode
-Plug 'jiangmiao/auto-pairs'                  " Insert or delete brackets, parens, quotes in pairs
-" Plug 'ycm-core/YouCompleteMe'              " Autocomplete for many languages (Eg: Typescript)
-Plug 'vim-ruby/vim-ruby'                     " Language Support for Rails
-Plug 'tpope/vim-rails'                       " Language Support for Rails
-Plug 'tpope/vim-endwise'                     " Language Support for Ruby - close end blocks automagically
-Plug 'ap/vim-css-color'                      " Language Support - show CSS Colors
+Plug 'gruvbox-community/gruvbox'                " Color scheme
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
+Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'mbbill/undotree'                          " Non linear undos
+Plug 'tpope/vim-commentary'                     " Use gcc to comment out a line or gc to comment a selection in visual mode
+Plug 'Yggdroot/indentLine'                      " Show the indentation lines
+Plug 'tpope/vim-eunuch'                         " Delete, Rename, Move files and much more
+Plug 'sheerun/vim-polyglot'                    " Language Support for the Win
+Plug 'tpope/vim-rails'                          " Language Support for Rails
+Plug 'tpope/vim-endwise'                        " Language Support for Ruby - close end blocks automagically
+Plug 'ap/vim-css-color'                         " Language Support - show CSS Colors
+
+Plug 'godlygeek/tabular'                        " Align things together http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+" Plug 'plasticboy/vim-markdown'                " Language Support for Markdown DEPENDS OF godlygeek/tabular
+Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 " Initialize plugin system
 " Reload .vimrc (:so %) and :PlugInstall to install plugins.
 call plug#end()
 
-" Configure LINT languages
-let g:ale_set_highlights = 0
-let g:ale_linters = {
-      \   'ruby':       ['standardrb', 'rubocop', 'reek', 'brakeman'],
-      \   'javascript': ['eslint'],
-      \   'jsx':        ['stylelint', 'eslint']
-      \}
+source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/plug-config/gruvebox.vim
 
-" Only run linters named in ale_linters settings.
-let g:ale_linters_explicit = 1
-
-let g:ale_linter_aliases = {'jsx': 'css'} " https://github.com/mlent/ale#5xi-how-can-i-check-jsx-files-with-both-stylelint-and-eslint
-
-" autofix languages on save
-let g:ale_fixers = {
-      \    '*':    ['remove_trailing_lines', 'trim_whitespace'],
-      \    'ruby': ['standardrb', 'rubocop'],
-      \}
-
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_enter = 0              " Make it faster
-let g:ale_lint_on_insert_leave = 0       " Make it faster
-let g:ale_lint_on_text_changed = 'never' " Make it faster
-" let g:ale_open_list = 1                " Open the location list when we have Lint issues.
-" let g:ale_keep_list_window_open = 1    " Keep the linting list open
-
-
-
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_number_column='bg1'
-let g:gruvbox_color_column='bg1'
-let g:gruvbox_italic=1
-
-colorscheme gruvbox
-set background=dark
+let g:indentLine_char = '¦'
 
 set termguicolors
 syntax on
@@ -67,12 +43,19 @@ set noerrorbells
 set noswapfile
 set smartcase
 set incsearch
-set updatetime=500
+set updatetime=300
 set cmdheight=2
 set cursorline
 set guicursor+=n-v-c:block-Cursor,i-ci-ve:block-blinkwait175-blinkoff150-blinkon175,r-cr-o:hor20  " use blinking block cursor when editing
 let mapleader=' '
 
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
 
 
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
@@ -82,6 +65,11 @@ set matchpairs+=<:>
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
+" Splits
+set splitbelow splitright
+" change split. to vertical or to horizontal
+map <leader>th <C-w>t<C-w>H
+map <leader>tk <C-w>t<C-w>K
 
 
 " tabs behaviour: https://tedlogan.com/techblog3.html
@@ -93,6 +81,7 @@ set smartindent        " auto indentation
 
 " backup strategy
 set nobackup
+set nowritebackup
 set undodir=~/.vim/undodir " WARNING: this folder needs to be manually created
 set undofile  " have a backup per file
 
@@ -108,6 +97,8 @@ set colorcolumn=120
 " let &colorcolumn="80,".join(range(120,999),",") " adds the 80 column and a 120 and above block
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
+" Fuzzy find files with the fzf Plugin
+nnoremap <C-p> :GFiles<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -132,3 +123,12 @@ function! CheckUpdate(timer)
     call timer_start(1000,'CheckUpdate')
 endfunction
 " END Auto File Update Timer  -------------------------------------
+
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+autocmd BufWritePre * :call TrimWhitespace()
