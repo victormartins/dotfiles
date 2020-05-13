@@ -150,8 +150,8 @@ function docker_start() {
 }
 alias start_docker='docker_start'
 
-function aws_login() {
-  eval "$(aws ecr get-login --no-include-email)"
+function aws_login () {
+  eval "$(aws ecr get-login-password | docker login --username AWS --password-stdin 522104923602.dkr.ecr.eu-west-1.amazonaws.com)"
 }
 
 #function to remove and close all docker containers
