@@ -3,13 +3,20 @@
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'                " Color scheme
+Plug 'jeffkreeftmeijer/vim-numbertoggle'        " toggle relative numbering in vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
 Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'mbbill/undotree'                          " Non linear undos
+Plug 'tpope/vim-repeat'                         " Repeat some plugins with . command (eg: vim-surround)
 Plug 'tpope/vim-commentary'                     " Use gcc to comment out a line or gc to comment a selection in visual mode
-Plug 'Yggdroot/indentLine'                      " Show the indentation lines
 Plug 'tpope/vim-eunuch'                         " Delete, Rename, Move files and much more
+Plug 'tpope/vim-obsession'                      " Save vim sessions before exit
+Plug 'tpope/vim-surround'                       " Custom Operator - Handle the surrounding things :)
+Plug 'kana/vim-textobj-user'                    " Custom Text Object - How to create custom text objects. (Dependency for vim-textobj-ruby)
+Plug 'rhysd/vim-textobj-ruby'                   " Custom Text Object - Ruby (r)
+Plug 'michaeljsmith/vim-indent-object'          " Custom Text Object - indentations (i)
+Plug 'Yggdroot/indentLine'                      " Show the indentation lines
 Plug 'sheerun/vim-polyglot'                    " Language Support for the Win
 Plug 'tpope/vim-rails'                          " Language Support for Rails
 Plug 'tpope/vim-endwise'                        " Language Support for Ruby - close end blocks automagically
@@ -30,7 +37,7 @@ let g:indentLine_char = '¦'
 
 set termguicolors
 syntax on
-set nu
+set number relativenumber
 set nowrap
 set backspace=2
 set foldmethod=syntax
@@ -111,6 +118,8 @@ nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
+" Ctrl+/ to clear the last search
+noremap <silent> <c-_> :let @/ = ""<CR>
 
 " Auto File Update Timer  -------------------------------------
 " This timmer will check the files for change outside VIM and update them.
