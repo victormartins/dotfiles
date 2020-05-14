@@ -118,6 +118,10 @@ nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
+" Move lines up and down in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Ctrl+/ to clear the last search
 noremap <silent> <c-_> :let @/ = ""<CR>
 
