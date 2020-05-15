@@ -17,10 +17,11 @@ Plug 'kana/vim-textobj-user'                    " Custom Text Object - How to cr
 Plug 'rhysd/vim-textobj-ruby'                   " Custom Text Object - Ruby (r)
 Plug 'michaeljsmith/vim-indent-object'          " Custom Text Object - indentations (i)
 Plug 'Yggdroot/indentLine'                      " Show the indentation lines
-Plug 'sheerun/vim-polyglot'                    " Language Support for the Win
+Plug 'sheerun/vim-polyglot'                     " Language Support for the Win
 Plug 'tpope/vim-rails'                          " Language Support for Rails
 Plug 'tpope/vim-endwise'                        " Language Support for Ruby - close end blocks automagically
 Plug 'ap/vim-css-color'                         " Language Support - show CSS Colors
+Plug 'mattn/emmet-vim'                          " Language Support Emmet
 
 Plug 'godlygeek/tabular'                        " Align things together http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 " Plug 'plasticboy/vim-markdown'                " Language Support for Markdown DEPENDS OF godlygeek/tabular

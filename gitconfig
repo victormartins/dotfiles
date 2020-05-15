@@ -45,3 +45,5 @@
   br = branch
   ci = commit
   amend = co -a --amend
+[diff "exif"]
+	textconv = exiftool
