@@ -1,4 +1,4 @@
-" Victor Martins
+" Victor Martins Martins
 
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -27,12 +27,20 @@ Plug 'godlygeek/tabular'                        " Align things together http://v
 " Plug 'plasticboy/vim-markdown'                " Language Support for Markdown DEPENDS OF godlygeek/tabular
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
+
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " Initialize plugin system
 " Reload .vimrc (:so %) and :PlugInstall to install plugins.
 call plug#end()
 
+source $HOME/.config/nvim/my-config/file_associations.vim
 source $HOME/.config/nvim/plug-config/coc.vim
-source $HOME/.config/nvim/plug-config/gruvebox.vim
+source $HOME/.config/nvim/plug-config/vim_airline.vim
+source $HOME/.config/nvim/plug-config/gruvbox.vim
+source $HOME/.config/nvim/plug-config/emmet.vim
 
 let g:indentLine_char = '¦'
 
@@ -57,6 +65,8 @@ set cursorline
 set guicursor+=n-v-c:block-Cursor,i-ci-ve:block-blinkwait175-blinkoff150-blinkon175,r-cr-o:hor20  " use blinking block cursor when editing
 let mapleader=' '
 
+" set the text delimiter horizontal column
+set colorcolumn=120
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -100,10 +110,6 @@ filetype plugin on
 filetype indent on
 
 
-" set the text delimiter horizontal column
-set colorcolumn=120
-" let &colorcolumn="80,".join(range(120,999),",") " adds the 80 column and a 120 and above block
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Fuzzy find files with the fzf Plugin
 nnoremap <C-p> :GFiles<CR>
@@ -114,8 +120,8 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
+nnoremap <Up> :resize -2<CR>
+nnoremap <Down> :resize +2<CR>
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 

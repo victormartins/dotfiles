@@ -1,3 +1,6 @@
+# Load Work Stuff
+source "$HOME/.work_credentials"
+
 # Set iTerm colors to match grubox
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
@@ -26,11 +29,19 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # After brew install qt  for capybara webkit gem
 export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="~/scripts:$PATH"
+export PATH="~/Work/__scripts:$PATH"
 
 export TERM=screen-256color
 
 #Set Default Editor
 export EDITOR=nvim
+
+
+# nvm configuration
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
 source ~/dotfiles/git-completion.bash
