@@ -1,5 +1,7 @@
+set -o vi
 # Load Work Stuff
 source "$HOME/.work_credentials"
+source "$HOME/.personal_credentials"
 
 # Set iTerm colors to match grubox
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
@@ -12,7 +14,7 @@ export PATH="$PATH:/Users/$USER/dotfiles/vendor_bin"
 
 # WORK STUFF
 export DEFERRED_GARBAGE_COLLECTION=true #move this to a rails_stuff .file
-
+export WORK_CODE_BASES_DIR="/Volumes/Playground/keep_me_sane/code_bases"
 # MYSQL configurations
 # Did: "brew install mysql@5.7"
 # To have launchd start mysql@5.7 now and restart at login:
@@ -174,10 +176,11 @@ function docker_clean() {
   #!/bin/sh
   echo cleanup started
   echo stop all containers
-  docker stop $(docker ps -a -q)
+  docker stop $(docker ps -aq)
   echo removed untagged images
   docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
-  docker rm -v $(docker ps -a -q -f status=exited)
+  docker rm -v $(docker ps -aq)
+  # docker rm -v $(docker ps -aq -f status=exited)
   echo cleanup complete
 
   docker system prune --force

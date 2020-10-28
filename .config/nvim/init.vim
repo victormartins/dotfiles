@@ -36,6 +36,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Reload .vimrc (:so %) and :PlugInstall to install plugins.
 call plug#end()
 
+set termguicolors
+
 source $HOME/.config/nvim/my-config/file_associations.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/vim_airline.vim
@@ -44,7 +46,6 @@ source $HOME/.config/nvim/plug-config/emmet.vim
 
 let g:indentLine_char = '¦'
 
-set termguicolors
 syntax on
 set number relativenumber
 set nowrap

@@ -43,6 +43,7 @@ alias gpu='git push upstream'
 alias gb='git branch'
 alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
 alias gls="git log  --oneline -10"
+alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local"
 
 #Docker
 alias d-c='docker-compose'

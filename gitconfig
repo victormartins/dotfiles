@@ -31,7 +31,7 @@
     # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -46,4 +46,7 @@
   ci = commit
   amend = co -a --amend
 [diff "exif"]
-	textconv = exiftool
+  textconv = exiftool
+
+# run git lola to see a git history in a graph form
+[alias] lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
