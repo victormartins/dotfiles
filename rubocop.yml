@@ -20,5 +20,8 @@ Layout/TrailingEmptyLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Style/RedundantSelf:
+  Enabled: false
+
 # Rails/TimeZone:
 #   EnforcedStyle: strict
