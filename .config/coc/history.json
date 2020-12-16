@@ -1,0 +1,73 @@
+{
+  "commands": {
+    "%2FUsers%2Fvictor": {
+      "martins%2FProjects%2Fpersonal_trainer%2Fpersonal_trainer_app": [
+        "solargraph."
+      ],
+      "martins%2FProjects%2Fkatas%2Fruby_katas%2Froman_numerals%2F20200509": [
+        "solar"
+      ]
+    }
+  },
+  "lists": {
+    "%2FUsers%2Fvictor": {
+      "martins%2FProjects%2Fpersonal_trainer%2Fpersonal_trainer_app": [
+        "symbols",
+        "extensions",
+        "extensi"
+      ],
+      "martins%2FWork%2Fmysageone_uk": [
+        "ext"
+      ]
+    }
+  },
+  "extensions": {
+    "%2FUsers%2Fvictor": {
+      "martins%2FProjects%2Fpersonal_trainer%2Fpersonal_trainer_app": [
+        ":",
+        "j",
+        "y"
+      ],
+      "martins%2FWork%2Fs1_central_ui": [
+        "j"
+      ],
+      "martins": [
+        ":"
+      ],
+      "martins%2Fdotfiles%2F": {
+        "config": [
+          ":q"
+        ]
+      }
+    }
+  },
+  "actions": {
+    "%2FUsers%2Fvictor": {
+      "martins%2FProjects%2Fkatas%2Fruby_katas%2Froman_numerals%2F20200509": [
+        "--normal",
+        "no",
+        "sola",
+        "q"
+      ]
+    }
+  },
+  "diagnostics": {
+    "%2FUsers%2Fvictor": {
+      "martins%2FProjects%2Fkatas%2Fruby_katas%2Froman_numerals%2F20200509": [
+        "c",
+        "kl",
+        "whil"
+      ],
+      "martins%2FWork%2Fs1_central_test": [
+        " "
+      ]
+    }
+  },
+  "marketplace": {
+    "%2FUsers%2Fvictor": {
+      "martins%2FWork%2Fmysageone_uk": [
+        "git"
+      ]
+    }
+  }
+}

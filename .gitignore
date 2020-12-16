@@ -1,2 +1,6 @@
 vim/tmp/**/*.*
-atom
+.config/nvim/plugged
+.config/nvim/undodir
+.config/nvim/.netrwhist
+.config/qtile/__pycache__
+node_modules

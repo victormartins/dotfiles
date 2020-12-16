@@ -1,0 +1,7 @@
+solargraph.environment
+solargraph.checkGemVersion
+eslint.executeAutofix
+git.foldUnchanged
+solargraph.diagnostics
+solargraph.search
+solargraph.rebuildAllGemDocs
