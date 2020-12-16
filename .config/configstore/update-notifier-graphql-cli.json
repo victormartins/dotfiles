@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1570984360854,
+	"update": {
+		"latest": "3.0.14",
+		"current": "2.16.7",
+		"type": "major",
+		"name": "graphql-cli"
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "lastUpdate": 1596612544810,
+  "extension": {
+    "coc-git": {
+      "disabled": false
+    },
+    "coc-eslint": {
+      "disabled": true
+    },
+    "coc-emmet": {
+      "disabled": false
+    },
+    "coc-cssmodules": {
+      "disabled": false
+    },
+    "coc-yaml": {
+      "disabled": false
+    },
+    "coc-solargraph": {
+      "disabled": false
+    },
+    "coc-pairs": {
+      "disabled": false
+    }
+  }
+}

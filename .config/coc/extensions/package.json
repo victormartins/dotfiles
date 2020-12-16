@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "coc-css": ">=1.2.4",
+    "coc-cssmodules": ">=1.0.0",
+    "coc-emmet": ">=1.1.6",
+    "coc-eslint": ">=1.2.6",
+    "coc-git": ">=1.8.1",
+    "coc-html": ">=1.2.4",
+    "coc-json": ">=1.2.6",
+    "coc-marketplace": ">=1.7.0",
+    "coc-pairs": ">=1.2.21",
+    "coc-solargraph": ">=1.1.6",
+    "coc-tsserver": ">=1.5.3",
+    "coc-vimlsp": ">=0.10.1",
+    "coc-yaml": ">=1.0.4"
+  }
+}
