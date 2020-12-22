@@ -1,5 +1,9 @@
 " Victor Martins Martins
 
+" must be set before polyglot is loaded to ignore languages that create
+" problems. see: https://github.com/sheerun/vim-polyglot#troubleshooting
+let g:polyglot_disabled = ['markdown.plugin']
+
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'                " Color scheme
@@ -59,6 +63,15 @@ filetype indent on
 
 " Fuzzy find files with the fzf Plugin
 nnoremap <C-p> :GFiles<CR>
+let g:fzf_layout = { 'window': {'width': 0.9, 'height': 0.8} }
+let $FZF_DEFAULT_OPTS='--reverse'
+
+
+" Vim Fugite keybindings
+nmap <leader>gl :diffget //3<CR>
+nmap <leader>gh :diffget //2<CR>
+" open Git Status
+nmap <leader>gs :G<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
