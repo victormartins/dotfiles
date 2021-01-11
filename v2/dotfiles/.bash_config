@@ -1,0 +1,2 @@
+bind "set completion-ignore-case on" #make the bash autocomplete case insensitive
+bind "set show-all-if-ambiguous on"  #shows all options if ambiguouse, avoiding to press tab twice
