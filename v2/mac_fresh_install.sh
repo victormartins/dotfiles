@@ -37,5 +37,6 @@ unset files
 # Install Homebrew Packages
 ############################
 
-# Run the Homebrew Script
-# ./brew.sh
+# Run the Homebrew Scripts
+# ./brew_casks.sh
+# ./brew_formulae.sh
