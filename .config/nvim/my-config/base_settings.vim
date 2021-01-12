@@ -11,7 +11,6 @@ set confirm
 set nocompatible
 set noerrorbells
 set noswapfile
-set smartcase
 set incsearch
 set updatetime=300
 set cmdheight=2

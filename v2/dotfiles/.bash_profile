@@ -26,4 +26,4 @@ fi
 set -o vi
 
 # Set Default Editor
-# export EDITOR=nvim
+export EDITOR=nvim

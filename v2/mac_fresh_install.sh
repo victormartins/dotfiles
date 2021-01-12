@@ -57,4 +57,12 @@ echo "...done"
 
 ln -nfs ${root}/.config/alacritty ${homedir}/.config/alacritty
 ln -nfs ${root}/.config/ranger ${homedir}/.config/ranger
+ln -nfs ${root}/.config/nvim ${homedir}/.config/nvim
+
+############################
+# Config nvim
+############################
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 

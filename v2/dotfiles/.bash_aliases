@@ -2,7 +2,7 @@ function todaystr {
   echo $(date "+%Y%m%d")
 }
 
-alias nvim='nvim'
+alias vim='nvim'
 alias cls='clear'
 alias ..='cd ..'
 alias ls='ls -CGAop -lh'
