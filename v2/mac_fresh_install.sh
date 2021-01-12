@@ -11,10 +11,10 @@ configdir=${root}/.config
 
 touch ${homedir}/.env.work
 touch ${homedir}/.env.personal
+mkdir -p ~/.nvm
 
 # Download Git Auto-Completion
 curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" > ${homedir}/.git-completion.bash
-
 
 ############################
 # Create symlinks of configuration files
