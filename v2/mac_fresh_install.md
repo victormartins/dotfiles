@@ -2,7 +2,7 @@ How I Setup a New Development Machine - Using Scripts to Automate Installs and S
 https://www.youtube.com/watch?v=kIdiWut8eD8
 
 
-- Configure Keyboard: 
+- Configure Keyboard:
   Keyboard Type: ANSI
 
 - Configure Language: English(US)
@@ -26,6 +26,7 @@ https://www.youtube.com/watch?v=kIdiWut8eD8
 - Install node depenencies
   ```
   npm install -g neovim
+  npm install -g yarn
   ```
 - Install gem depenencies
   ```

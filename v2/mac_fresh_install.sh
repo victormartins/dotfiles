@@ -43,9 +43,9 @@ cd ${root}
 echo "...done"
 
 # Run the Homebrew Scripts
-# ./brew_casks.sh
-# ./brew_formulae.sh
-# ./brew_fonts.sh
+./brew_casks.sh
+./brew_formulae.sh
+./brew_fonts.sh
 
 
 ############################
@@ -62,7 +62,7 @@ ln -nfs ${root}/.config/nvim ${homedir}/.config/nvim
 ############################
 # Config nvim
 ############################
-
+# Install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
