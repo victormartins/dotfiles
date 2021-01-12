@@ -14,7 +14,6 @@ set expandtab          " convert from tab to spaces
 set smartindent        " auto indentation
 
 
-syntax on
 set nowrap
 set updatetime=50         " Make vim more responsive
 set number relativenumber " Show line numbers
@@ -58,13 +57,8 @@ set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 
-
-
-
-
-
-
-
-
-
-
+syntax on
+" Enable file specific behaviour like syntax highlighting and indentation
+filetype on
+filetype plugin on
+filetype indent on
