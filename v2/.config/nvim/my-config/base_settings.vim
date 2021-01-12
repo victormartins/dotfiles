@@ -1,4 +1,4 @@
-" set termguicolors      " Enables 24-bit RGB color in the TUI.
+set termguicolors      " Enables 24-bit RGB color in the TUI.
 
 
 " When we do "vim ." to open vim in a directory, it will source any .vimrc inside that directory
