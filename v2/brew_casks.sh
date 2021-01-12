@@ -7,6 +7,9 @@ brew install --cask google-chrome
 brew install --cask firefox
                   
 brew install --cask google-backup-and-sync
+brew install --cask dropbox
+
+brew install --cask keepassxc
 brew install --cask alfred
                   
 brew install --cask skype

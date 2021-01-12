@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 homedir=$HOME
-dotfiledir=${homedir}/dotfiles/v2/dotfiles
+root=${homedir}/dotfiles/v2
+dotfiledir=${root}/dotfiles
+configdir=${root}/.config
 
 ############################
 # Pre Conditions
@@ -36,7 +38,22 @@ unset files
 ############################
 # Install Homebrew Packages
 ############################
+echo "Changing to the ${root} directory"
+cd ${root}
+echo "...done"
 
 # Run the Homebrew Scripts
-# ./brew_casks.sh
-# ./brew_formulae.sh
+./brew_casks.sh
+./brew_formulae.sh
+./brew_fonts.sh
+
+
+############################
+# Symlink .config files
+############################
+echo "Changing to the ${configdir} directory"
+cd ${configdir}
+echo "...done"
+
+ln -nfs ${root}/.config/alacritty ${homedir}/.config/alacritty
+
