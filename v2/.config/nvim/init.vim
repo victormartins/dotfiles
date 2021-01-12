@@ -13,5 +13,11 @@ Plug 'gruvbox-community/gruvbox'                " Color scheme
 call plug#end()
 
 source $HOME/.config/nvim/my-config/base_settings.vim
+source $HOME/.config/nvim/my-config/file_type_associations.vim
 
 let mapleader=' '
+
+" change split. to vertical or to horizontal
+map <leader>th <C-w>t<C-w>H
+map <leader>tk <C-w>t<C-w>K
+

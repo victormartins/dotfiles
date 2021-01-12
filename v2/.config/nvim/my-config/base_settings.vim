@@ -14,6 +14,7 @@ set expandtab          " convert from tab to spaces
 set smartindent        " auto indentation
 
 
+syntax on
 set nowrap
 set updatetime=50         " Make vim more responsive
 set number relativenumber " Show line numbers
