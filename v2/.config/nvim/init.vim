@@ -24,6 +24,8 @@ Plug 'ap/vim-css-color'                         " Language Support - show CSS Co
 Plug 'mattn/emmet-vim'                          " Language Support Emmet
 
 Plug 'tpope/vim-fugitive'
+
+" WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 
@@ -34,6 +36,8 @@ call plug#end()
 source $HOME/.config/nvim/my-config/base_settings.vim
 source $HOME/.config/nvim/my-config/file_type_associations.vim
 
+" source $HOME/.config/nvim/plug-config/vim_airline.vim
+source $HOME/.config/nvim/plug-config/emmet.vim
 source $HOME/.config/nvim/plug-config/gruvbox.vim
 
 let mapleader=' '

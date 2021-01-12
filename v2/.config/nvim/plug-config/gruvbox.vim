@@ -9,4 +9,4 @@ colorscheme gruvbox
 set background=dark
 
 hi StatusLine   cterm=none guifg=#B8BB26 guibg=#282828
-hi StatusLineNC cterm=none guifg=#689D6A guibg=232
+hi StatusLineNC cterm=none guifg=#689D6A guibg=#282828

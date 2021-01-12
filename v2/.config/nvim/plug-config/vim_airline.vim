@@ -13,6 +13,8 @@ let g:airline_inactive_collapse=0
 let g:airline_inactive_alt_sep=1
 
 function! s:update_highlights()
+  " hi StatusLine   cterm=none guifg=#B8BB26 guibg=#282828
+  " hi StatusLineNC cterm=none guifg=#689D6A guibg=#282828
   " hi CursorLine ctermbg=none guibg=none
   " hi VertSplit ctermbg=none guibg=none
 endfunction
