@@ -43,9 +43,9 @@ cd ${root}
 echo "...done"
 
 # Run the Homebrew Scripts
-./brew_casks.sh
-./brew_formulae.sh
-./brew_fonts.sh
+# ./brew_casks.sh
+# ./brew_formulae.sh
+# ./brew_fonts.sh
 
 
 ############################
@@ -56,4 +56,5 @@ cd ${configdir}
 echo "...done"
 
 ln -nfs ${root}/.config/alacritty ${homedir}/.config/alacritty
+ln -nfs ${root}/.config/ranger ${homedir}/.config/ranger
 
