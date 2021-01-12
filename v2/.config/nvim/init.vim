@@ -23,7 +23,7 @@ Plug 'tpope/vim-endwise'                        " Language Support for Ruby - cl
 Plug 'ap/vim-css-color'                         " Language Support - show CSS Colors
 Plug 'mattn/emmet-vim'                          " Language Support Emmet
 Plug 'tpope/vim-fugitive'
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
 " WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -46,8 +46,28 @@ source $HOME/.config/nvim/my-config/keybinding_splits.vim
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+nnoremap <leader>u :UndotreeShow<CR>
+
 " Vim Fugite keybindings
+" gl is get changes from the right
+" gh is get changes from the left
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>gh :diffget //2<CR>
 " open Git Status
 nmap <leader>gs :G<CR>
+
+
+
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup clean_white_space
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+    " autocmd VimEnter * :VimApm
+    autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+augroup END
