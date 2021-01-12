@@ -22,7 +22,6 @@ Plug 'tpope/vim-rails'                          " Language Support for Rails
 Plug 'tpope/vim-endwise'                        " Language Support for Ruby - close end blocks automagically
 Plug 'ap/vim-css-color'                         " Language Support - show CSS Colors
 Plug 'mattn/emmet-vim'                          " Language Support Emmet
-
 Plug 'tpope/vim-fugitive'
 
 " WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC

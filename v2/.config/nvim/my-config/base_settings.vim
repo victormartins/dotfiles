@@ -47,6 +47,8 @@ set colorcolumn=120
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
+" Allow background transparency
+highlight Normal guibg=none
 
 
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
