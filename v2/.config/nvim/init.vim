@@ -24,6 +24,9 @@ Plug 'ap/vim-css-color'                         " Language Support - show CSS Co
 Plug 'mattn/emmet-vim'                          " Language Support Emmet
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
+Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
+
 " WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
