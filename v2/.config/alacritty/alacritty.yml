@@ -42,7 +42,7 @@ font:
     style: SemiBold
   italic:
     family: Fira Code
-    style: Bold
+    style: Light   #  Fira Code has no italic fonts :(
   size: 15.0
   offset:
     x: 0
