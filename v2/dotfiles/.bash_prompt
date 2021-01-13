@@ -101,8 +101,8 @@ fi;
 PS1="\[\033]0;\w\007\]";
 PS1+="\[${bold}\]\n"; # newline
 PS1+="\[${userStyle}\]\u"; # username
-PS1+="\[${white}\] at ";
-PS1+="\[${hostStyle}\]\h"; # host
+# PS1+="\[${white}\] at ";
+# PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\] in ";
 # PS1+="\[${green}\]\W"; # working directory
 PS1+='\[${green}\]$(pwd)'; # current path  https://superuser.com/questions/601181/how-to-display-current-path-in-command-prompt-in-linuxs-sh-not-bash
