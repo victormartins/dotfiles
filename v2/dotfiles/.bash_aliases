@@ -4,9 +4,10 @@ function todaystr {
 
 alias vim='nvim'
 alias cls='clear'
-alias ..='cd ..'
+alias ll='clear'
 alias ls='ls -CGAop -lh'
 alias lls='clear && ls'
+alias ..='cd ..'
 alias f='find . -name '
 alias today='date +%a_%b\(%d-%m-%Y\)'
 alias wtf='top -o mem -O cpu -n 20'

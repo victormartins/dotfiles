@@ -5,7 +5,7 @@ set termguicolors      " Enables 24-bit RGB color in the TUI.
 set exrc
 
 " use blinking block cursor when editing
-set guicursor+=n-v-c:block-Cursor,i-ci-ve:block-blinkwait175-blinkoff150-blinkon175,r-cr-o:hor20  
+set guicursor+=n-v-c:block-Cursor,i-ci-ve:block-blinkwait175-blinkoff150-blinkon175,r-cr-o:hor20
 
 " tabs behaviour: https://tedlogan.com/techblog3.html
 set tabstop=2 softtabstop=2
@@ -17,12 +17,12 @@ set smartindent        " auto indentation
 set nowrap
 set updatetime=50         " Make vim more responsive
 set number relativenumber " Show line numbers
-set nohlsearch            " remove highlight after copy seach
-set hidden                " keep unsaved buffers in the background
-set noerrorbells          " peace and quiet
-set incsearch             " highlight as we search
-set scrolloff=8           " always keep a few lines bellow/above when scrolling
-set cursorline            " highlight the current cursor line
+set nohlsearch            " Remove highlight after copy seach
+set hidden                " Keep unsaved buffers in the background
+set noerrorbells          " Peace and quiet
+set incsearch             " Highlight as we search
+set scrolloff=8           " Always keep a few lines bellow/above when scrolling
+set cursorline            " Highlight the current cursor line
 set splitbelow splitright " Where new splits show up
 set shortmess+=c          " Don't pass messages to |ins-completion-menu|.
 set cmdheight=2           " Extra space for messages
