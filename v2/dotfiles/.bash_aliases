@@ -5,6 +5,7 @@ function todaystr {
 alias vim='nvim'
 alias cls='clear'
 alias ll='clear'
+alias l='ls | awk -F : '"'"'{print $2}'"'"'|cut -c3-'
 alias ls='ls -CGAop -lh'
 alias lls='clear && ls'
 alias ..='cd ..'
