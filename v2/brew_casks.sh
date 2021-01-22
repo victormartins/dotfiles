@@ -22,4 +22,4 @@ brew install --cask amethyst
 brew install --cask alacritty
 brew install --cask meld
 
-
+brew install --cask docker
