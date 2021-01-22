@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "fetchsnippet-cli": "1.8.23",
-    "now": "^15.6.0",
-    "prisma": "^1.33.0"
-  }
-}
