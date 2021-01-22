@@ -1,4 +1,4 @@
-" Victor Martins Martins
+" Victor Martins
 
 " must be set before polyglot is loaded to ignore languages that create
 " problems. see: https://github.com/sheerun/vim-polyglot#troubleshooting
@@ -24,6 +24,8 @@ Plug 'ap/vim-css-color'                         " Language Support - show CSS Co
 Plug 'mattn/emmet-vim'                          " Language Support Emmet
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
+Plug 'vimwiki/vimwiki'                          " VimWiki FTW
+
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 
@@ -41,6 +43,7 @@ source $HOME/.config/nvim/my-config/file_type_associations.vim
 " source $HOME/.config/nvim/plug-config/vim_airline.vim
 source $HOME/.config/nvim/plug-config/emmet.vim
 source $HOME/.config/nvim/plug-config/gruvbox.vim
+source $HOME/.config/nvim/plug-config/vimwiki.vim
 
 let mapleader=' '
 source $HOME/.config/nvim/my-config/keybinding_splits.vim

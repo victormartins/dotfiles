@@ -98,12 +98,13 @@ else
 fi;
 
 # Set the terminal title to the current working directory.
-PS1="\[\033]0;\w\007\]";
-PS1+="\[${bold}\]\n"; # newline
-PS1+="\[${userStyle}\]\u"; # username
+PS1="";
+# PS1+="\[\033]0;\w\007\]";
+# PS1+="\[${bold}\]\n"; # newline
+# PS1+="\[${userStyle}\]\u"; # username
 # PS1+="\[${white}\] at ";
 # PS1+="\[${hostStyle}\]\h"; # host
-PS1+="\[${white}\] in ";
+# PS1+="\[${white}\] in ";
 # PS1+="\[${green}\]\W"; # working directory
 PS1+='\[${green}\]$(pwd)'; # current path  https://superuser.com/questions/601181/how-to-display-current-path-in-command-prompt-in-linuxs-sh-not-bash
 PS1+="\$(prompt_git \"\[${white}\] on \[${blue}\]\" \"\[${blue}\]\")"; # Git repository details

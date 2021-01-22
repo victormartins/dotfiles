@@ -15,7 +15,7 @@ alias wtf='top -o mem -O cpu -n 20'
 
 alias be='bundle exec'
 alias g2_today="cd ./$(todaystr)"
-alias kata='cp -r ./starting_point ./$(todaystr) && echo created ./$(todaystr) && g2_today && git add . && git commit -m "start"'
+alias kata="cp -r ./starting_point ./$(todaystr) && echo created ./$(todaystr) && g2_today && git add . && git commit -m 'start'"
 alias kkata='kata && code . && be guard'
 alias jskata='kata && npm install && code . && npx jest --watch'
 
