@@ -45,3 +45,13 @@ eval "$(rbenv init -)"
 if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
+
+
+############################
+# util functions
+############################
+# set the window title. eg: set-title my special window
+set-title() {
+  TITLE="$@"
+  PROMPT_COMMAND='echo -ne "\033]0;${TITLE}\007"'
+}
