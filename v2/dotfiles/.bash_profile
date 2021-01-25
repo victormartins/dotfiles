@@ -24,6 +24,15 @@ set -o vi
 # Set Default Editor
 export EDITOR=nvim
 
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# Fixes to install ruby versions with rbenv
+export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export CPPFLAGS="-I/usr/local/opt/libffi/include"
+
+
 
 ############################
 # NodeJS
