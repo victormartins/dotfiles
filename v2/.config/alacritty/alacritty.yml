@@ -13,6 +13,7 @@
 
 window:
   title: You can only fight the way you practice.
+  dynamic_title: true
   dimensions:
     columns: 120
     lines: 50
@@ -29,8 +30,7 @@ scrolling:
   multiplier: 3
 
 live_config_reload: true
-background_opacity: 0.95
-dynamic_title: true
+background_opacity: 0.90
 
 
 font:
