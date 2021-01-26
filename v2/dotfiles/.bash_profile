@@ -55,6 +55,10 @@ if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
 
+if [ -f ~/.bash_local ]; then
+    source ~/.bash_local
+fi
+
 
 ############################
 # util functions
