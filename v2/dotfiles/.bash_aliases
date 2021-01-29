@@ -24,6 +24,9 @@ alias jskata='kata && npm install && code . && npx jest --watch'
 alias dot_show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias dot_hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+#Ports
+alias ports_open='sudo lsof -i -P -n | grep LISTEN'
+alias port_info='function _port_info(){ sudo lsof -i:$1; };_port_info'
 
 #Git
 alias gst='clear; git status -sb'
