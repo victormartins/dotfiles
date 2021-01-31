@@ -59,6 +59,7 @@ ln -nfs ${root}/.config/alacritty ${homedir}/.config/alacritty
 ln -nfs ${root}/.config/nvim ${homedir}/.config/nvim
 ln -nfs ${root}/.config/ranger ${homedir}/.config/ranger
 ln -nfs ${root}/.config/shell ${homedir}/.config/shell
+ln -nfs ${root}/.config/zsh ${homedir}/.config/zsh
 
 ############################
 # Config nvim
