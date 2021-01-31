@@ -52,14 +52,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # Enable rbenv ruby versions
 eval "$(rbenv init -)"
-
-
-############################
-# util functions
-############################
-# WARNING: this function only works in bash shell
-# set the window title. eg: set-title my special window
-# set-title() {
-#   TITLE="$@"
-#   PROMPT_COMMAND='echo -ne "\033]0;${TITLE}\007"'
-# }
