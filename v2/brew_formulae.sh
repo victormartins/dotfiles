@@ -10,6 +10,7 @@ brew install nvm
 brew install starship  # http://starship.rs  this is the promt program
 brew install zplug     # plugin manager for zsh
 brew install zsh-syntax-highlighting
+brew install fzf
 
 brew install libyaml # dependency to install ruby
 brew install rbenv
