@@ -32,7 +32,7 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 ############################
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colors" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colors"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colorsrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colorsrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME}/.env.personal" ] && source "${XDG_CONFIG_HOME:-$HOME}/.env.personal"
 [ -f "${XDG_CONFIG_HOME:-$HOME}/.env.work" ] && source "${XDG_CONFIG_HOME:-$HOME}/.env.work"
 
