@@ -25,12 +25,14 @@ Plug 'mattn/emmet-vim'                          " Language Support Emmet
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
 Plug 'vimwiki/vimwiki'                          " VimWiki FTW
+Plug 'schickling/vim-bufonly'                   " Close all others buffers with :BOnly
 
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 
 Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 
 " WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC
 " Plug 'vim-airline/vim-airline'
