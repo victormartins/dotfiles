@@ -82,10 +82,6 @@ colors:
     text: '#FE9019'
     background: '#1D2021'
 
-cursor:
-  style: Block
-  unfocused_hollow: true
-  thickness: 1.0
 
 key_bindings:
   - { key: N,        mods: Command, action: SpawnNewInstance } # Open new Alacritty window
