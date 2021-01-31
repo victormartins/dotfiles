@@ -16,6 +16,7 @@ brew install --cask skype
 brew install --cask zoom
 brew install --cask slack
 brew install --cask vlc
+brew install --cask gimp
 
 brew install --cask caffeine
 brew install --cask amethyst
@@ -23,3 +24,4 @@ brew install --cask alacritty
 brew install --cask meld
 
 brew install --cask docker
+brew install --cask pgadmin4

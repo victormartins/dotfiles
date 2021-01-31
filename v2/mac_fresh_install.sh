@@ -9,19 +9,19 @@ configdir=${root}/.config
 # Pre Conditions
 ############################
 
-touch ${homedir}/.env.work
-touch ${homedir}/.env.personal
-mkdir -p ~/.nvm
+# touch ${homedir}/.env.work
+# touch ${homedir}/.env.personal
+# mkdir -p ~/.nvm
 
 # Download Git Auto-Completion
-curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" > ${homedir}/.git-completion.bash
+# curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" > ${homedir}/.git-completion.bash
 
 ############################
 # Create symlinks of configuration files
 ############################
 
 # list of files/folders to symlink in ${homedir}
-files="bash_aliases bash_colors bash_config bash_profile bash_prompt bashrc"
+files="shell_aliases shell_colors bash_config bash_profile bash_prompt bashrc"
 
 # change to the dotfiles directory
 echo "Changing to the ${dotfiledir} directory"

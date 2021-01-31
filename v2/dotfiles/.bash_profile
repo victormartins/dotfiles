@@ -5,11 +5,14 @@
 source "$HOME/.env.personal"
 source "$HOME/.env.work"
 
+if [ $(echo $SHELL) = '/bin/bash' ]; then
 source "$HOME/.bash_config"
-source "$HOME/.bash_colors"
 source "$HOME/.bash_prompt"
-source "$HOME/.bash_aliases"
-source "$HOME/.git-completion.bash"
+fi
+
+source "$HOME/.shell_colors"
+source "$HOME/.shell_aliases"
+# source "$HOME/.git-completion.bash"    ## TODO: see what git-completion zhs supports
 
 
 
@@ -51,12 +54,12 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(rbenv init -)"
 
 #Git auto-complete
-if [ -f ~/.git-completion.bash ]; then
-    source ~/.git-completion.bash
-fi
+# if [ -f ~/.git-completion.bash ]; then
+#     source ~/.git-completion.bash
+# fi
 
-if [ -f ~/.bash_local ]; then
-    source ~/.bash_local
+if [ -f ~/.shell_local ]; then
+    source ~/.shell_local
 fi
 
 
