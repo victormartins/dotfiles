@@ -9,9 +9,9 @@ configdir=${root}/.config
 # Pre Conditions
 ############################
 
-# touch ${homedir}/.env.work
-# touch ${homedir}/.env.personal
-# mkdir -p ~/.nvm
+touch ${homedir}/.env.work
+touch ${homedir}/.env.personal
+mkdir -p ~/.nvm
 
 # Download Git Auto-Completion
 # curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" > ${homedir}/.git-completion.bash
@@ -21,7 +21,7 @@ configdir=${root}/.config
 ############################
 
 # list of files/folders to symlink in ${homedir}
-files="shell_aliases shell_colors bash_config bash_profile bash_prompt bashrc"
+files="profile zprofile"
 
 # change to the dotfiles directory
 echo "Changing to the ${dotfiledir} directory"
@@ -56,8 +56,9 @@ cd ${configdir}
 echo "...done"
 
 ln -nfs ${root}/.config/alacritty ${homedir}/.config/alacritty
-ln -nfs ${root}/.config/ranger ${homedir}/.config/ranger
 ln -nfs ${root}/.config/nvim ${homedir}/.config/nvim
+ln -nfs ${root}/.config/ranger ${homedir}/.config/ranger
+ln -nfs ${root}/.config/shell ${homedir}/.config/shell
 
 ############################
 # Config nvim
