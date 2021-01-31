@@ -29,6 +29,9 @@ Plug 'vimwiki/vimwiki'                          " VimWiki FTW
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 
+Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 " WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -44,6 +47,7 @@ source $HOME/.config/nvim/my-config/file_type_associations.vim
 source $HOME/.config/nvim/plug-config/emmet.vim
 source $HOME/.config/nvim/plug-config/gruvbox.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
+source $HOME/.config/nvim/plug-config/fzf.vim
 
 let mapleader=' '
 source $HOME/.config/nvim/my-config/keybinding_splits.vim
