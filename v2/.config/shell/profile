@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Set Default Editor
 export EDITOR=nvim
 export BROWSER=brave
@@ -10,13 +13,23 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
-# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-# Fixes to install ruby versions with rbenv
-export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
-export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
-export LDFLAGS="-L/usr/local/opt/libffi/lib"
-export CPPFLAGS="-I/usr/local/opt/libffi/include"
+
+############################
+# Uncomment to install ruby versions on OSX M1
+# THIS MAKES OPEN A TERMINAL SLOW export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+############################
+# # To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# # Fixes to install ruby versions with rbenv
+# export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+# export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+# export LDFLAGS="-L/usr/local/opt/libffi/lib"
+# export CPPFLAGS="-I/usr/local/opt/libffi/include"
+
+
+############################
+# Source personal configs
+############################
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colors" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colors"

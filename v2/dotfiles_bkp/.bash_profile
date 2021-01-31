@@ -59,7 +59,7 @@ eval "$(rbenv init -)"
 # fi
 
 if [ -f ~/.shell_local ]; then
-    source ~/.shell_local
+    source ~/._local
 fi
 
 
