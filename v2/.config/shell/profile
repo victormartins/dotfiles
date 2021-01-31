@@ -1,0 +1,52 @@
+#!/bin/zsh
+
+# Set Default Editor
+export EDITOR=nvim
+export BROWSER=brave
+export TERMINAL=alacritty
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# Fixes to install ruby versions with rbenv
+export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export CPPFLAGS="-I/usr/local/opt/libffi/include"
+
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colors" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colors"
+[ -f "${XDG_CONFIG_HOME:-$HOME}/.env.personal" ] && source "${XDG_CONFIG_HOME:-$HOME}/.env.personal"
+[ -f "${XDG_CONFIG_HOME:-$HOME}/.env.work" ] && source "${XDG_CONFIG_HOME:-$HOME}/.env.work"
+
+
+############################
+# NodeJS
+# https://github.com/nvm-sh/nvm
+############################
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+############################
+# Other App Configs
+############################
+
+# Enable rbenv ruby versions
+eval "$(rbenv init -)"
+
+
+############################
+# util functions
+############################
+# WARNING: this function only works in bash shell
+# set the window title. eg: set-title my special window
+# set-title() {
+#   TITLE="$@"
+#   PROMPT_COMMAND='echo -ne "\033]0;${TITLE}\007"'
+# }
