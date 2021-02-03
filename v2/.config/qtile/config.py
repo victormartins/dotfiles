@@ -40,6 +40,7 @@ mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
+term = "alacritty"
 
 
 @lazy.function
@@ -56,6 +57,9 @@ def window_to_next_group(qtile):
 
 keys = [
 
+
+
+
 # APP LAUCHERS
 
     Key([mod, "shift"], "r", lazy.spawn('gmrun')),
@@ -63,86 +67,112 @@ keys = [
     # Key([mod, 'shift'], "r", lazy.spawn('rofi -show run')),
     # Key(["mod1"], "r", lazy.spawn('xfce4-appfinder')),
 
+
+    Key(['mod1', 'shift'], "i", lazy.layout.flip()),                         # Invert main Pannel
+
+    Key(['mod1', 'shift'], "f", lazy.window.toggle_floating()),              # Toggle Floating
+
+    Key(['mod1', 'shift'], "space", lazy.next_layout()),                     # Cycle to next layout
+    Key(['mod1', 'control', 'shift'], "space", lazy.prev_layout()),          # Cycle to next layout backwards
+    Key(['mod1', 'control', 'shift'], "s", lazy.to_layout_index(0)),         # Switch to Tall Layout
+    Key(['mod1', 'control', 'shift'], "d", lazy.to_layout_index(1)),         # Switch to Full Screen
+
+    Key(['mod1', 'shift'], "k", lazy.layout.down()),                         # Move Focus Clock Wise
+    Key(['mod1', 'shift'], "j", lazy.layout.up()),                           # Move Focus Anti Clock Wise
+    Key(['mod1', 'control', 'shift'], "k", lazy.layout.shuffle_down()),      # Swap Focus Window Clock Wise
+    Key(['mod1', 'control', 'shift'], "j", lazy.layout.shuffle_up()),        # Swap Focus Window Anti Clock Wise
+
+    Key(['mod1', 'shift'], "l", lazy.layout.grow()),                         # grow selected pannel
+    Key(['mod1', 'shift'], "h", lazy.layout.shrink()),                       # shrink selected pannel
+
+    Key(['mod4', "control"], "r", lazy.restart()),                           # Restart qTile
+    Key(['mod4'], "r", lazy.spawncmd()),                                     # App Launcher
+    Key(['mod4'], "Return", lazy.spawn(term)),                               # Start Terminal
+    Key(['mod4'], "w", lazy.window.kill()),                                  # Close Window
+
+
+
+
+
+
 # FUNCTION KEYS
 
-    Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
+    # Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
 
 # SUPER + FUNCTION KEYS
 
-    Key([mod], "e", lazy.spawn('atom')),
-    Key([mod], "c", lazy.spawn('conky-toggle')),
-    Key([mod], "f", lazy.window.toggle_fullscreen()),
-    Key([mod], "m", lazy.spawn('pragha')),
-    Key([mod], "q", lazy.window.kill()),
-    Key([mod], "t", lazy.spawn('urxvt')),
-    Key([mod], "v", lazy.spawn('pavucontrol')),
-    Key([mod], "w", lazy.spawn('vivaldi-stable')),
-    Key([mod], "x", lazy.spawn('arcolinux-logout')),
-    Key([mod], "Escape", lazy.spawn('xkill')),
-    Key([mod], "Return", lazy.spawn('termite')),
-    Key([mod], "KP_Enter", lazy.spawn('termite')),
-    Key([mod], "F1", lazy.spawn('vivaldi-stable')),
-    Key([mod], "F2", lazy.spawn('atom')),
-    Key([mod], "F3", lazy.spawn('inkscape')),
-    Key([mod], "F4", lazy.spawn('gimp')),
-    Key([mod], "F5", lazy.spawn('meld')),
-    Key([mod], "F6", lazy.spawn('vlc --video-on-top')),
-    Key([mod], "F7", lazy.spawn('virtualbox')),
-    Key([mod], "F8", lazy.spawn('thunar')),
-    Key([mod], "F9", lazy.spawn('evolution')),
-    Key([mod], "F10", lazy.spawn("spotify")),
-    Key([mod], "F11", lazy.spawn('rofi -show run -fullscreen')),
-    Key([mod], "F12", lazy.spawn('rofi-theme-selector')),
+    # Key([mod], "e", lazy.spawn('atom')),
+    # Key([mod], "c", lazy.spawn('conky-toggle')),
+    # Key([mod], "f", lazy.window.toggle_fullscreen()),
+    # Key([mod], "m", lazy.spawn('pragha')),
+    # Key([mod], "t", lazy.spawn('urxvt')),
+    # Key([mod], "v", lazy.spawn('pavucontrol')),
+    # Key([mod], "w", lazy.spawn('vivaldi-stable')),
+    # Key([mod], "x", lazy.spawn('arcolinux-logout')),
+    # Key([mod], "Escape", lazy.spawn('xkill')),
+    # Key([mod], "KP_Enter", lazy.spawn('termite')),
+    # Key([mod], "F1", lazy.spawn('vivaldi-stable')),
+    # Key([mod], "F2", lazy.spawn('atom')),
+    # Key([mod], "F3", lazy.spawn('inkscape')),
+    # Key([mod], "F4", lazy.spawn('gimp')),
+    # Key([mod], "F5", lazy.spawn('meld')),
+    # Key([mod], "F6", lazy.spawn('vlc --video-on-top')),
+    # Key([mod], "F7", lazy.spawn('virtualbox')),
+    # Key([mod], "F8", lazy.spawn('thunar')),
+    # Key([mod], "F9", lazy.spawn('evolution')),
+    # Key([mod], "F10", lazy.spawn("spotify")),
+    # Key([mod], "F11", lazy.spawn('rofi -show run -fullscreen')),
+    # Key([mod], "F12", lazy.spawn('rofi-theme-selector')),
 
 # SUPER + SHIFT KEYS
-    Key([mod, "shift"], "Return", lazy.spawn('thunar')),
-    Key([mod, "shift"], "q", lazy.window.kill()),
-    Key([mod, "shift", "control"], "r", lazy.restart()),
-    Key([mod, "control"], "r", lazy.restart()),
+    # Key([mod, "shift"], "Return", lazy.spawn('thunar')),
+    # Key([mod, "shift"], "q", lazy.window.kill()),
+    # Key([mod, "shift", "control"], "r", lazy.restart()),
+    # Key([mod, "control"], "r", lazy.restart()),
     # Key([mod, "shift"], "x", lazy.shutdown()),
 
 # CONTROL + ALT KEYS
 
-    Key(["mod1", "control"], "Next", lazy.spawn('conky-rotate -n')),
-    Key(["mod1", "control"], "Prior", lazy.spawn('conky-rotate -p')),
-    Key(["mod1", "control"], "a", lazy.spawn('xfce4-appfinder')),
-    Key(["mod1", "control"], "b", lazy.spawn('thunar')),
-    Key(["mod1", "control"], "c", lazy.spawn('catfish')),
-    Key(["mod1", "control"], "e", lazy.spawn('arcolinux-tweak-tool')),
-    Key(["mod1", "control"], "f", lazy.spawn('firefox')),
-    Key(["mod1", "control"], "g", lazy.spawn('chromium -no-default-browser-check')),
-    Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
-    Key(["mod1", "control"], "k", lazy.spawn('arcolinux-logout')),
-    Key(["mod1", "control"], "l", lazy.spawn('arcolinux-logout')),
-    Key(["mod1", "control"], "m", lazy.spawn('xfce4-settings-manager')),
-    Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
-    Key(["mod1", "control"], "p", lazy.spawn('pamac-manager')),
-    Key(["mod1", "control"], "r", lazy.spawn('rofi-theme-selector')),
-    Key(["mod1", "control"], "s", lazy.spawn('spotify')),
-    Key(["mod1", "control"], "t", lazy.spawn('termite')),
-    Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
-    Key(["mod1", "control"], "v", lazy.spawn('vivaldi-stable')),
-    Key(["mod1", "control"], "w", lazy.spawn('arcolinux-welcome-app')),
-    Key(["mod1", "control"], "Return", lazy.spawn('termite')),
+    # Key(["mod1", "control"], "Next", lazy.spawn('conky-rotate -n')),
+    # Key(["mod1", "control"], "Prior", lazy.spawn('conky-rotate -p')),
+    # Key(["mod1", "control"], "a", lazy.spawn('xfce4-appfinder')),
+    # Key(["mod1", "control"], "b", lazy.spawn('thunar')),
+    # Key(["mod1", "control"], "c", lazy.spawn('catfish')),
+    # Key(["mod1", "control"], "e", lazy.spawn('arcolinux-tweak-tool')),
+    # Key(["mod1", "control"], "f", lazy.spawn('firefox')),
+    # Key(["mod1", "control"], "g", lazy.spawn('chromium -no-default-browser-check')),
+    # Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
+    # Key(["mod1", "control"], "k", lazy.spawn('arcolinux-logout')),
+    # Key(["mod1", "control"], "l", lazy.spawn('arcolinux-logout')),
+    # Key(["mod1", "control"], "m", lazy.spawn('xfce4-settings-manager')),
+    # Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
+    # Key(["mod1", "control"], "p", lazy.spawn('pamac-manager')),
+    # Key(["mod1", "control"], "r", lazy.spawn('rofi-theme-selector')),
+    # Key(["mod1", "control"], "s", lazy.spawn('spotify')),
+    # Key(["mod1", "control"], "t", lazy.spawn('termite')),
+    # Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
+    # Key(["mod1", "control"], "v", lazy.spawn('vivaldi-stable')),
+    # Key(["mod1", "control"], "w", lazy.spawn('arcolinux-welcome-app')),
+    # Key(["mod1", "control"], "Return", lazy.spawn('termite')),
 
 # ALT + ... KEYS
 
-    Key(["mod1"], "f", lazy.spawn('variety -f')),
-    Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
-    Key(["mod1"], "n", lazy.spawn('variety -n')),
-    Key(["mod1"], "p", lazy.spawn('variety -p')),
-    Key(["mod1"], "t", lazy.spawn('variety -t')),
-    Key(["mod1"], "Up", lazy.spawn('variety --pause')),
-    Key(["mod1"], "Down", lazy.spawn('variety --resume')),
-    Key(["mod1"], "Left", lazy.spawn('variety -p')),
-    Key(["mod1"], "Right", lazy.spawn('variety -n')),
+    # Key(["mod1"], "f", lazy.spawn('variety -f')),
+    # Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
+    # Key(["mod1"], "n", lazy.spawn('variety -n')),
+    # Key(["mod1"], "p", lazy.spawn('variety -p')),
+    # Key(["mod1"], "t", lazy.spawn('variety -t')),
+    # Key(["mod1"], "Up", lazy.spawn('variety --pause')),
+    # Key(["mod1"], "Down", lazy.spawn('variety --resume')),
+    # Key(["mod1"], "Left", lazy.spawn('variety -p')),
+    # Key(["mod1"], "Right", lazy.spawn('variety -n')),
 
 # VARIETY KEYS WITH PYWAL
 
-    Key(["mod1", "shift"], "f", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -f')),
-    Key(["mod1", "shift"], "p", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -p')),
-    Key(["mod1", "shift"], "n", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -n')),
-    Key(["mod1", "shift"], "u", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -u')),
+    # Key(["mod1", "shift"], "f", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -f')),
+    # Key(["mod1", "shift"], "p", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -p')),
+    # Key(["mod1", "shift"], "n", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -n')),
+    # Key(["mod1", "shift"], "u", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -u')),
 
 # CONTROL + SHIFT KEYS
 
@@ -175,91 +205,13 @@ keys = [
 #    Key([], "XF86AudioPrev", lazy.spawn("mpc prev")),
 #    Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
 
-# QTILE LAYOUT KEYS
-    Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "space", lazy.next_layout()),
-
-# CHANGE FOCUS
-    Key([mod], "Up", lazy.layout.up()),
-    Key([mod], "Down", lazy.layout.down()),
-    Key([mod], "Left", lazy.layout.left()),
-    Key([mod], "Right", lazy.layout.right()),
-    Key([mod], "k", lazy.layout.up()),
-    Key([mod], "j", lazy.layout.down()),
-    Key([mod], "h", lazy.layout.left()),
-    Key([mod], "l", lazy.layout.right()),
 
 
-# RESIZE UP, DOWN, LEFT, RIGHT
-    Key([mod, "control"], "l",
-        lazy.layout.grow_right(),
-        lazy.layout.grow(),
-        lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
-        ),
-    Key([mod, "control"], "Right",
-        lazy.layout.grow_right(),
-        lazy.layout.grow(),
-        lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
-        ),
-    Key([mod, "control"], "h",
-        lazy.layout.grow_left(),
-        lazy.layout.shrink(),
-        lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
-        ),
-    Key([mod, "control"], "Left",
-        lazy.layout.grow_left(),
-        lazy.layout.shrink(),
-        lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
-        ),
-    Key([mod, "control"], "k",
-        lazy.layout.grow_up(),
-        lazy.layout.grow(),
-        lazy.layout.decrease_nmaster(),
-        ),
-    Key([mod, "control"], "Up",
-        lazy.layout.grow_up(),
-        lazy.layout.grow(),
-        lazy.layout.decrease_nmaster(),
-        ),
-    Key([mod, "control"], "j",
-        lazy.layout.grow_down(),
-        lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
-        ),
-    Key([mod, "control"], "Down",
-        lazy.layout.grow_down(),
-        lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
-        ),
 
 
-# FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    Key([mod, "shift"], "f", lazy.layout.flip()),
 
-# FLIP LAYOUT FOR BSP
-    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
 
-# MOVE WINDOWS UP OR DOWN BSP LAYOUT
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
-
-# MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
-    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "Left", lazy.layout.swap_left()),
-    Key([mod, "shift"], "Right", lazy.layout.swap_right()),
-
-# TOGGLE FLOATING LAYOUT
-    Key([mod, "shift"], "space", lazy.window.toggle_floating()),]
+]
 
 groups = []
 
@@ -300,24 +252,33 @@ for i in groups:
     ])
 
 
-def init_layout_theme():
-    return {"margin":5,
-            "border_width":2,
-            "border_focus": "#5e81ac",
-            "border_normal": "#4c566a"
-            }
+# def init_layout_theme():
+#     return {"margin":5,
+#             "border_width":2,
+#             "border_focus": "#5e81ac",
+#             "border_normal": "#4c566a"
+#             }
 
-layout_theme = init_layout_theme()
+# layout_theme = init_layout_theme()
 
+layout_theme = {
+  "border_width": 4,
+  "margin": 8,
+  # "border_focus": "d79921", # gold
+  "border_focus": "#18FFFF", # blue
+  # "border_focus": "C6FF00", # green
+  # "border_normal":"9d0006", # red
+  "border_normal":"#607D8B"    # gray
+}
 
 layouts = [
-    layout.MonadTall(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
-    layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
-    layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
-    layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme)
+    layout.MonadTall(**layout_theme),
+    layout.Max(**layout_theme),
+    # layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
+    # layout.Matrix(**layout_theme),
+    # layout.Bsp(**layout_theme),
+    # layout.Floating(**layout_theme),
+    # layout.RatioTile(**layout_theme),
 ]
 
 # COLORS FOR THE BAR
@@ -561,7 +522,8 @@ mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size())
+         start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
 dgroups_key_binder = None
@@ -628,7 +590,7 @@ def set_floating(window):
 floating_types = ["notification", "toolbar", "splash", "dialog"]
 
 
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
