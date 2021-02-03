@@ -8,6 +8,8 @@ brew install ranger
 brew install nvm
 brew install zsh
 brew install exa       # ls replacement
+brew install fd        # find replacement
+brew install ripgrep   # find replacement
 
 brew install starship  # http://starship.rs  this is the promt program
 brew install zplug     # plugin manager for zsh

@@ -30,8 +30,8 @@ Plug 'schickling/vim-bufonly'                   " Close all others buffers with 
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 
-Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
 
 
 " WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC
