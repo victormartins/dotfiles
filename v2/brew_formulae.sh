@@ -6,7 +6,8 @@ brew install neofetch
 brew install neovim
 brew install ranger
 brew install nvm
-brew install exa
+brew install zsh
+brew install exa       # ls replacement
 
 brew install starship  # http://starship.rs  this is the promt program
 brew install zplug     # plugin manager for zsh
