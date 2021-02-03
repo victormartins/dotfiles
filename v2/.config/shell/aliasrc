@@ -5,13 +5,23 @@ function todaystr {
 alias vim='nvim'
 alias cls='clear'
 alias oo='clear'
-alias ll='ls -CGAop -lh'
+# alias ll='ls -CGAop -lh'
+
+alias ls='exa'
+alias ll='exa --all --long'
+
 alias l='ll | awk -F : '"'"'{print $2}'"'"'|cut -c3-'
 alias lls='clear && ll'
 alias ..='cd ..'
 alias f='find . -name '
 alias today='date +%a_%b\(%d-%m-%Y\)'
 alias wtf='top -o mem -O cpu -n 20'
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 alias be='bundle exec'
 alias g2_today="cd ./$(todaystr)"
