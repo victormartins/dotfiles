@@ -28,6 +28,8 @@ set shortmess+=c          " Don't pass messages to |ins-completion-menu|.
 set cmdheight=2           " Extra space for messages
 set autoread              " Detect file changes and read them
 set confirm               " Ask to confirm commands like "qa"
+set sidescroll=1          " Enable horizontal scroll
+set sidescrolloff=8       " Always keep some chars ahead of current cursor
 
 " backup strategy
 set noswapfile
