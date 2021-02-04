@@ -62,10 +62,10 @@ keys = [
 
 # APP LAUCHERS
 
-    Key([mod, "shift"], "r", lazy.spawn('gmrun')),
-    Key([mod], "r", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
+    # Key([mod, "shift"], "r", lazy.spawn('gmrun')),
     # Key([mod, 'shift'], "r", lazy.spawn('rofi -show run')),
-    # Key(["mod1"], "r", lazy.spawn('xfce4-appfinder')),
+    Key([mod, "shift"], "r", lazy.spawn('xfce4-appfinder')),
+    Key([mod], "r", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#ba000d' -sb '#ff7961' -sf '#191919' -fn 'NotoMonoRegular:pixelsize=32'")),
 
 
     Key(['mod1', 'shift'], "i", lazy.layout.flip()),                         # Invert main Pannel
@@ -86,9 +86,11 @@ keys = [
     Key(['mod1', 'shift'], "h", lazy.layout.shrink()),                       # shrink selected pannel
 
     Key(['mod4', "control"], "r", lazy.restart()),                           # Restart qTile
-    Key(['mod4'], "r", lazy.spawncmd()),                                     # App Launcher
     Key(['mod4'], "Return", lazy.spawn(term)),                               # Start Terminal
     Key(['mod4'], "w", lazy.window.kill()),                                  # Close Window
+    Key([mod], "x", lazy.spawn('arcolinux-logout')),
+    Key([mod, "shift"], "Return", lazy.spawn('thunar')),                     # Thunar is a modern file manager for the Xfce Desktop Environment
+    # Key([mod, "shift"], "x", lazy.shutdown()),
 
 
 
@@ -108,7 +110,6 @@ keys = [
     # Key([mod], "t", lazy.spawn('urxvt')),
     # Key([mod], "v", lazy.spawn('pavucontrol')),
     # Key([mod], "w", lazy.spawn('vivaldi-stable')),
-    # Key([mod], "x", lazy.spawn('arcolinux-logout')),
     # Key([mod], "Escape", lazy.spawn('xkill')),
     # Key([mod], "KP_Enter", lazy.spawn('termite')),
     # Key([mod], "F1", lazy.spawn('vivaldi-stable')),
@@ -125,11 +126,9 @@ keys = [
     # Key([mod], "F12", lazy.spawn('rofi-theme-selector')),
 
 # SUPER + SHIFT KEYS
-    # Key([mod, "shift"], "Return", lazy.spawn('thunar')),
     # Key([mod, "shift"], "q", lazy.window.kill()),
     # Key([mod, "shift", "control"], "r", lazy.restart()),
     # Key([mod, "control"], "r", lazy.restart()),
-    # Key([mod, "shift"], "x", lazy.shutdown()),
 
 # CONTROL + ALT KEYS
 
