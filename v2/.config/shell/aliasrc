@@ -1,4 +1,4 @@
-function todaystr {
+function todaystr() {
   echo $(date "+%Y%m%d")
 }
 
