@@ -13,6 +13,9 @@ brew install ripgrep   # find replacement
 
 brew install starship  # http://starship.rs  this is the promt program
 brew install zplug     # plugin manager for zsh
+
+brew install zsh
+brew install zsh-completions
 brew install zsh-syntax-highlighting
 brew install fzf
 

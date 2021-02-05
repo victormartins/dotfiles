@@ -33,24 +33,9 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colorsrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colorsrc"
-[ -f "${HOME}/.shell_local" ] && source "${HOME}/.shell_local"
+[ -f "${HOME}/.shell_local" ] && source "${HOME}/.shell_local" # use this to load ./config/shell/profile_mac and profile_linux
 [ -f "${HOME}/.env.personal" ] && source "${HOME}/.env.personal"
 [ -f "${HOME}/.env.work" ] && source "${HOME}/.env.work"
 
 
 
-############################
-# NodeJS
-# https://github.com/nvm-sh/nvm
-############################
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-
-############################
-# Other App Configs
-############################
-
-# Enable rbenv ruby versions
-eval "$(rbenv init -)"
