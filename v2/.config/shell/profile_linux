@@ -17,7 +17,7 @@ export NVM_DIR="$HOME/.nvm"
 # Other App Configs
 ############################
 
-# Enable rbenv ruby versions
+# Enable brew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Enable fzf

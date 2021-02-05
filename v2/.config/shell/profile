@@ -39,3 +39,5 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 
 
+# Enable rbenv ruby versions
+eval "$(rbenv init -)"
