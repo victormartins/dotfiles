@@ -69,8 +69,9 @@ upon upgrade/reinstall.
 
 
 
-
-
+# TODO: fix pacman scripts to not ask permissions and update servers
+v2/.pacman_fonts.sh
+# TODO: produce v2/.pacman_programs.sh
 sudo pacman -S keepassxc
 
 # install vim plug: https://github.com/junegunn/vim-plug
