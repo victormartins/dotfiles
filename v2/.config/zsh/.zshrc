@@ -67,6 +67,7 @@ function set-title() {
 
 
 zplug "plugins/zsh-interactive-cd",   from:oh-my-zsh
+zplug "plugins/zsh-completions",   from:oh-my-zsh
 
 
 [ -f ~/.config/zsh/.fzf.zsh ] && source ~/.config/zsh/.fzf.zsh

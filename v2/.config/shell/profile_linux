@@ -5,6 +5,14 @@
 export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
+# Enable zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 ############################
 # NodeJS
 # https://github.com/nvm-sh/nvm
