@@ -26,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
 Plug 'vimwiki/vimwiki'                          " VimWiki FTW
 Plug 'schickling/vim-bufonly'                   " Close all others buffers with :BOnly
+Plug 'brooth/far.vim'                           " Find and replace project wide
 
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
