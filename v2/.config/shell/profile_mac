@@ -1,4 +1,12 @@
 ############################
+# ZSH
+############################
+# Enable zplug to manage zsh plugins
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+
+############################
 # NodeJS
 # https://github.com/nvm-sh/nvm
 ############################
@@ -13,3 +21,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # Enable rbenv ruby versions
 eval "$(rbenv init -)"
+
+# Enable fzf
+[ -f ~/.config/zsh/.fzf_mac.zsh ] && source ~/.config/zsh/.fzf_mac.zsh
+
+# Must be the last thing! requires brew install zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -65,13 +65,8 @@ function set-title() {
 }
 
 
-# Enable zplug to manage zsh plugins
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/zsh-interactive-cd",   from:oh-my-zsh
 
-# Must be the last thing! requires this to be installed: https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.config/zsh/.fzf.zsh ] && source ~/.config/zsh/.fzf.zsh
