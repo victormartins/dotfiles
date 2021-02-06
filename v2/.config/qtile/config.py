@@ -343,6 +343,12 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                         ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
                # widget.Net(
                #          font="Noto Sans",
                #          fontsize=12,
@@ -351,26 +357,28 @@ def init_widgets_list():
                #          background=colors[1],
                #          padding = 0,
                #          ),
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
-               # widget.NetGraph(
-               #          font="Noto Sans",
-               #          fontsize=12,
-               #          bandwidth="down",
-               #          interface="auto",
-               #          fill_color = colors[8],
-               #          foreground=colors[2],
-               #          background=colors[1],
-               #          graph_color = colors[8],
-               #          border_color = colors[2],
-               #          padding = 0,
-               #          border_width = 1,
-               #          line_width = 1,
-               #          ),
+               widget.TextBox(
+                        font="FontAwesome",
+                        text="  ",
+                        foreground=colors[4],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=16
+                        ),
+               widget.NetGraph(
+                        font="Noto Sans",
+                        fontsize=12,
+                        bandwidth="down",
+                        interface="auto",
+                        fill_color = colors[8],
+                        foreground=colors[2],
+                        background=colors[1],
+                        graph_color = colors[8],
+                        border_color = colors[2],
+                        padding = 0,
+                        border_width = 1,
+                        line_width = 1,
+                        ),
                # widget.Sep(
                #          linewidth = 1,
                #          padding = 10,
@@ -485,6 +493,14 @@ def init_widgets_list():
                         background=colors[1],
                         icon_size=20,
                         padding = 4
+                        ),
+               widget.TextBox(
+                        font="FontAwesome",
+                        text=" ",
+                        foreground=colors[4],
+                        background=colors[1],
+                        padding = 5,
+                        fontsize=16
                         ),
               ]
     return widgets_list
