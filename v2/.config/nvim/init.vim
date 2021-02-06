@@ -27,6 +27,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
 Plug 'vimwiki/vimwiki'                          " VimWiki FTW
 Plug 'schickling/vim-bufonly'                   " Close all others buffers with :BOnly
 Plug 'brooth/far.vim'                           " Find and replace project wide
+Plug 'justinmk/vim-sneak'                       " Quickly goto text
 
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
@@ -51,6 +52,7 @@ source $HOME/.config/nvim/plug-config/emmet.vim
 source $HOME/.config/nvim/plug-config/gruvbox.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/plug-config/sneak.vim
 
 let mapleader=' '
 source $HOME/.config/nvim/my-config/keybinding_splits.vim
