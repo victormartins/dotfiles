@@ -72,7 +72,7 @@ keys = [
 
     Key(['mod1', 'shift'], "f", lazy.window.toggle_floating()),              # Toggle Floating
 
-    Key(['mod1', 'shift'], "space", lazy.next_layout()),                     # Cycle to next layout
+    Key(['mod1', 'shift'], "space", lazy.next_layout()),                     # Cycle to next layout (acting as toggle fullscreen for now)
     Key(['mod1', 'control', 'shift'], "space", lazy.prev_layout()),          # Cycle to next layout backwards
     Key(['mod1', 'control', 'shift'], "s", lazy.to_layout_index(0)),         # Switch to Tall Layout
     Key(['mod1', 'control', 'shift'], "d", lazy.to_layout_index(1)),         # Switch to Full Screen
@@ -175,7 +175,7 @@ keys = [
 
 # CONTROL + SHIFT KEYS
 
-    Key([mod2, "shift"], "Escape", lazy.spawn('xfce4-taskmanager')),
+    # Key([mod2, "shift"], "Escape", lazy.spawn('xfce4-taskmanager')),
 
 # SCREENSHOTS
 
@@ -253,13 +253,15 @@ for i in groups:
 # layout_theme = init_layout_theme()
 
 layout_theme = {
-  "border_width": 4,
+  "border_width": 3,
   "margin": 8,
   # "border_focus": "d79921", # gold
-  "border_focus": "#18FFFF", # blue
+  "border_focus": "#fb4934", # red
+  # "border_focus": "#18FFFF", # blue
   # "border_focus": "C6FF00", # green
   # "border_normal":"9d0006", # red
-  "border_normal":"#607D8B"    # gray
+  # "border_normal":"#607D8B"    # gray
+  "border_normal":"#bdae93"    # light brown
 }
 
 layouts = [
@@ -278,10 +280,10 @@ def init_colors():
     return [["#2F343F", "#2F343F"], # color 0
             ["#2F343F", "#2F343F"], # color 1
             ["#c0c5ce", "#c0c5ce"], # color 2
-            ["#fba922", "#fba922"], # color 3
+            ["#fabd2f", "#fabd2f"], # color 3
             ["#3384d0", "#3384d0"], # color 4
             ["#f3f4f5", "#f3f4f5"], # color 5
-            ["#cd1f3f", "#cd1f3f"], # color 6
+            ["#fb4934", "#fb4934"], # color 6
             ["#62FF00", "#62FF00"], # color 7
             ["#6790eb", "#6790eb"], # color 8
             ["#a9a9a9", "#a9a9a9"]] # color 9
