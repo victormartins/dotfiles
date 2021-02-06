@@ -357,6 +357,9 @@ def init_widgets_list():
                #          background=colors[1],
                #          padding = 0,
                #          ),
+               widget.CapsNumLockIndicator(
+                   padding = 5
+               ),
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
@@ -430,6 +433,10 @@ def init_widgets_list():
                         background=colors[1],
                         padding = 0,
                         fontsize=16
+                        ),
+               widget.CPU(
+                        update_interval= 1.0,
+                        padding = 5,
                         ),
                widget.CPUGraph(
                         border_color = colors[2],
