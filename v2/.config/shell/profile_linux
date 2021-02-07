@@ -1,4 +1,10 @@
 ############################
+# Alias
+############################
+
+alias g2_proj='cd /mnt/DROPBOX/Projects'
+
+############################
 # ZSH
 ############################
 # Enable zplug to manage zsh plugins
@@ -33,4 +39,5 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Must be the last thing! requires brew install zsh-syntax-highlighting
 source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
