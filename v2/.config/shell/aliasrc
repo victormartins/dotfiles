@@ -7,7 +7,7 @@ alias cls='clear'
 alias oo='clear'
 # alias ll='ls -CGAop -lh'
 
-alias ls='exa'
+alias ls='exa -l'
 alias ll='exa --all --long'
 
 alias l='ll | awk -F : '"'"'{print $2}'"'"'|cut -c3-'
