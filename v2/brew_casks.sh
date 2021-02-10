@@ -11,6 +11,7 @@ brew install --cask dropbox
 
 brew install --cask keepassxc
 brew install --cask alfred
+brew install --cask boostnote
 
 brew install --cask skype
 brew install --cask zoom
