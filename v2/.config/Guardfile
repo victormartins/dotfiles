@@ -1,0 +1,22 @@
+# frozen_string_literal: true
+
+rspec_options = {
+  first_match: true,
+  all_after_pass: false,
+  failed_mode: :focus,
+  cmd: 'clear && bundle exec rspec',
+  cmd_additional_args: '--format progress --no-profile'
+}
+
+guard :rspec, rspec_options do
+  # watch app
+  watch(%r{^app/(.+)\.rb$})     { './spec' }
+  watch(%r{^lib/(.+)\.rb$})     { './spec' }
+  watch(%r{^db/(.+)\.rb$})      { './spec' }
+  watch(%r{^config/routes.rb$}) { './spec' }
+
+  # watch specs
+  watch('spec/spec_helper.rb')           { './spec' }
+  watch(%r{^spec/requests/.+_spec\.rb$}) { './spec/requests' }
+  watch(%r{^spec/.+_spec\.rb$})
+end
