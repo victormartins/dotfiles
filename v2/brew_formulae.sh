@@ -29,3 +29,4 @@ brew install htop
 brew install awscli
 brew install aws-iam-authenticator
 brew install kubectl
+brew install openapi-generator
