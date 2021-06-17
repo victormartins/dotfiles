@@ -2,6 +2,17 @@
 ## Buffers
 `:BOnly` - Close all buffers expect current. (added by: `Plug 'schickling/vim-bufonly'`)
 
+## Select
+### Code
+`vii` - Select inside block
+`viI` - Select inside block and wrapper
+## Github (Plugin Vim Fugitive)
+`leader gs` - Open git status
+`s` - Stage
+`u` - UnStage
+`cc` - (Inside git status) commit
+`cc` - (Inside git status) commit -ammend
+
 ## Splits
 ~/dotfiles/v2/.config/nvim/my-config/keybinding_splits.vim
 `leader + th`   - change split to vertical
