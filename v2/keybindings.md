@@ -1,4 +1,17 @@
 # VIM
+## Macros
+Steps:
+1 - Start the macro:
+  - Put the cursor on the line we want to edit.
+  - Press `q<some_letter>` to start the marco. Eg: `qa`
+  - We should now read `recording @a` in the bottom.
+2 - Do the work.
+3 - End the macro:
+  - Press `q`
+4 - Play the macro:
+  - Press `@<letter_with_macro>`. Eg: `@a`
+
+
 ## Buffers
 `:BOnly` - Close all buffers expect current. (added by: `Plug 'schickling/vim-bufonly'`)
 
