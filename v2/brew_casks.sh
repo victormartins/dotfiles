@@ -23,6 +23,9 @@ brew install --cask caffeine
 brew install --cask amethyst
 brew install --cask alacritty
 brew install --cask meld
+brew install --cask licecap
+brew install --cask sourcetree
 
 brew install --cask docker
 brew install --cask pgadmin4
+brew install --cask postman

@@ -23,6 +23,10 @@ brew install libyaml # dependency to install ruby
 brew install rbenv
 brew install python3
 
-
 brew install tree
 brew install htop
+
+brew install awscli
+brew install aws-iam-authenticator
+brew install kubectl
+# brew install openapi-generator # can't use this. will use npm since we need a specific version

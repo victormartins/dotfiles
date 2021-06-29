@@ -38,6 +38,9 @@ set nowritebackup
 set undodir=$HOME/.config/nvim/undodir " WARNING: this folder needs to be manually created
 set undofile  " have a backup per file
 
+" folding configurations
+set foldmethod=syntax
+set foldlevel=3
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
