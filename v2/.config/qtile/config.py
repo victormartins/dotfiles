@@ -89,7 +89,7 @@ keys = [
     Key(['mod4'], "Return", lazy.spawn(term)),                               # Start Terminal
     Key(['mod4'], "w", lazy.window.kill()),                                  # Close Window
     Key([mod, "shift"], "Return", lazy.spawn('thunar')),                     # Thunar is a modern file manager for the Xfce Desktop Environment
-    Key([mod], "x", lazy.spawn('arcolinux-logout')),
+    Key([mod], "x", lazy.spawn('arcolinux-logout')),                         # Shutdown Screen
     # Key([mod, "shift"], "x", lazy.shutdown()),
 
 
