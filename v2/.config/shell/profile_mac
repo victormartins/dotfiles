@@ -25,3 +25,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # Must be the last thing! requires brew install zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+# Enable jenv to manage Java versions.
+# jenv is installed by homebrew with brew install jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

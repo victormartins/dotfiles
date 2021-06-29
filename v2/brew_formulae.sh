@@ -29,4 +29,11 @@ brew install htop
 brew install awscli
 brew install aws-iam-authenticator
 brew install kubectl
+
+# Java Stuff
+# https://www.youtube.com/watch?v=dkjnY_RY75o
+brew install openjdk # Install Java OpenJDK
+brew install maven   # Java Project Management
+brew install jenv # to manage multiple java versions
+
 # brew install openapi-generator # can't use this. will use npm since we need a specific version
