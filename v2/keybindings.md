@@ -1,4 +1,20 @@
 # VIM
+## Utils
+### Print HTML
+With a document open and syntax run command `:TOhtml`.
+A html document will be generated that can be used to print the code.
+
+### Write/Read Markup
+We need these plugins
+```
+Plug 'mzlogin/vim-markdown-toc'                                        " Language Support for Markdown - Generate table of contents
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
+```
+
+To read markup, open a markup file and run `:MarkdownPreview`.
+Write `[TOC]` on the top of the document to see an auto generated Table of Contents
+
+
 ## Macros
 Steps:
 1 - Start the macro:
