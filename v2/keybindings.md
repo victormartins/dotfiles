@@ -35,6 +35,7 @@ Steps:
 ### Code
 `vii` - Select inside block
 `viI` - Select inside block and wrapper
+
 ## Github (Plugin Vim Fugitive)
 `leader gs` - Open git status
 `s` - Stage
@@ -47,6 +48,16 @@ Steps:
 `leader + th`   - change split to vertical
 `leader + tk`   - change split to horizontal
 
+## Tabs
+`:tabnew`     - Create New tab
+`:tabp`       - Go to previous Tab
+`:tabNext`    - Go to next tab
+`{count}gt`   -  Go to tab page {count}.
+
+## Folding
+`zA` - Toggle Folding All
+`za` - Toggle Folding Section
+`:set foldlevel=3` - Set fold level
 
 # Amethyst
 ```
