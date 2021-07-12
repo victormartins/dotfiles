@@ -29,39 +29,39 @@ Steps:
 
 
 ## Buffers
-`:BOnly` - Close all buffers expect current. (added by: `Plug 'schickling/vim-bufonly'`)
+- `:BOnly` - Close all buffers expect current. (added by: `Plug 'schickling/vim-bufonly'`)
 
 ## Select
 ### Code
-`vii` - Select inside block
-`viI` - Select inside block and wrapper
+- `vii` - Select inside block
+- `viI` - Select inside block and wrapper
 
 ## Github (Plugin Vim Fugitive)
-`leader gs` - Open git status
-`s` - Stage
-`u` - UnStage
-`cc` - (Inside git status) commit
-`cc` - (Inside git status) commit -ammend
+- `leader gs` - Open git status
+- `s` - Stage
+- `u` - UnStage
+- `cc` - (Inside git status) commit
+- `cc` - (Inside git status) commit -ammend
 
 ## Splits
 ~/dotfiles/v2/.config/nvim/my-config/keybinding_splits.vim
-`leader + th`   - change split to vertical
-`leader + tk`   - change split to horizontal
+- `leader + th`   - change split to vertical
+- `leader + tk`   - change split to horizontal
 
 ## Tabs
-`:tabnew`     - Create New tab
-`:tabp`       - Go to previous Tab
-`:tabNext`    - Go to next tab
-`{count}gt`   -  Go to tab page {count}.
+- `:tabnew`     - Create New tab
+- `:tabp`       - Go to previous Tab
+- `:tabNext`    - Go to next tab
+- `{count}gt`   -  Go to tab page {count}.
 
 ## Folding
-`zM` - Close all folds
-`zm` - Increase Folding by 1
-`zr` - Reduce Folding by 1
-`zR` - Open all folds
-`zA` - Toggle Folding All under cursor
-`za` - Toggle Folding Section under cursor
-`:set foldlevel=3` - Set fold level
+- `zM` - Close all folds
+- `zm` - Increase Folding by 1
+- `zr` - Reduce Folding by 1
+- `zR` - Open all folds
+- `zA` - Toggle Folding All under cursor
+- `za` - Toggle Folding Section under cursor
+- `:set foldlevel=3` - Set fold level
 
 # Amethyst
 ```
