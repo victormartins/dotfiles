@@ -55,8 +55,12 @@ Steps:
 `{count}gt`   -  Go to tab page {count}.
 
 ## Folding
-`zA` - Toggle Folding All
-`za` - Toggle Folding Section
+`zM` - Close all folds
+`zm` - Increase Folding by 1
+`zr` - Reduce Folding by 1
+`zR` - Open all folds
+`zA` - Toggle Folding All under cursor
+`za` - Toggle Folding Section under cursor
 `:set foldlevel=3` - Set fold level
 
 # Amethyst
