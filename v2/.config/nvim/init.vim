@@ -29,6 +29,8 @@ Plug 'schickling/vim-bufonly'                   " Close all others buffers with 
 Plug 'brooth/far.vim'                           " Find and replace project wide
 Plug 'justinmk/vim-sneak'                       " Quickly goto text
 Plug 'honza/vim-snippets'                       " Snippts FTW
+Plug 'tribela/vim-transparent'                  " Allow background transparency( :TransparentToggle)
+
 
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
