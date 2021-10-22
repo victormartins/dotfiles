@@ -49,6 +49,7 @@ Steps:
 - `leader + tk`   - change split to horizontal
 
 ## Tabs
+- `:tabs`     - List Tabs
 - `:tabnew`     - Create New tab
 - `:tabp`       - Go to previous Tab
 - `:tabNext`    - Go to next tab
