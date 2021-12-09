@@ -47,6 +47,9 @@ Steps:
 ~/dotfiles/v2/.config/nvim/my-config/keybinding_splits.vim
 - `leader + th`   - change split to vertical
 - `leader + tk`   - change split to horizontal
+- `ctrl + w then |` expand view horizontally
+- `ctrl + w then _` expand view vertically
+- `ctrl + w then =` normalise splits
 
 ## Tabs
 - `:tabs`     - List Tabs
