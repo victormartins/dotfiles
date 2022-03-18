@@ -1,4 +1,7 @@
 # VIM
+## TO LEARN
+- How to see the documentation of a given Ruby class and scroll the documentation
+
 ## Utils
 ### Print HTML
 With a document open and syntax run command `:TOhtml`.
