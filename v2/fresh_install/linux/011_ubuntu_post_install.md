@@ -1,0 +1,1 @@
+- Go to "Ubuntu Software" and run updates

@@ -7,6 +7,9 @@
 With a document open and syntax run command `:TOhtml`.
 A html document will be generated that can be used to print the code.
 
+### Emmet
+`CTRL + Y then ,` Expand
+
 ### Write/Read Markup
 We need these plugins
 ```
