@@ -1,0 +1,34 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Victor Martins
+  email = email@victormartins.com
+
+[core]
+  excludesfile = /Users/victor.martins/.gitignore_global
+  editor = nvim
+
+[color]
+  ui = true
+
+# https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool#34119867
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+    tool = meld
+[mergetool "meld"]
+    # $LOCAL is the file in the current branch (e.g. master).
+    # $REMOTE is the file in the branch being merged (e.g. branch_name).
+    # $MERGED is the partially merged file with the merge conflict information in it.
+    # $BASE is the shared commit ancestor of $LOCAL and $REMOTE, this is to say the file as it was when the branch containing $REMOTE was originally created.
+    # Choose one of these 2 lines bellow (not both!).
+    # The difference is just in which starting edit position you'd prefer;
+    # $MERGED for the file which contains the partially merged file with the merge conflict information or
+    # $BASE for the shared commit ancestor of $LOCAL and $REMOTE.
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+
+# run git lola to see a git history in a graph form
+[alias] lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
