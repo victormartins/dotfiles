@@ -1,3 +1,19 @@
+# Steps to configure a new Mac
+- Change mouse config: remove check of "natural" scroll
+- Install Homebrew:
+  https://brew.sh
+
+- Install git with homebrew
+- Clone dotfiles repo with git to the home folder
+  ```
+  cd ~
+  git clone https://github.com/victormartins/dotfiles.git
+  ```
+
+
+
+
+
 How I Setup a New Development Machine - Using Scripts to Automate Installs and Save Time
 https://www.youtube.com/watch?v=kIdiWut8eD8
 
@@ -7,7 +23,6 @@ https://www.youtube.com/watch?v=kIdiWut8eD8
 
 - Configure Language: English(US)
 - Install Xcode
-- Install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 - Get my scripts: https://github.com/victormartins/dotfiles.git
 
 ./dotfiles/v2/mac_fresh_install.sh
