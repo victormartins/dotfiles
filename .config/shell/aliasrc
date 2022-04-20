@@ -1,0 +1,48 @@
+function todaystr() {
+  echo $(date "+%Y%m%d")
+}
+
+alias vim='nvim'
+alias cls='clear'
+alias oo='clear'
+# alias ll='ls -CGAop -lh'
+
+alias ls='exa -l'
+alias ll='exa --all --long'
+
+alias l='ll | awk -F : '"'"'{print $2}'"'"'|cut -c3-'
+alias lls='clear && ll'
+alias ..='cd ..'
+alias f='find . -name '
+alias today='date +%a_%b\(%d-%m-%Y\)'
+alias wtf='top -o mem -O cpu -n 20'
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias be='bundle exec'
+alias g2_today="cd ./$(todaystr)"
+alias kata="cp -r ./starting_point ./$(todaystr) && echo created ./$(todaystr) && g2_today && git add . && git commit -m 'start'"
+alias kkata='kata && code . && be guard'
+alias jskata='kata && npm install && code . && npx jest --watch'
+
+
+# Show/hide hidden files in Finder
+alias dot_show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias dot_hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+#Ports
+alias ports_open='sudo lsof -i -P -n | grep LISTEN'
+alias port_info='function _port_info(){ sudo lsof -i:$1; };_port_info'
+
+#Git
+alias gst='clear; git status -sb'
+alias gitclean='git clean -f -d -n' #DOn't delete, just show the problems
+alias gitcleany='git clean -f -d' #Delete at will
+alias gco='git checkout'
+alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
+alias gls="git log  --oneline -10"
+alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local"

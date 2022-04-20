@@ -1,0 +1,43 @@
+############################
+# Alias
+############################
+
+alias g2_proj='cd /mnt/DROPBOX/Projects'
+
+############################
+# ZSH
+############################
+# Enable zplug to manage zsh plugins
+export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# Enable zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+############################
+# NodeJS
+# https://github.com/nvm-sh/nvm
+############################
+export NVM_DIR="$HOME/.nvm"
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+############################
+# Other App Configs
+############################
+
+# Enable brew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# Enable fzf
+[ -f ~/.config/zsh/.fzf_linux.zsh ] && source ~/.config/zsh/.fzf_linux.zsh
+
+# Must be the last thing! requires brew install zsh-syntax-highlighting
+source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+

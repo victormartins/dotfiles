@@ -1,0 +1,83 @@
+#!/bin/zsh
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Set Default Editor
+export EDITOR=nvim
+export BROWSER=brave
+export TERMINAL=alacritty
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+
+
+############################
+# Uncomment to install ruby versions on OSX M1
+# THIS MAKES OPEN A TERMINAL SLOW export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+############################
+# # To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# # Fixes to install ruby versions with rbenv
+# export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+# export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+# export LDFLAGS="-L/usr/local/opt/libffi/lib"
+# export CPPFLAGS="-I/usr/local/opt/libffi/include"
+
+
+############################
+# Source personal configs
+############################
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colorsrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/colorsrc"
+
+[ -f "${HOME}/.shell_local" ] && source "${HOME}/.shell_local"   # use this to load stuff particular to this machine
+[ -f "${HOME}/.env.personal" ] && source "${HOME}/.env.personal" # use this to load ENVs particular to this machine
+
+
+############################
+# ZSH
+############################
+# Enable zplug to manage zsh plugins
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+
+############################
+# NodeJS
+# https://github.com/nvm-sh/nvm
+############################
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+############################
+# Other App Configs
+############################
+# Enable fzf
+# [ -f ~/.config/zsh/.fzf_mac.zsh ] && source ~/.config/zsh/.fzf_mac.zsh
+
+# Must be the last thing! requires brew install zsh-syntax-highlighting
+# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+############################
+# eval libraries
+############################
+
+# Enable homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Enable rbenv ruby versions
+eval "$(rbenv init -)"
+
+
+# Enable jenv to manage Java versions.
+# Only use this if jenv was installed. See brew_formulae.sh in the dotfiles folder.
+#
+# jenv is installed by homebrew with brew install jenv
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
