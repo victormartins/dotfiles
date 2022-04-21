@@ -17,9 +17,9 @@ ln -nsf $HOME/dotfiles/.config    $HOME/.config
 curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" > $HOME/.git-completion.bash
 
 # Run the Homebrew Scripts
-.$HOME/dotfiles/brew_casks.sh
-.$HOME/dotfiles/brew_formulae.sh
-.$HOME/dotfiles/brew_fonts.sh
+sh -c '$HOME/dotfiles/brew_casks.sh'
+sh -c '$HOME/dotfiles/brew_formulae.sh'
+sh -c '$HOME/dotfiles/brew_fonts.sh'
 
 ############################
 # Config nvim
