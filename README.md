@@ -14,6 +14,8 @@
   ./install.sh
   ```
 
+- Copy my .shh folder from Keybase private folder
+
 # Post Install
 - Configure Keyboard:
   - Keyboard Type: ANSI
@@ -60,3 +62,5 @@
   rbenv install 2.7.2  # install a given version
   ```
 
+- Configure [NVIM](NVIM)
+  - Open nvim and run `:PlugInstall`
