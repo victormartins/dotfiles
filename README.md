@@ -64,3 +64,12 @@
 
 - Configure [NVIM](NVIM)
   - Open nvim and run `:PlugInstall`
+
+
+
+
+# App Store Apps
+
+## 2DO
+Sync with dropbox. Go to settings, select sync and dropbox.
+Then click "link to account" and use dropbox credentials.
