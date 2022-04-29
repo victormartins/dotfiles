@@ -32,6 +32,11 @@ brew install aws-iam-authenticator
 brew install kubectl                # work with kubernetes
 brew install minikube               # use kubernetes locally
 
+# Dev tools
+brew install yarn
+brew install redis
+brew install postgres
+
 # Java Stuff
 # https://www.youtube.com/watch?v=dkjnY_RY75o
 # brew install openjdk # Install Java OpenJDK
