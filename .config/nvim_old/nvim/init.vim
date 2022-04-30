@@ -15,7 +15,7 @@ Plug 'tpope/vim-eunuch'                         " Delete, Rename, Move files and
 Plug 'tpope/vim-obsession'                      " Save vim sessions before exit
 Plug 'tpope/vim-surround'                       " Custom Operator - Handle the surrounding things :)
 Plug 'kana/vim-textobj-user'                    " Custom Text Object - How to create custom text objects. (Dependency for vim-textobj-ruby)
-Plug 'rhysd/vim-textobj-ruby'                   " Custom Text Object - Ruby (r)
+" Plug 'rhysd/vim-textobj-ruby'                   " Custom Text Object - Ruby (r)
 Plug 'michaeljsmith/vim-indent-object'          " Custom Text Object - indentations (i)
 
 " Plug 'sheerun/vim-polyglot'                     " Language Support for the Win
@@ -49,18 +49,18 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview
 " Reload current file (:so %) and :PlugInstall to install plugins.
 call plug#end()
 
-source $HOME/.config/nvim/my-config/base_settings.vim
-source $HOME/.config/nvim/my-config/file_type_associations.vim
-
+" Configure Plugins:
 " source $HOME/.config/nvim/plug-config/vim_airline.vim
-source $HOME/.config/nvim/plug-config/emmet.vim
+" source $HOME/.config/nvim/plug-config/emmet.vim
 source $HOME/.config/nvim/plug-config/gruvbox.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/sneak.vim
 source $HOME/.config/nvim/plug-config/snippets.vim
 
 let mapleader=' '
+source $HOME/.config/nvim/my-config/base_settings.vim
+source $HOME/.config/nvim/my-config/file_type_associations.vim
 source $HOME/.config/nvim/my-config/keybinding_splits.vim
 
 " Move lines up and down in visual mode
