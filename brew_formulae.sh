@@ -22,7 +22,7 @@ brew install fzf
 
 brew install libyaml # dependency to install ruby
 brew install rbenv
-# brew install python3
+brew install python3 # dependency for neovim
 
 brew install tree
 brew install htop

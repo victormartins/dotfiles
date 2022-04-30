@@ -43,6 +43,9 @@
 
 
 # Configure Dev tools
+## Configure NVIM
+In vim, run `:checkhealth` to see with depenencies are missing.
+We start by installing the depenencies:
 - Install node depenencies
   ```
   npm install -g neovim
