@@ -1,0 +1,8 @@
+{
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+  "coc.preferences.formatOnTypeFiletypes":["css", "html", "yaml", "js", "rb"],
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.promptDownload": true
+}
