@@ -18,14 +18,14 @@ Plug 'kana/vim-textobj-user'                    " Custom Text Object - How to cr
 Plug 'rhysd/vim-textobj-ruby'                   " Custom Text Object - Ruby (r)
 Plug 'michaeljsmith/vim-indent-object'          " Custom Text Object - indentations (i)
 
-Plug 'sheerun/vim-polyglot'                     " Language Support for the Win
-Plug 'tpope/vim-rails'                          " Language Support for Rails
-Plug 'tpope/vim-endwise'                        " Language Support for Ruby - close end blocks automagically
+" Plug 'sheerun/vim-polyglot'                     " Language Support for the Win
+" Plug 'tpope/vim-rails'                          " Language Support for Rails
+" Plug 'tpope/vim-endwise'                        " Language Support for Ruby - close end blocks automagically
 
 Plug 'ap/vim-css-color'                         " Language Support - show CSS Colors
-Plug 'mattn/emmet-vim'                          " Language Support Emmet
+" Plug 'mattn/emmet-vim'                          " Language Support Emmet
 Plug 'tpope/vim-fugitive'                       " git integration
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} " The power of Completion
 Plug 'vimwiki/vimwiki'                          " VimWiki FTW
 Plug 'schickling/vim-bufonly'                   " Close all others buffers with :BOnly
 Plug 'brooth/far.vim'                           " Find and replace project wide
@@ -37,8 +37,8 @@ Plug 'tribela/vim-transparent'                  " Allow background transparency(
 Plug 'mzlogin/vim-markdown-toc'                 " Language Support for Markdown - Generate table of contents
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Preview for Markdown TODO: Install nodejs and yarn
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'                         " The power of Fuzzy Finder
 
 
 " WARNING: Vim Airline breaks the color of the StatusLine and StatusLineNC
