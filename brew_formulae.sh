@@ -33,8 +33,17 @@ brew install kubectl                # work with kubernetes
 brew install minikube               # use kubernetes locally
 
 # Dev tools
-brew install yarn
+# https://edgeguides.rubyonrails.org/development_dependencies_install.html#local-development
+brew install vips                   # Rails Dependency
+brew install poppler                # Rails Dependency
+brew install mupdf                  # Rails Dependency
+brew install ffmpeg                 # Rails Dependency
+brew install imagemagick            # Rails Dependency
+brew install ffmpeg                 # Rails Dependency
+brew install esbuild                # Rails Dependency. Extremely fast JavaScript bundler and minifier
+brew install yarn                   # Rails Dependency
 brew install redis
+brew install memcached
 brew install postgres
 
 # Java Stuff
