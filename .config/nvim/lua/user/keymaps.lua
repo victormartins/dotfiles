@@ -50,3 +50,16 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+
+
+-- undotree plugin
+keymap("n", "<leader>u", ":UndotreeShow<cr>", opts)
+
+-- Vim Fugitive Keybindings
+-- Vim Fugite keybindings
+-- gl is get changes from the right
+-- gh is get changes from the left
+keymap("n", "<leader>gl", ":diffget //3<cr>", opts)
+keymap("n", "<leader>gh", ":diffget //2<cr>", opts)
+-- open Git Status
+keymap("n", "<leader>gs", ":G<cr>", opts)

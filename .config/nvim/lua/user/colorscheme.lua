@@ -6,10 +6,10 @@ if not status_ok then
   return
 end
 
-vim.g.gruvbox_contrast_dark='hard'
-vim.g.gruvbox_number_column='bg1'
-vim.g.gruvbox_color_column='bg1'
-vim.g.gruvbox_vert_split='aqua'
+vim.g.gruvbox_contrast_dark="hard"
+vim.g.gruvbox_number_column="bg1"
+vim.g.gruvbox_color_column="bg1"
+vim.g.gruvbox_vert_split="aqua"
 vim.g.gruvbox_improved_strings=0
 vim.g.gruvbox_italic=1
 
