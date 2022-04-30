@@ -41,3 +41,6 @@ luac.out
 
 undodir/
 !undodir/.gitkeep
+
+# this file is auto generated
+plugin/packer_compiled.lua
