@@ -43,23 +43,21 @@
 
 
 # Configure Dev tools
-- Install NodeJS (nvm was installed by the script)
-  ```
-  nvm install 14
-  ```
 - Install node depenencies
   ```
   npm install -g neovim
   npm install -g yarn
   ```
-- Install gem depenencies
-  ```
-  gem install neovim
-  ```
+
 - Install ruby (rbenv was installed by the script)
   ```
   rbenv install -l     # check available versions
   rbenv install 2.7.2  # install a given version
+  ```
+
+- Install gem depenencies
+  ```
+  gem install neovim
   ```
 
 - Configure [NVIM](NVIM)
