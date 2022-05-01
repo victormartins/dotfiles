@@ -66,7 +66,6 @@ return packer.startup(function(use)
 
   use 'ap/vim-css-color'                         -- Language Support - show CSS Colors
   -- use 'mattn/emmet-vim'                          -- Language Support Emmet
-  use 'tpope/vim-fugitive'                       -- git integration
   -- use 'neoclide/coc.nvim', {'branch': 'release'} -- The power of Completion
   use 'vimwiki/vimwiki'                          -- VimWiki FTW
   use 'schickling/vim-bufonly'                   -- Close all others buffers with :BOnly
@@ -75,9 +74,14 @@ return packer.startup(function(use)
   use 'honza/vim-snippets'                       -- Snippts FTW
   use 'tribela/vim-transparent'                  -- Allow background transparency( :TransparentToggle)
 
+
+  -- Git
+  use 'tpope/vim-fugitive'                       -- git integration
+  use "lewis6991/gitsigns.nvim"                  -- show git decorations on the left
+
+  -- Markdown
   use 'mzlogin/vim-markdown-toc'              -- Language Support for Markdown - Generate table of contents
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) -- Preview for Markdown TODO: Install nodejs and yarn
-
 
   -- Code Completion "cmp" plugins
   -- This is the core plugin: https://github.com/hrsh7th/nvim-cmp
