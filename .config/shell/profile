@@ -13,6 +13,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
+# where I put my bin helpers
+export PATH="$HOME/.config/bin:$PATH"
 
 ############################
 # Uncomment to install ruby versions on OSX M1
