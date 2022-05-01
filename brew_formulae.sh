@@ -11,6 +11,7 @@ brew install ripgrep   # find replacement
 brew install jq        # JSON tool
 brew install svn       # Subversion. Required to install fonts with brew
 # brew install ranger  # File navigator
+brew install youtube-dl
 
 brew install starship  # http://starship.rs  this is the promt program
 
