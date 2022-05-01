@@ -63,3 +63,12 @@ keymap("n", "<leader>gl", ":diffget //3<cr>", opts)
 keymap("n", "<leader>gh", ":diffget //2<cr>", opts)
 -- open Git Status
 keymap("n", "<leader>gs", ":G<cr>", opts)
+
+
+-- Telescope Keybindings
+-- Find files with preview
+keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+-- Find files without preview
+keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+-- Grep files
+keymap("n", "<C-g>", "<cmd>Telescope live_grep<cr>", opts)
