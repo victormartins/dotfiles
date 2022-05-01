@@ -81,6 +81,7 @@ return packer.startup(function(use)
   -- Code Completion "cmp" plugins
   -- This is the core plugin: https://github.com/hrsh7th/nvim-cmp
   -- When we add cmd plugins, adjust the "sources" section in the cmd.lua script,
+  -- When we add cmd plugins, adjust the "vim_item.menu" section in the cmd.lua script,
   -- since this is where we define the order of the completions we see in the menu.
   -- We can find new plugins here:
   -- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
@@ -90,11 +91,16 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
-  -- snippets
+  -- snippets (the cmd plugin above is configured to use the LuaSnip plugin bellow)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a collection of snippets for different languages
 
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
