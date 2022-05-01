@@ -33,15 +33,17 @@ scrolling:
 live_config_reload: true
 
 
+# I should be able to see these Icons with the font bellow:
+#   
 font:
   normal:
-    family: Fira Code
-    style: Light
+    family: FiraCode Nerd Font
+    style: Retina
   bold:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: SemiBold
   italic:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Light   #  Fira Code has no italic fonts :(
   size: 15.0
   offset:
