@@ -106,6 +106,13 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
 
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate", -- comment this line if installing treesitter for the first time
+  }
+  use "p00f/nvim-ts-rainbow" -- Treesitter plugin: rainbow will colorize matching parenthesis and other wrappers
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
