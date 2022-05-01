@@ -42,6 +42,7 @@ packer.init {
 -- Install your plugins here
 -- Do :Packer<tab> to see more Packer commands.
 -- Press q to exit the packer window
+-- Find Plugins here: https://github.com/rockerBOO/awesome-neovim/blob/main/README.md
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"                -- Have packer manage itself
   use "nvim-lua/popup.nvim"                   -- An implementation of the Popup API from vim in Neovim
@@ -112,6 +113,8 @@ return packer.startup(function(use)
     run = ":TSUpdate", -- comment this line if installing treesitter for the first time
   }
   use "p00f/nvim-ts-rainbow" -- Treesitter plugin: rainbow will colorize matching parenthesis and other wrappers
+
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
