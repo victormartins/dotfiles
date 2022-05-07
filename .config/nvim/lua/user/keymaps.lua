@@ -38,6 +38,11 @@ keymap("n", "<Down>", ":resize -2<CR>", opts)
 keymap("n", "<Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<Right>", ":vertical resize +2<CR>", opts)
 
+
+-- Navigate through tabs
+keymap("n", "<C-l>", ":tabNext<cr>", opts)
+keymap("n", "<C-h>", ":tabNext<cr>", opts)
+
 -- when Yanking always keep the same value on the register instead of overiding when pasting over
 keymap("v", "p", '"_dP', opts)
 
