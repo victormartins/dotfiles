@@ -1,3 +1,6 @@
+-- HELP:
+-- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
+
 local M = {}
 
 -- TODO: backfill this to template
