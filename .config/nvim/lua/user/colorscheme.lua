@@ -15,5 +15,5 @@ vim.g.gruvbox_italic=1
 
 vim.opt.background = "dark"
 
--- highlight StatusLine   cterm=none guifg=#B8BB26 guibg=#282828
--- highlight StatusLineNC cterm=none guifg=#689D6A guibg=#282828
+vim.cmd "highlight StatusLine   cterm=none guifg=#B8BB26 guibg=#282828"
+vim.cmd "highlight StatusLineNC cterm=none guifg=#689D6A guibg=#282828"
