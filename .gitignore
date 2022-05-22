@@ -1,3 +1,4 @@
 *.swp
 .DS_Store
 irb_history
+.config/htop/htoprc
