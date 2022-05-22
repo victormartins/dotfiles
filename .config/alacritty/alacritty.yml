@@ -38,7 +38,7 @@ live_config_reload: true
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Retina
+    style: Light
   bold:
     family: FiraCode Nerd Font
     style: SemiBold

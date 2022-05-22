@@ -76,6 +76,8 @@ Steps:
 - `:tabp`       - Go to previous Tab
 - `:tabNext`    - Go to next tab
 - `{count}gt`   -  Go to tab page {count}.
+- `<C-l>`       - Go to tab on the left
+- `<C-h>`       - Go to tab on the right
 
 ## Folding
 - `zM` - Close all folds
