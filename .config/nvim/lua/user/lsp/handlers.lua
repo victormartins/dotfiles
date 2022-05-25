@@ -9,7 +9,7 @@ M.setup = function()
     { name = "DiagnosticSignError", text = "" }, -- ﮊ      
     { name = "DiagnosticSignWarn",  text = "" }, --  ﮏ    
     { name = "DiagnosticSignHint",  text = "" }, --   ﮻    ﯦ ﯧ
-    { name = "DiagnosticSignInfo",  text = "" }, --        
+    { name = "DiagnosticSignInfo",  text = "" }, --        
   }
 
   for _, sign in ipairs(signs) do
