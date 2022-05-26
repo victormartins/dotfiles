@@ -14,7 +14,6 @@
   ./install.sh
   ```
 
-- Copy my .shh folder from Keybase private folder
 
 # Post Install
 - Configure Keyboard:
@@ -36,11 +35,16 @@ Check the Keybindings file and do OSX ones.
 - Enable Dropbox
 - Get KeepassXC up and running (DB in Dropbox)
 - Sync Brave Browser
-
-
 - Config Email and Calendar
 - Config Slack
 
+- Copy my .shh folder from Keybase private folder
+  - Login to Github
+  - Configure local dotfiles folder to use ssh to connect to github
+  ```bash
+  git remote rm origin
+  git remote add origin git@github.com:victormartins/dotfiles.git
+  ```
 
 
 # Configure Dev tools
