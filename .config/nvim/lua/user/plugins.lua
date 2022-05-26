@@ -73,6 +73,7 @@ return packer.startup(function(use)
   use 'justinmk/vim-sneak'                       -- Quickly goto text
   use 'honza/vim-snippets'                       -- Snippts FTW
   use 'tribela/vim-transparent'                  -- Allow background transparency( :TransparentToggle)
+  use 'mattn/emmet-vim'
 
 
   -- Git
