@@ -38,6 +38,7 @@ Check the Keybindings file and do OSX ones.
 - Config Email and Calendar
 - Config Slack
 
+# Configure Git
 - Copy my .shh folder from Keybase private folder
   - Login to Github
   - Configure local dotfiles folder to use ssh to connect to github
