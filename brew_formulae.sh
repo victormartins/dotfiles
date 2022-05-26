@@ -10,6 +10,7 @@ brew install fd        # find replacement
 brew install ripgrep   # find replacement
 brew install jq        # JSON tool
 brew install svn       # Subversion. Required to install fonts with brew
+brew install wget      # Download stuff from the internet
 # brew install ranger  # File navigator
 brew install youtube-dl
 
