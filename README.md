@@ -21,7 +21,8 @@
   - Keyboard Type: ANSI
   - Configure Language: English(US)
 
-- Change mouse config: remove check of "natural" scroll
+Check the Keybindings file and do OSX ones.
+`./help/keybindings.md`
 
 
 # Configure Applications

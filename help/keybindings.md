@@ -1,19 +1,32 @@
+# Keybindings
+[TOC]
+
+# OSX
+## Keyboard
+- Keyboard: Add US and set US
+<img src='./img/Keyboard.png'>
+<img src='./img/keyboard_shortcuts_00.png'>
+<img src='./img/keyboard_shortcuts_01.png'>
+
+## Mission Control
+<img src='./img/OSX__mission_control.png'>
+
 # VIM
 ## TO LEARN
 - How to see the documentation of a given Ruby class and scroll the documentation
 
 ## LSP
-`K`   - See code documentation of hovering code
-`K + K` - Enter code documentation window. `q` will exit
-
-`gd` - Go to definition
-`gd` - Go to definition
-`gr` - Go to references
-`gl` - Show line diagnostics (eg: Rubocop)
-
-These are not available in Ruby
-`gD` - Go to declaration
-`gi` - Go to implementation
+- `K`   - See code documentation of hovering code
+- `K + K` - Enter code documentation window. `q` will exit
+ 
+- `gd` - Go to definition
+- `gd` - Go to definition
+- `gr` - Go to references
+- `gl` - Show line diagnostics (eg: Rubocop)
+ 
+- These are not available in Ruby
+- `gD` - Go to declaration
+- `gi` - Go to implementation
 
 ## Utils
 ### Print HTML
@@ -115,3 +128,11 @@ mod2 + O      Move Focus to other Screen Clockwise
 mod2 + L      Swap Focus Window to Next Screen Clock Wise
 mod2 + H      Swap Focus Window to Next Screen Counter Clock Wise
 ```
+<img src='./img/amethist_00.png' >
+<img src='./img/amethist_01.png' >
+<img src='./img/amethist_02.png' >
+<img src='./img/amethist_03.png' >
+<img src='./img/amethist_04.png' >
+<img src='./img/amethist_05.png' >
+<img src='./img/amethist_06.png' >
+

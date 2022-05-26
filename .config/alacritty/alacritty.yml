@@ -45,7 +45,7 @@ font:
   italic:
     family: FiraCode Nerd Font
     style: Light   #  Fira Code has no italic fonts :(
-  size: 15.0
+  size: 18.0
   offset:
     x: 0
     y: 0
