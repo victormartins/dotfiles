@@ -31,10 +31,10 @@ vim.opt.relativenumber = true                   -- set relative numbered lines
 
 vim.opt.hlsearch = false                        -- remove highlight after copy search
 vim.opt.hidden = true                           -- keep unsaved buffers in the background
-vim.opt.errorbells = false                      -- peace and quet
+vim.opt.errorbells = false                      -- peace and quiet
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 8                           
+vim.opt.scrolloff = 8
 vim.opt.sidescroll = 1                          -- enable horizontal scroll
 vim.opt.sidescrolloff = 8                       -- always keep some chars ahead of the current cursor
 
