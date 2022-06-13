@@ -32,6 +32,7 @@ scrolling:
 
 live_config_reload: true
 
+draw_bold_text_with_bright_colors: true
 
 # I should be able to see these Icons with the font bellow:
 #   
@@ -45,7 +46,7 @@ font:
   italic:
     family: FiraCode Nerd Font
     style: Light   #  Fira Code has no italic fonts :(
-  size: 18.0
+  size: 20.0
   offset:
     x: 0
     y: 0
