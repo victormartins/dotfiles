@@ -38,6 +38,7 @@ brew install --cask docker
 brew install --cask pgadmin4
 brew install --cask postman
 brew install --cask xquartz   #  Rails Dependency
+brew install --cask visual-studio-code
 
 # To install Java JDK
 # To chose other java versions see https://github.com/AdoptOpenJDK/homebrew-openjdk

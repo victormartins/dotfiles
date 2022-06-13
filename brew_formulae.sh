@@ -46,7 +46,8 @@ brew install esbuild                # Rails Dependency. Extremely fast JavaScrip
 brew install yarn                   # Rails Dependency
 brew install redis
 brew install memcached
-brew install postgres
+# brew install postgresql
+# brew install postgresql@12
 
 # Java Stuff
 # https://www.youtube.com/watch?v=dkjnY_RY75o
