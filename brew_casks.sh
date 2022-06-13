@@ -30,6 +30,7 @@ brew install --cask vlc
 brew install --cask caffeine
 brew install --cask amethyst
 brew install --cask alacritty
+brew install --cask kitty
 brew install --cask meld
 brew install --cask licecap
 brew install --cask sourcetree
