@@ -44,5 +44,5 @@ alias gitclean='git clean -f -d -n' #DOn't delete, just show the problems
 alias gitcleany='git clean -f -d' #Delete at will
 alias gco='git checkout'
 alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
-alias gls="git log  --oneline -10"
+alias gls="git log  --oneline -25"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local"
