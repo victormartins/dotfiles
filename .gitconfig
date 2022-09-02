@@ -1,10 +1,10 @@
 # This is Git's per-user configuration file.
 [user]
   name = Victor Martins
-  email = email@victormartins.com
+  email = victor.martins@easol.com
 
 [core]
-  excludesfile = /Users/victor.martins/.gitignore_global
+	excludesfile = /Users/victormartins/.gitignore_global
   editor = nvim
 
 [color]
@@ -32,3 +32,11 @@
 
 # run git lola to see a git history in a graph form
 [alias] lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+[init]
+	defaultBranch = main
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
