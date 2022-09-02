@@ -31,6 +31,10 @@
 ## GitMessenger
 Type :GitMessenger to show the commit msg for the line under the cursor
 
+## GBrowse
+- Select one or more lines and type :GBrowse to open the browser on that spot
+- In vim-fugitive, select a commit and type :GBrowse to open it in the browser
+
 ## Utils
 ### Print HTML
 With a document open and syntax run command `:TOhtml`.

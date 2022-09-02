@@ -63,8 +63,6 @@ return packer.startup(function(use)
   -- use 'rhysd/vim-textobj-ruby'              -- Custom Text Object - Ruby (r)
   use 'michaeljsmith/vim-indent-object'          -- Custom Text Object - indentations (i)
 
-  use 'rhysd/git-messenger.vim'               -- See commit messages for line under the cursor
-
   use 'sickill/vim-pasta'                     -- Automatically indent code when copy pasting
   use 'RRethy/nvim-treesitter-endwise'        -- Language Support for Ruby, Lua, Vimscript, Bash to close blocks automagically
   -- use 'sheerun/vim-polyglot'                     -- Language Support for the Win
@@ -83,8 +81,10 @@ return packer.startup(function(use)
 
 
   -- Git
-  use 'tpope/vim-fugitive'                       -- git integration
-  use "lewis6991/gitsigns.nvim"                  -- show git decorations on the left
+  use 'tpope/vim-fugitive'                    -- git integration
+  use 'tpope/vim-rhubarb'                     -- enable :GBrowse to open git stuff in the browser
+  use 'rhysd/git-messenger.vim'               -- See commit messages for line under the cursor
+  use "lewis6991/gitsigns.nvim"               -- show git decorations on the left
 
   -- Markdown
   use 'mzlogin/vim-markdown-toc'              -- Language Support for Markdown - Generate table of contents
