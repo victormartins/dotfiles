@@ -9,3 +9,10 @@
 - Keybase.io
   - Finder integration is failing to install
   "kbfuse.fs" can't be opened. OSX is blocking it.
+
+
+
+- [ ] dotfiles/.gitconfig
+  How to have a home/work version?
+  - [ ] email is different
+  - [ ] home folder is different (victor.martins vs victormartins)
