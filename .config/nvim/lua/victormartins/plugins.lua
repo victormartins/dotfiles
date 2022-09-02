@@ -65,6 +65,7 @@ return packer.startup(function(use)
 
   use 'rhysd/git-messenger.vim'               -- See commit messages for line under the cursor
 
+  use 'sickill/vim-pasta'                     -- Automatically indent code when copy pasting
   use 'RRethy/nvim-treesitter-endwise'        -- Language Support for Ruby, Lua, Vimscript, Bash to close blocks automagically
   -- use 'sheerun/vim-polyglot'                     -- Language Support for the Win
   -- use 'tpope/vim-rails'                          -- Language Support for Rails
