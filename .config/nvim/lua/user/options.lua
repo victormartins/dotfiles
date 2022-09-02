@@ -9,8 +9,8 @@ vim.opt.termguicolors = true                    -- Enables 24-bit RGB color in t
 
 -- use blinking block cursor when editing
 vim.opt.guicursor = {
-  'n-v-c:block-Cursor',
-  'i-ci-ve:block-blinkwait175-blinkoff150-blinkon175',
+  'n-v-c:block',
+  'i-ci-ve:ver20-blinkwait175-blinkoff150-blinkon175',
   'r-cr-o:hor20',
 }
 
