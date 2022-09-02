@@ -1,14 +1,5 @@
 -- To see how the run time paths are calculated do :help rtp
-print("Hello from init.lua")
+-- After installing plugins, configure them inside the after/plugins folder
+-- by adding a file there. This ensures the plugin is loaded before configuring it
 
-require "victormartins.options"
-require "victormartins.keymaps"
-require "victormartins.plugins"
-require "victormartins.colorscheme"
-require "victormartins.cmp"
-require "victormartins.lsp"
-require "victormartins.telescope"
-require "victormartins.treesitter"
-require "victormartins.autopairs"
-require "victormartins.gitsigns"
-require "victormartins.trimwhitespace"
+require("victormartins")

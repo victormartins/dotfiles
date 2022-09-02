@@ -48,7 +48,10 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"                   -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"                 -- Useful lua functions used ny lots of plugins
 
-  use 'ellisonleao/gruvbox.nvim'              -- Color scheme
+  -- Color Schemes
+  -- use 'ellisonleao/gruvbox.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+
   use 'jeffkreeftmeijer/vim-numbertoggle'     -- toggle relative numbering in vim when buffer not in focus
   use 'mbbill/undotree'                       -- Non linear undos
   use 'tpope/vim-repeat'                      -- Repeat some plugins with . command (eg: vim-surround)
