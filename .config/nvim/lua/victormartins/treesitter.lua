@@ -5,7 +5,14 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {
+    "ruby",
+    "javascript",
+    "json",
+    "yaml",
+    "html",
+    "scss"
+  },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
   autopairs = {
@@ -24,5 +31,5 @@ configs.setup {
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
   },
-  indent = { enable = true, disable = { "yaml" } },
+  indent = { enable = false, disable = { "yaml" } },
 }
