@@ -63,9 +63,9 @@ return packer.startup(function(use)
   -- use 'rhysd/vim-textobj-ruby'              -- Custom Text Object - Ruby (r)
   use 'michaeljsmith/vim-indent-object'          -- Custom Text Object - indentations (i)
 
+  use 'RRethy/nvim-treesitter-endwise'        -- Language Support for Ruby, Lua, Vimscript, Bash to close blocks automagically
   -- use 'sheerun/vim-polyglot'                     -- Language Support for the Win
   -- use 'tpope/vim-rails'                          -- Language Support for Rails
-  -- use 'tpope/vim-endwise'                        -- Language Support for Ruby - close end blocks automagically
 
   use 'ap/vim-css-color'                         -- Language Support - show CSS Colors
   -- use 'mattn/emmet-vim'                          -- Language Support Emmet
