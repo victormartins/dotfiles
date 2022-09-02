@@ -18,15 +18,18 @@
 ## LSP
 - `K`   - See code documentation of hovering code
 - `K + K` - Enter code documentation window. `q` will exit
- 
+
 - `gd` - Go to definition
 - `gd` - Go to definition
 - `gr` - Go to references
 - `gl` - Show line diagnostics (eg: Rubocop)
- 
+
 - These are not available in Ruby
 - `gD` - Go to declaration
 - `gi` - Go to implementation
+
+## GitMessenger
+Type :GitMessenger to show the commit msg for the line under the cursor
 
 ## Utils
 ### Print HTML
