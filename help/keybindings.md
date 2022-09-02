@@ -13,7 +13,8 @@
 
 # VIM
 ## TO LEARN
-- How to see the documentation of a given Ruby class and scroll the documentation
+- [x] How to see the documentation of a given Ruby class and scroll the documentation
+  - Use LSP, see bellow
 
 ## LSP
 - `K`   - See code documentation of hovering code

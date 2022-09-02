@@ -1,5 +1,3 @@
-print("Hello from victormartins")
-
 require "victormartins.options"
 require "victormartins.keymaps"
 require "victormartins.plugins"
