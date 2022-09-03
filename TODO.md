@@ -11,6 +11,7 @@
   "kbfuse.fs" can't be opened. OSX is blocking it.
 
 
+- [ ] LSP works for CSS and JS but not for Ruby in the EASOL project?
 
 - [ ] dotfiles/.gitconfig
   How to have a home/work version?

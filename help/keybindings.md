@@ -17,10 +17,11 @@
   - Use LSP, see bellow
 
 ## LSP
+- `:Format` - Format the code
+- `<leader>rn` - Rename methods, variables, etc
 - `K`   - See code documentation of hovering code
 - `K + K` - Enter code documentation window. `q` will exit
 
-- `gd` - Go to definition
 - `gd` - Go to definition
 - `gr` - Go to references
 - `gl` - Show line diagnostics (eg: Rubocop)

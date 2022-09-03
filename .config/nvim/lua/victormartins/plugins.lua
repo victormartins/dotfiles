@@ -113,8 +113,14 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a collection of snippets for different languages
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use {
+    -- The order bellow is important!
+    "williamboman/mason.nvim",              -- package manager for LSP servers, DAP servers, Linters, etc..
+    "williamboman/mason-lspconfig.nvim",    -- bridge between mason and nvim-lspconfig
+    "neovim/nvim-lspconfig",                -- LSP configurations
+    "mfussenegger/nvim-lint",
+    "mhartington/formatter.nvim"
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
