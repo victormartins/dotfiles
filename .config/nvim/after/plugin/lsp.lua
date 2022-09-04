@@ -164,6 +164,16 @@ nvim_lsp['tsserver'].setup({
 nvim_lsp['solargraph'].setup({
   on_attach = on_attach,
   flags = lsp_flags,
+  cmd = { "solargraph", "stdio" },
+  root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git"),
+  -- filetypes = { "ruby" },
+  -- init_options = {
+  --   formatting = true
+  -- },
+  -- settings = {
+  --   solargraph = {
+  --     diagnostics = true,
+  -- }
 })
 
 nvim_lsp['cssls'].setup({
