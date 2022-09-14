@@ -11,6 +11,9 @@
 ## Mission Control
 <img src='./img/OSX__mission_control.png'>
 
+# Kitty Terminal
+`CTRL + SHIFT + h` then `/` to search contents
+
 # VIM
 ## TO LEARN
 - [x] How to see the documentation of a given Ruby class and scroll the documentation
