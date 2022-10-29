@@ -40,6 +40,11 @@ Type :GitMessenger to show the commit msg for the line under the cursor
 - Select one or more lines and type :GBrowse to open the browser on that spot
 - In vim-fugitive, select a commit and type :GBrowse to open it in the browser
 
+## Vim Test
+`- <leader>tf` Test the file
+`- <leader>tn` Test the nearest test
+`- <leader>tl` Test last ran spec
+
 ## Utils
 ### Print HTML
 With a document open and syntax run command `:TOhtml`.
