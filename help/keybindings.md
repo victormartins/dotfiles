@@ -1,6 +1,9 @@
 # Keybindings
 [TOC]
 
+# Alias
+- `ww` - go to main project folder and run `$vim -S Session.vim`
+
 # OSX
 ## Keyboard
 - Keyboard: Add US and set US
