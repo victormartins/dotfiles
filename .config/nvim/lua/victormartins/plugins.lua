@@ -87,6 +87,7 @@ return packer.startup(function(use)
   use 'tpope/vim-rhubarb'                     -- enable :GBrowse to open git stuff in the browser
   use 'rhysd/git-messenger.vim'               -- See commit messages for line under the cursor
   use "lewis6991/gitsigns.nvim"               -- show git decorations on the left
+  use "github/copilot.vim"                    -- magic bot says hi :)
 
   -- Markdown
   use 'mzlogin/vim-markdown-toc'              -- Language Support for Markdown - Generate table of contents

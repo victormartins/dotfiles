@@ -2,3 +2,5 @@
 .DS_Store
 irb_history
 .config/htop/htoprc
+.config/github-copilot/hosts.json
+.config/configstore/update-notifier-npm-check-updates.json
