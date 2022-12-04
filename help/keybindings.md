@@ -22,6 +22,10 @@
 - [x] How to see the documentation of a given Ruby class and scroll the documentation
   - Use LSP, see bellow
 
+## Day to day
+`- <leader>e` Open File Explorer
+
+
 ## LSP
 - `:Format` - Format the code
 - `<leader>rn` - Rename methods, variables, etc
