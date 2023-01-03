@@ -1,6 +1,11 @@
 # Keybindings
 [TOC]
 
+# Keyboard Hold Keys
+K is CTRL
+S is SHIFT
+F is ALT
+
 # Alias
 - `ww` - go to main project folder and run `$vim -S Session.vim`
 
