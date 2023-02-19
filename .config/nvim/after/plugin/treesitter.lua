@@ -21,7 +21,7 @@ require'nvim-treesitter.configs'.setup {
     -- which will have a performance hit
     additional_vim_regex_highlighting = false,
   },
-
-  local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-  parser_config.ruby.filetype_to_parsername = { "ruby" }
 }
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.ruby.filetype_to_parsername = { "ruby" }
