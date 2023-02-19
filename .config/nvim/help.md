@@ -16,6 +16,12 @@ Edit the `plugins.lua` file and then run the following:
 ```
 
 # Key shortcuts
+## Copy Pasting
+```
+<leader>p   --  past contents without replacing buffer
+<leader>y   --  copy selected contents to system clipboard
+<leader>Y   --  copy entire line to system clipboard
+```
 ## File Navigation
 ```
 <leader> + pv  -- project view (Explorer)
@@ -46,7 +52,7 @@ Edit the `plugins.lua` file and then run the following:
 ```
 arrows   --  resize window
 <C-w>    --  maximize window
-<C-=>	 -- equalize windows
+<C-=>    -- equalize windows
 ```
 
 # Copilot

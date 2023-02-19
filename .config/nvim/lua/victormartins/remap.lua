@@ -45,3 +45,7 @@ vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
 
+-- past selected value without replacing contents of buffer
+vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
