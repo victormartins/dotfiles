@@ -1,3 +1,5 @@
 require("victormartins.remap")
 require("victormartins.plugins")
 require("victormartins.set")
+require("victormartins.trimwhitespace")
+require("victormartins.copy_file_paths")
