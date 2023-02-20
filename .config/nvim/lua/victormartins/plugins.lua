@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
   use 'kana/vim-textobj-user'                 -- Custom Text Object - How to create custom text objects. (Dependency for vim-textobj-ruby)
   use 'michaeljsmith/vim-indent-object'          -- Custom Text Object - indentations (i)
 
+  use 'vim-test/vim-test'                     -- Run tests directly from nvim. :TestNearest, :TestFile, :TestLast, :TestVisit
   use 'sickill/vim-pasta'                     -- Automatically indent code when copy pasting
   use 'RRethy/nvim-treesitter-endwise'        -- Language Support for Ruby, Lua, Vimscript, Bash to close blocks automagically
 
@@ -79,7 +80,7 @@ return require('packer').startup(function(use)
       {'neovim/nvim-lspconfig'},             -- Required
       {'williamboman/mason.nvim'},           -- Optional
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
-  
+
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},         -- Required
       {'hrsh7th/cmp-nvim-lsp'},     -- Required
@@ -87,7 +88,7 @@ return require('packer').startup(function(use)
       {'hrsh7th/cmp-path'},         -- Optional
       {'saadparwaiz1/cmp_luasnip'}, -- Optional
       {'hrsh7th/cmp-nvim-lua'},     -- Optional
-  
+
       -- Snippets
       {'L3MON4D3/LuaSnip'},             -- Required
       {'rafamadriz/friendly-snippets'}, -- Optional

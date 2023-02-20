@@ -286,6 +286,11 @@ _G.packer_plugins = {
     path = "/Users/victormartins/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/Users/victormartins/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
+  },
   ["vim-textobj-user"] = {
     loaded = true,
     path = "/Users/victormartins/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
