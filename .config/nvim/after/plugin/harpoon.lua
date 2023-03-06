@@ -7,3 +7,11 @@ vim.keymap.set("n", "<leader>hh", ui.toggle_quick_menu)
 vim.keymap.set("n", "<leader>h1", function() ui.nav_file(1) end)
 vim.keymap.set("n", "<leader>h2", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<leader>h3", function() ui.nav_file(3) end)
+
+
+require("harpoon").setup({
+    menu = {
+      -- make the width of the harpoon window adjust to window size
+        width = vim.api.nvim_win_get_width(0) - 4,
+    }
+})
