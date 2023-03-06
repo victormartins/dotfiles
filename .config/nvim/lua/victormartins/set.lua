@@ -60,7 +60,8 @@ vim.opt.fileencoding = "utf-8"                  -- the encoding written to a fil
 vim.opt.iskeyword:append "-"                    -- always words separated by - to be connected when we do selections etc. like-this
 
 -- folding configurations
-vim.opt.foldmethod='syntax'
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel=3
 
 -- Always show the signcolumn, otherwise it would shift the text each time
