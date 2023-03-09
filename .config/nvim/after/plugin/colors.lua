@@ -1,6 +1,7 @@
 -- CATPPUCCIN SETTINGS ------------------------------------------------
-
 -- Help: https://github.com/catppuccin/nvim
+-- https://github.com/catppuccin/catppuccin#-palettes
+
 require("catppuccin").setup({
   flavour = "macchiato", -- (latte, frappe, macchiato, mocha)
   transparent_background = true,
@@ -10,6 +11,13 @@ require("catppuccin").setup({
     shade = "dark",
     percentage = 0.15,
   },
+  custom_highlights = function(colors)
+    return {
+      -- MatchParen = { fg = "#40a02b" }, -- highlight matching (), {}, etc. in green
+      MatchParen = { fg = "#00FF00" }, -- highlight matching (), {}, etc. in green
+      ["@punctuation.bracket"] = { fg ="#fe640b" }  -- hightlight Treesitter syntax brackets like () , {}, etc in red
+    }
+  end
 })
 
 vim.cmd.colorscheme "catppuccin"

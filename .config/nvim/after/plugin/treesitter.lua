@@ -2,9 +2,9 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 
+  ensure_installed = {
     "ruby", "javascript", "typescript", "json", "yaml", "html", "scss",
-    "lua", "vim", "help" 
+    "lua", "vim", "help"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
