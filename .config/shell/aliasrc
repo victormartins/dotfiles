@@ -48,3 +48,4 @@ alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgree
 alias gls="git log  --oneline -10"
 alias glsl="git log  --oneline -25"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local"
+alias git_stash_non_staged="git stash --keep-index"
