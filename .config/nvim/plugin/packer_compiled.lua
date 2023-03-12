@@ -300,6 +300,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/victormartins/.local/share/nvim/site/pack/packer/start/vim-transparent",
     url = "https://github.com/tribela/vim-transparent"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/Users/victormartins/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

@@ -16,7 +16,9 @@ vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
 
 -- Window resizing
-vim.keymap.set("n", "<C-=>", "<C-w>=") -- equalize window sizes. Remaped since I'm using <C-w> to maximize
+vim.keymap.set("n", "<C-=>", "<C-w>=")                 -- equalize window sizes. Remaped since I'm using <C-w> to maximize
+vim.keymap.set("n", "<C-w>w", ":MaximizerToggle<CR>")  --  Maximize split to the fill
+vim.keymap.set("n", "<C-w>z", ":ZenMode<CR>")          -- Maximize split to the center
 
 -- open explorer on the left
 vim.keymap.set("n", "<leader>e", ":Lex 30<cr>")

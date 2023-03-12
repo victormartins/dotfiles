@@ -46,13 +46,14 @@ return require('packer').startup(function(use)
   use 'sickill/vim-pasta'                     -- Automatically indent code when copy pasting
   use 'RRethy/nvim-treesitter-endwise'        -- Language Support for Ruby, Lua, Vimscript, Bash to close blocks automagically
 
-  use 'ap/vim-css-color'                         -- Language Support - show CSS Colors
-  use 'schickling/vim-bufonly'                   -- Close all others buffers with :BOnly
-  use 'brooth/far.vim'                           -- Find and replace project wide
-  use 'justinmk/vim-sneak'                       -- Quickly goto text
-  use 'tribela/vim-transparent'                  -- Allow background transparency( :TransparentToggle)
+  use 'ap/vim-css-color'                      -- Language Support - show CSS Colors
+  use 'schickling/vim-bufonly'                -- Close all others buffers with :BOnly
+  use 'brooth/far.vim'                        -- Find and replace project wide
+  use 'justinmk/vim-sneak'                    -- Quickly goto text
+  use 'tribela/vim-transparent'               -- Allow background transparency( :TransparentToggle)
   use 'mattn/emmet-vim'
-  use 'szw/vim-maximizer'			-- Maximize the current window
+  use 'szw/vim-maximizer'                     -- Maximize the current window
+  use "folke/zen-mode.nvim"                   -- Maximize but in Zen mode :)
 
   -- use 'vimwiki/vimwiki'                          -- VimWiki FTW
   -- use 'honza/vim-snippets'                       -- Snippts FTW
