@@ -44,8 +44,9 @@ alias gst='clear; git status -sb'
 alias gitclean='git clean -f -d -n' #DOn't delete, just show the problems
 alias gitcleany='git clean -f -d' #Delete at will
 alias gco='git checkout'
-alias gl="git log  --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
-alias gls="git log  --oneline -10"
-alias glsl="git log  --oneline -25"
+alias gl="git log --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
+alias gls="git log --oneline -10"
+alias glss="git log --oneline -25"
+alias glsss="git log --oneline -50"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local"
 alias git_stash_non_staged="git stash --keep-index"
