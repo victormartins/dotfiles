@@ -40,9 +40,10 @@ alias ports_open='sudo lsof -i -P -n | grep LISTEN'
 alias port_info='function _port_info(){ sudo lsof -i:$1; };_port_info'
 
 #Git
-alias gst='clear; git status -sb'
-alias gitclean='git clean -f -d -n' #DOn't delete, just show the problems
-alias gitcleany='git clean -f -d' #Delete at will
+alias gst='clear; git status -sb'   # Show all changes
+alias gbv='clear; git branch -v'    # Show all branches
+alias gitclean='git clean -f -d -n' # Don't delete, just show the problems
+alias gitcleany='git clean -f -d'   # Delete at will
 alias gco='git checkout'
 alias gl="git log --pretty=format:'%Cgreen %ci %Cred %h %Cgreen(%Cblue%an%Cgreen) %Creset %s'"
 alias gls="git log --oneline -10"
