@@ -23,7 +23,7 @@ require("catppuccin").setup({
 vim.cmd.colorscheme "catppuccin"
 vim.cmd "highlight StatusLine   cterm=none guifg=#c6d0f5 guibg=#232634"  -- active window
 vim.cmd "highlight StatusLineNC cterm=none guifg=#737994 guibg=#303446"  -- background window
-
+vim.cmd "highlight CursorColumn cterm=none guibg=#494d64"                -- the column we see when we run set :cuc
 -- END CATPPUCCIN SETTINGS ------------------------------------------------
 
 
