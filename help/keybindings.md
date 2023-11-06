@@ -165,3 +165,13 @@ mod2 + H      Swap Focus Window to Next Screen Counter Clock Wise
 <img src='./img/amethist_05.png' >
 <img src='./img/amethist_06.png' >
 
+
+# Desktop Numbers
+1 - Main Worker
+2 - Work Support
+5 - PG Admin
+...
+7 - Servers
+8 - Datadog
+9 - Calendars
+10 - Sprint Browsers | Slack
