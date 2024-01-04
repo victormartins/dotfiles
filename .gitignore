@@ -6,3 +6,4 @@ irb_history
 .config/configstore/update-notifier-npm-check-updates.json
 .config/stripe
 .config/nvim/undodir
+.config/lazygit/state.yml
